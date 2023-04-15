@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPols</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/global.css">
+</head>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+<header>
+    <img id="CPlogo" src="./assets/CP logo - dummy.jpg">
+    <h1>CryptoPols</h1>
+    <nav>
+        <p>Home</p>
+        <p>State</p>
+        <p>Politician</p>
+    </nav>
+</header>
+
+<body>
+    <section id="index-top">
+        <div class="index-top1">
+            <h2 class="index-top2">Crypto Position by US Politicians in Congress</h2>
+            <div class="index-top2">
+                <p>This website provides deeper insights into how US politicians in Congress view the crypto industry.
+                    The context of "crypto"
+                    extends to cryptocurrencies, web3 and blockchain technology as an ecosystem. Crypto is in its early
+                    stages and has seen both
+                    positive developments in innovation as well as negative events in financial exploits. The future
+                    success of crypto will in
+                    meaningful part be driven by the type of regulations passed by Congress. Whether you are pro or
+                    anti-crypto, this website
+                    provides a transparent and holisitic overview of all politicians in Congress with regards to their
+                    position towards the
+                    crypto industry. You can also generate a letter to send to your representative(s) to express your
+                    support or opposition on crypto.
+                </p>
+                <p>The below map shows the aggregate position towards crypto by all US politicians in Congress (Senate
+                    and House of Representatives)
+                    by state. Click each state for more information.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chart code -->
+    <script>
+        am5.ready(function () {
+
+            var root = am5.Root.new("chartdiv");
+
+            root.setThemes([
+                am5themes_Animated.new(root)
+            ]);
+
+            var chart = root.container.children.push(am5map.MapChart.new(root, {
+                panX: "rotateX",
+                panY: "none",
+                projection: am5map.geoAlbersUsa(),
+                layout: root.horizontalLayout,
+            }));
+
+            var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+                geoJSON: am5geodata_usaLow,
+                valueField: "value",
+                calculateAggregates: true
+            }));
+
+            polygonSeries.mapPolygons.template.setAll({
+                tooltipHTML: "<div style='text-align: center; color: #FFFFFF;'>{name}<br><b>{value}</b></div>"
+            });
+
+            /* polygonSeries.mapPolygons.template.events.on("pointerover", function (ev) {
+                heatLegend.showValue(ev.target.dataItem.get("value"));
+            }); */
+
+            polygonSeries.mapPolygons.template.events.on("pointerup", function (ev) {
+                var stateId = ev.target.dataItem.dataContext.id;
+                window.location.href = './html/state.html?state=' + stateId;
+            });
+
+            polygonSeries.set("heatRules", [{
+                target: polygonSeries.mapPolygons.template,
+                dataField: "value",
+                min: am5.color(0x6f2da8),
+                max: am5.color(0xf2a900),
+                key: "fill"
+            }]);
+
+            polygonSeries.data.setAll([
+                { id: "US-AL", value: 9, name: "Alabama" },
+                { id: "US-AK", value: 8 },
+                { id: "US-AZ", value: 7 },
+                { id: "US-AR", value: 6 },
+                { id: "US-CA", value: 5 },
+                { id: "US-CO", value: 4 },
+                { id: "US-CT", value: 3 },
+                { id: "US-DE", value: 7 },
+                { id: "US-FL", value: 1 },
+                { id: "US-GA", value: 8 },
+                { id: "US-HI", value: 1 },
+                { id: "US-ID", value: 1 },
+                { id: "US-IL", value: 1 },
+                { id: "US-IN", value: 6 },
+                { id: "US-IA", value: 2 },
+                { id: "US-KS", value: 2 },
+                { id: "US-KY", value: 4 },
+                { id: "US-LA", value: 4 },
+                { id: "US-ME", value: 1 },
+                { id: "US-MD", value: 5 },
+                { id: "US-MA", value: 6 },
+                { id: "US-MI", value: 10 },
+                { id: "US-MN", value: 4 },
+                { id: "US-MS", value: 2 },
+                { id: "US-MO", value: 5 },
+                { id: "US-MT", value: 10 },
+                { id: "US-NE", value: 0.1 },
+                { id: "US-NV", value: 1 },
+                { id: "US-NH", value: 1 },
+                { id: "US-NJ", value: 8 },
+                { id: "US-NM", value: 2.5 },
+                { id: "US-NY", value: 1 },
+                { id: "US-NC", value: 8 },
+                { id: "US-ND", value: 6 },
+                { id: "US-OH", value: 1 },
+                { id: "US-OK", value: 3 },
+                { id: "US-OR", value: 3 },
+                { id: "US-PA", value: 1 },
+                { id: "US-RI", value: 1 },
+                { id: "US-SC", value: 4 },
+                { id: "US-SD", value: 7 },
+                { id: "US-TN", value: 5 },
+                { id: "US-TX", value: 0 },
+                { id: "US-UT", value: 5 },
+                { id: "US-VT", value: 6 },
+                { id: "US-VA", value: 7 },
+                { id: "US-WA", value: 5 },
+                { id: "US-WV", value: 1 },
+                { id: "US-WI", value: 5 },
+                { id: "US-WY", value: 7.5 }
+            ]);
+
+            var heatLegend = am5.HeatLegend.new(root, {
+                orientation: "horizontal",
+                startColor: am5.color(0x6f2da8),
+                endColor: am5.color(0xf2a900),
+                startText: "",
+                endText: "",
+                stepCount: 10000
+            });
+
+            am5.dom.getElement("legend").appendChild(heatLegend.dom);
+
+            heatLegend.startLabel.setAll({
+                fontSize: 12,
+                fill: heatLegend.get("startColor")
+            });
+
+            heatLegend.endLabel.setAll({
+                fontSize: 12,
+                fill: heatLegend.get("endColor")
+            });
+
+            polygonSeries.events.on("datavalidated", function () {
+                heatLegend.set("startValue", polygonSeries.getPrivate("valueLow"));
+                heatLegend.set("endValue", polygonSeries.getPrivate("valueHigh"));
+            });
+
+        });
+
+        am5.on("stateClicked", function (data) {
+            window.location.href = './html/state.html?state=' + data.stateId;
+        });
+
+    </script>
+
+
+
+    <div class="map-container">
+        <div id="chartdiv"></div>
+        <div class="custom-legend">
+            <span class="label" style="color: var(--strongly-anti);">Anti</span>
+            <div class="gradient"></div>
+            <span class="label" style="color: var(--strongly-pro);">Pro</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
