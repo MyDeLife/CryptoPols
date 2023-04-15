@@ -1,2 +1,2 @@
 # CryptoPols
-Tracking the perspectives of US politicians towards the crypto industry
+Tracking the perspectives of federal US politicians towards the crypto industry
