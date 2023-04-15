@@ -1,0 +1,452 @@
+#content {
+    max-width: 100rem;
+    margin: 2% auto 5% auto;
+}
+
+#pol-name {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    justify-content: left;
+    margin-bottom: 1%;
+}
+
+#party-color {
+    width: 1rem;
+    height: 2.5rem;
+    background-color: #E81B23
+        /* Dem: #00AEF3; Rep: E81B23*/
+}
+
+#politician-name {
+    display: flex;
+}
+
+
+#profile {
+    display: flex;
+    height: 30rem;
+}
+
+#personal-info {
+    display: flex;
+    border-radius: 1rem;
+    background-color: var(--light-brown);
+    padding-right: 1.5rem;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--dark-brown);
+    padding: 1%;
+    width: 35%
+}
+
+#profile1,
+#profile2,
+#profile3,
+#profile4 {
+    margin: 0% 0% 3% 1%;
+    height: 100%
+}
+
+#profile1 {
+    display: flex;
+    flex-direction: column;
+}
+
+#profile2 {
+    display: flex;
+    margin: 0;
+    width: 50%
+}
+
+#profile3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    border-radius: 1rem;
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--dark-brown);
+}
+
+#profile4 {
+    width: 20rem;
+}
+
+.profile-divider {
+    background: linear-gradient(var(--white) 2%, var(--light-brown)5%, var(--light-brown)95%, var(--white) 98%);
+    color: var(--light-brown);
+    font-size: 1rem;
+}
+
+#pol-pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18rem;
+    border-radius: 1rem;
+}
+
+.pol-text1 {
+    margin-left: 10%
+}
+
+.pol-text1 h3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    font-size: 1.3rem;
+    height: 2.2rem;
+}
+
+.pol-text2 {
+    margin-left: 10%
+}
+
+.pol-text2 p {
+    display: flex;
+
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    height: 2.2rem;
+    font-size: 1.3rem;
+}
+
+.profile-text {
+    margin: 4%;
+    text-align: center;
+    color: var(--dark-brown)
+}
+
+#express-view {
+    display: flex;
+    gap: 10%;
+    margin: 2% 5% 5% 5%
+}
+
+.profile-button {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: bold;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--white);
+    border-radius: 1.5rem;
+    width: 13rem;
+}
+
+#support {
+    background-color: var(--blue);
+    color: var(--white)
+}
+
+#oppose {
+    background-color: var(--blue);
+    color: var(--white)
+}
+
+.fa-arrow-down {
+    text-align: center;
+    margin-bottom: 3%;
+    color: var(--dark-brown);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#contact {
+    display: flex;
+    justify-content: center;
+    background-color: var(--blue);
+    color: var(--white);
+    margin: 2% auto 4% auto
+}
+
+
+#socials-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 1rem;
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+    width: 16rem;
+    padding-right: 1.5rem;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--dark-brown);
+    height: 100%;
+}
+
+.socials img {
+    height: 2rem;
+    width: 2rem !important;
+    border-radius: 50%
+}
+
+.socials-logo,
+.socials-text {
+    margin: 8% 0 8% 0;
+}
+
+.socials-logo,
+.socials img {
+    font-size: 2rem;
+    width: 4rem;
+
+}
+
+.socials-logo,
+.socials-text1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.socials-logo1 {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 3rem
+}
+
+.socials-text1 {
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.3rem;
+}
+
+.socials-text1,
+.socials-logo1 {
+    height: 3rem;
+    min-height: 3rem;
+    display: flex;
+}
+
+#website {
+    color: var(--dark-brown)
+}
+
+#twitter {
+    color: #1DA1F2;
+}
+
+#facebook {
+    color: #3b5998
+}
+
+#youtube {
+    color: #c4302b
+}
+
+#pol-crypto-info {
+    display: flex;
+    margin: 3% auto 0 auto;
+    max-width: 100rem;
+    padding-top: 3%;
+    border-top: 0.1rem solid var(--light-brown);
+}
+
+#pol-eval {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 40% !important
+}
+
+
+#pol-cfr,
+#pol-er,
+#pol-remarks,
+#chart1,
+#chart2,
+#pol-table1 {
+    border-radius: 1rem;
+    background-color: var(--light-brown);
+    width: 80%;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--dark-brown);
+
+}
+
+.pol-eval-header {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    padding: 5%;
+    line-height: 1.5rem;
+}
+
+#pol-cfr-text {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.3rem;
+    font-style: bold;
+    background-color: var(--slightly-pro);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 1.5rem;
+    width: 80%;
+    margin: 1rem auto 2rem auto;
+
+}
+
+#pol-er {
+    margin-top: 8%
+}
+
+.pol-er {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 2% 0 6% 0
+}
+
+.low,
+.high {
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.low {
+
+    margin-left: 10%;
+}
+
+.high {
+
+    margin-right: 10%;
+}
+
+.pol-er-wrapper {
+    width: 80%;
+    height: 2rem;
+    margin: 0rem auto 0rem auto;
+    background-color: #ccc;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.pol-er-bar {
+    height: 100%;
+    width: 0;
+}
+
+#pol-remarks {
+    width: 100%;
+    padding: 0% 2% 0% 3.5%
+}
+
+#pol-remarks h3 {
+    font-size: 2rem;
+    text-decoration: underline;
+    margin-bottom: 5%;
+}
+
+.quote-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+
+.quote-container p {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+
+.quote-container a {
+    color: blue;
+    text-decoration: underline;
+    margin-left: 1%;
+}
+
+.date {
+    font-style: italic;
+    text-align: right;
+    margin: 0 4% 5% 0;
+}
+
+#pol-charts {
+    display: flex;
+    gap: 10%;
+    margin-top: 5%
+}
+
+#chart1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 20rem;
+    width: 45%;
+    font-size: 5rem;
+}
+
+#chart2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 20rem;
+    width: 45%;
+    font-size: 5rem;
+}
+
+#pol-table {
+    margin-top: 5%;
+}
+
+#pol-table1 {
+    width: 100%;
+    padding: 2%
+}
+
+th {
+    font-size: 2rem;
+    border-bottom: 0.1rem solid black;
+    text-align: left;
+}
+
+td {
+    font-size: 1.5rem;
+
+}
+
+.link {
+    color: blue;
+    text-decoration: underline;
+}
+
+.cfr {
+    background-color: var(--strongly-pro);
+    border-radius: 1rem;
+}
+
+.pol-date {
+    text-align: right;
+}
+
+.pol-cfr {
+    text-align: center;
+}
+
+.pol-link {
+    text-align: center;
+}

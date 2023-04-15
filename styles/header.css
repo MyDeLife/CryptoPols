@@ -1,0 +1,20 @@
+header {
+    border-bottom: 0.1rem solid var(--light-brown);
+    margin: 0 auto 3% auto;
+    display: flex;
+}
+
+#CPlogo {
+    height: 5rem;
+}
+
+h1 {
+    margin: auto 0 auto 2% !important
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25%;
+    margin-left: 50%;
+}

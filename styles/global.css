@@ -1,0 +1,41 @@
+* {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+:root {
+    --black: black;
+    --white: white;
+    --gray: lightgray;
+    --blue: rgb(48, 110, 180);
+    --dark-brown: #51372e;
+    --light-brown: #d4c7bd;
+    --strongly-pro: #f2a900;
+    --slightly-pro: #d18a2a;
+    --neutral: #b06b54;
+    --slightly-anti: #8f4c7e;
+    --strongly-anti: #6f2da8;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    max-width: 100rem;
+    margin: 0 auto 0 auto
+}
+
+h1 {
+    font-size: 2.7rem;
+    margin: 0 auto 2% auto;
+}
+
+h2 {
+    font-size: 2.3rem;
+}
+
+p {
+    font-size: 1.6rem;
+    margin: 0 auto 1.5% auto;
+    line-height: 2.2rem
+}

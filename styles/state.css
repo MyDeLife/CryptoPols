@@ -1,0 +1,75 @@
+#state-info {
+    display: flex;
+    flex-direction: column;
+    max-width: 80rem;
+}
+
+#state-name {
+    margin-bottom: 3%;
+}
+
+
+#politician-table {
+    border-radius: 1rem;
+    background-color: var(--light-brown);
+    width: 80%;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--dark-brown);
+    text-align: left;
+    line-height: 2rem;
+    padding: 2%
+}
+
+
+#pol-name {
+    width: 15rem;
+}
+
+.name-link {
+    cursor: pointer;
+}
+
+#party {
+    width: 8rem
+}
+
+.party-icon {
+    width: 1.5rem;
+    height: 1rem;
+    border-radius: 0.3rem;
+}
+
+#office {
+    width: 8rem;
+}
+
+#district,
+.district {
+    width: 8rem;
+    text-align: center;
+}
+
+#cfr {
+    text-align: center;
+}
+
+.cfr {
+    text-align: center;
+    color: white;
+    width: 18rem;
+    max-height: 80%;
+}
+
+
+.cfr {
+    border-radius: 1rem;
+    padding: 0.5% 0% 0.5% 0%;
+}
+
+th {
+    font-size: 1.5rem
+}
+
+tbody {
+    font-size: 1.4rem;
+}
