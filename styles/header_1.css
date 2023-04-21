@@ -1,0 +1,68 @@
+* {
+    /border: 1px solid black;
+}
+
+header {
+    border-bottom: 0.1rem solid var(--dark-brown);
+    margin: 0 auto 0% auto;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    background-color: var(--gray);
+    width: 100vw;
+
+}
+
+#header-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 120rem;
+    width: 90vw;
+    flex-wrap: wrap;
+}
+
+#header-title {
+    display: flex;
+    flex-direction: row;
+
+align-items: center;}
+
+#CPlogo {
+    height: 4.5rem;
+    margin: 5%
+}
+
+h1 {
+    margin: auto 0 auto 1% !important;
+    color: var(--dark-brown);
+    font-size: 3.3rem !important;
+}
+
+h1 span {
+    color: #b1a296;
+font-family: 'Segoe UI',
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif
+}
+
+#header-content p:not(nav p) {
+    margin: 2.8% auto 0 7%;
+    font-style:italic;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--dark-brown)
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25%;
+    color: var(--dark-brown)
+}
+
+nav p {
+    font-size: 1.6rem;
+}

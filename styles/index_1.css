@@ -1,0 +1,561 @@
+* {
+    /border: 1px solid black
+}
+
+body {
+    width: 120rem;
+}
+
+h3.fancy {
+    font-size: 1.3rem;
+    margin-bottom: 5%;
+}
+
+#index-page {
+    margin: 0 auto 0 auto;
+    padding-top: 8%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#index-middle1 {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 5% auto;
+    width: 90%;
+}
+
+#us-avg {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0
+}
+
+#us-avg h2 {
+    text-align: center;
+    margin-bottom: 8%;
+}
+
+#congress-avg {
+    background-color: var(--slightly-pro);
+    font-family: var(--text-header);
+    height: 4rem;
+    width: 60%;
+    margin: -4% auto 2% auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    font-size: 250%;
+    font-style: bold;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--light-brown);
+    border-radius: 2rem;
+}
+
+#us-avg .notation {
+    width: 55%;
+    font-size: 120%;
+    line-height: 110%;
+    font-style: italic;
+}
+
+#demrep-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.map-legend {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 2% auto 7% auto;
+
+}
+
+.gradient-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 1rem;
+    width: 100%;
+
+}
+
+.gradient {
+    width: 100%;
+    height: 1.6rem;
+    background: linear-gradient(90deg, var(--strongly-anti) 5%, var(--strongly-pro) 90%);
+    z-index: 1;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--light-brown);
+    border-radius: 2rem;
+}
+
+.map-legend .label {
+    font-size: 150%;
+}
+
+.label-dems span,
+.label-reps span {
+    font-size: 1.1rem;
+    padding: 15% 20% 15% 20%;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.label-dems span {
+    margin-left: -48%;
+}
+
+.label-reps span {
+    margin-left: -38%;
+}
+
+.arrow {
+    position: absolute;
+    top: -3.5rem;
+    width: 2rem;
+    height: 3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.arrow .label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.arrow.dems {
+    left: calc((var(--dems-pos) - 1) / 10 * 100%);
+    transform: translateX(-50%);
+}
+
+.arrow.reps {
+    left: calc((var(--reps-pos) - 1) / 10 * 100%);
+    transform: translateX(-50%);
+}
+
+.arrow.dems .label,
+.dems-text,
+.label-dems span {
+    background-color: var(--dems);
+
+}
+
+.arrow.reps .label,
+.reps-text,
+.label-reps span {
+    background-color: var(--reps);
+}
+
+.arrow .fa-arrow-down {
+    font-size: 1.5rem;
+    margin-top: 0.4rem;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.label.anti {
+    color: var(--strongly-anti);
+}
+
+.label.pro {
+    color: var(--strongly-pro);
+}
+
+#chartdiv {
+    width: 90%;
+    height: 60%;
+    pointer-events: all;
+    margin: 0 3% 2% 3%;
+}
+
+#chartdiv:hover {
+    cursor: pointer;
+}
+
+#index-middle2 {
+    margin: 5% auto 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#index-middle2 h1 {
+    margin-top: 15%;
+    text-align: center;
+}
+
+
+#cfr-trend {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#cfr-trend-header h2 {
+    font-size: 2.7rem;
+    text-align: left;
+    margin-left: 1%;
+    color: var(--dark-brown);
+    text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+#cfr-trend-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%
+}
+
+#cfr-trend-chart1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding: 3% 0 0 5%;
+    border-width: 0.2rem;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-image: linear-gradient(166deg, var(--dark-brown)20%, white 20%) 1;
+}
+
+
+#cfr-trend-chart2 {
+    width: 100%;
+    height: 60%;
+    margin: 2% auto 1% auto;
+    border: 1px solid var(--light-brown);
+    padding: 3%;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--light-brown);
+    border-radius: 2rem;
+}
+
+#cfr-trend-text {
+    font-style: italic;
+    padding: 1.5% 1% 0% 2%;
+    margin: 5% 0% 0 3%;
+    width: 30%;
+    height: 70%;
+    background-color: var(--light-brown);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--dark-brown);
+    border-radius: 1rem;
+}
+
+#cfr-trend-text p {
+    font-size: 1.4rem;
+}
+
+.cfr-chart-legend {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+.cfr-legend {
+    display: flex;
+    margin: 0 3% 0 3%
+}
+
+#cfr-avg-legend {
+    color: gray
+}
+
+#cfr-dems-legend {
+    color: var(--dems)
+}
+
+#cfr-reps-legend {
+    color: var(--reps)
+}
+
+.line-legend {
+    width: 1.5rem;
+    font-size: 4rem;
+    text-align: right;
+}
+
+.text-legend {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    width: 8rem;
+    height: 2.2rem;
+    margin: auto;
+    text-align: center;
+}
+
+#cfr-avg-legend .text-legend {
+    background-color: gray;
+}
+
+#cfr-dems-legend .text-legend {
+    background-color: var(--dems);
+}
+
+#cfr-reps-legend .text-legend {
+    background-color: var(--reps);
+}
+
+
+#cfr-trend-text span {
+    padding: 0.6%;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+
+
+
+.fancy {
+    --b: 0.3rem;
+    /* control the border thickness */
+    --w: 200rem;
+    /* control the width of the line*/
+    --g: 2rem;
+    /* control the gap */
+    --c: var(--light-brown);
+
+    width: fit-content;
+    padding: 0 1em;
+    line-height: 1.6em;
+    border: 1px solid;
+    color: var(--dark-brown);
+    background:
+        conic-gradient(from 45deg at left, var(--c) 25%, #0000 0) 0,
+        conic-gradient(from -135deg at right, var(--c) 25%, #0000 0) 100%;
+    background-size: 51% 100%;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    border-image:
+        linear-gradient(#0000 calc(50% - var(--b)/2),
+            var(--c) 0 calc(50% + var(--b)/2),
+            #0000 0) 1/0 var(--w)/calc(var(--w) + var(--g));
+    margin-inline: auto;
+}
+
+
+
+
+#index3 {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    height: 100%
+}
+
+#index3-1,
+#index3-2 {
+    margin-top: 5%;
+    width: 95%;
+    height: 100%;
+}
+
+#movers-pro-header, #movers-anti-header {
+    color: var(--dark-brown)
+}
+
+#movers-tables-sec {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+#pro-movers {
+    padding: 4% 0 0 4%;
+    border-width: 0.2rem;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-image: linear-gradient(166deg, var(--dark-brown)20%, white 20%) 1;
+    background: linear-gradient(45deg, var(--light-brown, white))
+}
+
+#anti-movers {
+    padding: 4% 0 0 4%;
+    border-width: 0.2rem;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-image: linear-gradient(166deg, var(--dark-brown)20%, white 20%) 1;
+}
+
+.movers {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.movers-tables {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.movers-header {
+    display: table-row;
+    font-weight: bold;
+}
+
+.movers-header .movers-name,
+.movers-header .movers-state,
+.movers-header .movers-rating,
+.movers-header .movers-quote,
+.movers-header .movers-link {
+    background-color: var(--light-brown);
+}
+
+.movers-header .movers-img {
+    background-color: var(--dark-brown) !important;
+}
+
+.movers-header p,
+.movers-text p,
+.movers-text a {
+    font-family: var(--text-header);
+    font-size: 1.4rem;
+}
+
+.movers-text {
+    display: table-row;
+    height: 100%;
+}
+
+
+.movers-text:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.movers-party,
+.movers-name,
+.movers-state,
+.movers-rating,
+.movers-quote,
+.movers-link {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 1rem 0 1rem;
+}
+
+
+.movers-name,
+.movers-state,
+.movers-rating,
+.movers-quote,
+.movers-link {
+    border: 1px solid var(--dark-brown);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.movers-img {
+    border: 1px solid var(--dark-brown);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+
+.movers-party-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    height: 100%;
+}
+
+.movers-party:not(.movers-header .movers-party) {
+    width: 0.8rem;
+    background-color: var(--dems);
+    border-radius: 1rem;
+    margin-right: 1.1rem;
+    padding: 0.2rem;
+    height: 4rem;
+}
+
+.movers-img-cont {
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px solid var(--dark-brown);
+}
+
+.movers-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 5rem;
+    border: 1px solid var(--dark-brown);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.movers-name {
+    width: 20%;
+}
+
+.movers-state {
+    width: 6%;
+    text-align: center;
+}
+
+.movers-rating {
+    width: 18%;
+    text-align: center;
+}
+
+.movers-rating:not(.movers-header .movers-rating) {
+    width: 70%;
+    background-color: var(--slightly-pro);
+    border-radius: 1rem;
+    margin-right: 1rem auto;
+    padding: 1rem;
+    height: 3rem;
+}
+
+.movers-quote {
+    width: 45%;
+    max-width: 50rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movers-link {
+    width: 5%;
+    text-decoration: none;
+    text-align: center;
+}
+
+.movers-link-text {
+    color: #0000ee;
+}
