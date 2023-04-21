@@ -1,7 +1,7 @@
 #state-info {
     display: flex;
     flex-direction: column;
-    max-width: 80rem;
+    max-width: 120rem;
 }
 
 #state-name {

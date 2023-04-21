@@ -1,5 +1,5 @@
 #content {
-    max-width: 100rem;
+    max-width: 120rem;
     margin: 2% auto 5% auto;
 }
 
@@ -15,7 +15,7 @@
     width: 1rem;
     height: 2.5rem;
     background-color: #E81B23
-        /* Dem: #00AEF3; Rep: E81B23*/
+        /* Dem: #00AEF3; Rep: #E81B23*/
 }
 
 #politician-name {
@@ -245,7 +245,7 @@
 #pol-crypto-info {
     display: flex;
     margin: 3% auto 0 auto;
-    max-width: 100rem;
+    max-width: 120rem;
     padding-top: 3%;
     border-top: 0.1rem solid var(--light-brown);
 }
