@@ -4,8 +4,8 @@ import { openai } from './api.js'
 async function createFineTune() {
     try {
         const response = await openai.createFineTune({
-            training_file: 'file-eEVczudnj3D9X5mLL1Q4jF0q',
-            model: 'davinci'
+            training_file: 'file-ZEzWqMgLUsRmcxHsojVPiWUP',
+            model: 'babbage'
         })
         console.log('response: ', response)
     } catch (err) {

@@ -7,10 +7,12 @@ follow these steps:
     3. open createFineTune.js and update the file ID: training_file: 'your-file-id',
     4. run createFineTune script: node createFineTune.js
         NOTE: this may take several minutes
-    5. to check status of createFineTune, run listFineTunes script: node listFineTunes.js
-    6. to use your custom AI model after adding the new data 
-        (and updating prompt in createCompletion.js if needed), 
-        run createCompletion script: node createCompletion.js
+    5. to check status of createFineTune, run listFineTunes script: node listFineTunes.js;
+        when process is completed, copy the new model id in the "fine_tuned_model" field
+    6. in createCompletion.js, update the "model" with the new model id (from step #5) for
+        the createCompletion(), update the prompt if necessary, and run createCompletion
+        script: node createCompletion.js
+     
 
 source links:
 openAI doc - https://platform.openai.com/docs/guides/fine-tuning
