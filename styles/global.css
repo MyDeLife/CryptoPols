@@ -1,28 +1,56 @@
 * {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--text-body)
 }
 
 :root {
     --black: black;
     --white: white;
-    --gray: lightgray;
+    --gray: rgb(244, 244, 244);
     --blue: rgb(48, 110, 180);
     --dark-brown: #51372e;
     --light-brown: #d4c7bd;
-    --strongly-pro: #f2a900;
-    --slightly-pro: #d18a2a;
-    --neutral: #b06b54;
-    --slightly-anti: #8f4c7e;
-    --strongly-anti: #6f2da8;
+    --strongly-pro: #F2a900;
+    /* rgba(242, 169, 0) */
+    --slightly-pro: #D0871B;
+    /* rgba(208, 135, 27)*/
+    --neutral: #9D5444;
+    /* rgba(157, 84, 68) */
+    --slightly-anti: #6A216C;
+    /* rgba(106, 33, 108 */
+    --strongly-anti: #480088;
+    /* rgba(72, 0, 136) */
+    --dems: #00AEF3;
+    --reps: #E81B23;
+    --text-body: Georgia,
+        'Times New Roman',
+        Times,
+        serif;
+    --text-header: 'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif
 }
 
 html {
     font-size: 62.5%;
+
 }
 
 body {
-    max-width: 100rem;
-    margin: 0 auto 0 auto
+    max-width: 100vw;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+nav p,
+.label-dems span,
+.label-reps span,
+.text-legend {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 h1 {
@@ -32,6 +60,10 @@ h1 {
 
 h2 {
     font-size: 2.3rem;
+}
+
+h3 {
+    font-size: 1.9rem
 }
 
 p {

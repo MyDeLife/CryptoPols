@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryptoPols</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/global.css">
@@ -18,184 +19,652 @@
 <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <header>
-    <img id="CPlogo" src="./assets/CP logo - dummy.jpg">
-    <h1>CryptoPols</h1>
-    <nav>
-        <p>Home</p>
-        <p>State</p>
-        <p>Politician</p>
-    </nav>
+    <div id="header-content">
+        <div id="header-title">
+            <img id="CPlogo" src="./assets/CP Logo wo 2048.png">
+            <h1>Crypto<span>Pols</span></h1>
+        </div>
+        <p>...monitoring crypto sentiment of US politicians in Congress</p>
+        <nav>
+            <p>Home</p>
+            <p>State</p>
+            <p>Politician</p>
+        </nav>
+    </div>
 </header>
 
 <body>
-    <section id="index-top">
-        <div class="index-top1">
-            <h2 class="index-top2">Crypto Position by US Politicians in Congress</h2>
-            <div class="index-top2">
-                <p>This website provides deeper insights into how US politicians in Congress view the crypto industry.
-                    The context of "crypto"
-                    extends to cryptocurrencies, web3 and blockchain technology as an ecosystem. Crypto is in its early
-                    stages and has seen both
-                    positive developments in innovation as well as negative events in financial exploits. The future
-                    success of crypto will in
-                    meaningful part be driven by the type of regulations passed by Congress. Whether you are pro or
-                    anti-crypto, this website
-                    provides a transparent and holisitic overview of all politicians in Congress with regards to their
-                    position towards the
-                    crypto industry. You can also generate a letter to send to your representative(s) to express your
-                    support or opposition on crypto.
-                </p>
-                <p>The below map shows the aggregate position towards crypto by all US politicians in Congress (Senate
-                    and House of Representatives)
-                    by state. Click each state for more information.
-                </p>
+    <div id="index-page">
+
+
+        <!-- Chart code -->
+        <script>
+            am5.ready(function () {
+
+                var root = am5.Root.new("chartdiv");
+
+                root.setThemes([
+                    am5themes_Animated.new(root)
+                ]);
+
+                var chart = root.container.children.push(am5map.MapChart.new(root, {
+                    panX: "rotateX",
+                    panY: "none",
+                    projection: am5map.geoAlbersUsa(),
+                    layout: root.horizontalLayout,
+                }));
+
+                var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+                    geoJSON: am5geodata_usaLow,
+                    valueField: "value",
+                    calculateAggregates: true
+                }));
+
+                polygonSeries.mapPolygons.template.setAll({
+                    tooltipHTML: "<div style='text-align: center; color: #FFFFFF;'>{name}<br><b>{value}</b></div>"
+                });
+
+                /* polygonSeries.mapPolygons.template.events.on("pointerover", function (ev) {
+                    heatLegend.showValue(ev.target.dataItem.get("value"));
+                }); */
+
+                polygonSeries.mapPolygons.template.events.on("pointerup", function (ev) {
+                    var stateId = ev.target.dataItem.dataContext.id;
+                    window.location.href = './html/state.html?state=' + stateId;
+                });
+
+                const stronglyAntiColor = am5.color(getComputedStyle(document.documentElement).getPropertyValue("--strongly-anti"));
+                const stronglyProColor = am5.color(getComputedStyle(document.documentElement).getPropertyValue("--strongly-pro"));
+
+                polygonSeries.set("heatRules", [{
+                    target: polygonSeries.mapPolygons.template,
+                    dataField: "value",
+                    min: stronglyAntiColor,
+                    max: stronglyProColor,
+                    key: "fill"
+                }]);
+
+                polygonSeries.data.setAll([
+                    { id: "US-AL", value: 9, name: "Alabama" },
+                    { id: "US-AK", value: 8 },
+                    { id: "US-AZ", value: 7 },
+                    { id: "US-AR", value: 6 },
+                    { id: "US-CA", value: 5 },
+                    { id: "US-CO", value: 4 },
+                    { id: "US-CT", value: 3 },
+                    { id: "US-DE", value: 2 },
+                    { id: "US-FL", value: 1 },
+                    { id: "US-GA", value: 11 },
+                    { id: "US-HI", value: 10 },
+                    { id: "US-ID", value: 9 },
+                    { id: "US-IL", value: 8 },
+                    { id: "US-IN", value: 7 },
+                    { id: "US-IA", value: 6 },
+                    { id: "US-KS", value: 5 },
+                    { id: "US-KY", value: 4 },
+                    { id: "US-LA", value: 3 },
+                    { id: "US-ME", value: 2 },
+                    { id: "US-MD", value: 1 },
+                    { id: "US-MA", value: 11 },
+                    { id: "US-MI", value: 10 },
+                    { id: "US-MN", value: 9 },
+                    { id: "US-MS", value: 8 },
+                    { id: "US-MO", value: 7 },
+                    { id: "US-MT", value: 6 },
+                    { id: "US-NE", value: 5 },
+                    { id: "US-NV", value: 4 },
+                    { id: "US-NH", value: 3 },
+                    { id: "US-NJ", value: 2 },
+                    { id: "US-NM", value: 1 },
+                    { id: "US-NY", value: 11 },
+                    { id: "US-NC", value: 10 },
+                    { id: "US-ND", value: 9 },
+                    { id: "US-OH", value: 8 },
+                    { id: "US-OK", value: 7 },
+                    { id: "US-OR", value: 6 },
+                    { id: "US-PA", value: 5 },
+                    { id: "US-RI", value: 4 },
+                    { id: "US-SC", value: 3 },
+                    { id: "US-SD", value: 2 },
+                    { id: "US-TN", value: 1 },
+                    { id: "US-TX", value: 11 },
+                    { id: "US-UT", value: 10 },
+                    { id: "US-VT", value: 9 },
+                    { id: "US-VA", value: 8 },
+                    { id: "US-WA", value: 7 },
+                    { id: "US-WV", value: 6 },
+                    { id: "US-WI", value: 5 },
+                    { id: "US-WY", value: 4 }
+                ]);
+
+                var heatLegend = am5.HeatLegend.new(root, {
+                    orientation: "horizontal",
+                    startColor: am5.color(0x55009f),
+                    endColor: am5.color(0xF2a900),
+                    startText: "",
+                    endText: "",
+                    stepCount: 10000
+                });
+
+                am5.dom.getElement("legend").appendChild(heatLegend.dom);
+
+                heatLegend.startLabel.setAll({
+                    fontSize: 15,
+                    fill: heatLegend.get("startColor")
+                });
+
+                heatLegend.endLabel.setAll({
+                    fontSize: 15,
+                    fill: heatLegend.get("endColor")
+                });
+
+                polygonSeries.events.on("datavalidated", function () {
+                    heatLegend.set("startValue", polygonSeries.getPrivate("valueLow"));
+                    heatLegend.set("endValue", polygonSeries.getPrivate("valueHigh"));
+                });
+
+            });
+
+            am5.on("stateClicked", function (data) {
+                window.location.href = './html/state.html?state=' + data.stateId;
+            });
+
+        </script>
+
+
+        <section id="index-middle1">
+            <div class="map-container">
+                <div id="us-avg">
+                    <h2>Overall Sentiment</h2>
+                    <div id="congress-avg">Slightly Pro</div>
+                    <p class="notation">*Average of all members of Congress in the Senate and House of Representatives
+                    </p>
+                </div>
+                <div id="demrep-content">
+                    <h2>By Party</h2>
+                    <div class="map-legend">
+                        <span class="label anti">Anti</span>
+                        <div class="gradient-container">
+                            <div class="gradient"></div>
+                            <div class="arrow dems" style="--dems-pos: 5;">
+                                <div class="label-dems">
+                                    <span>Dems</span>
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                            </div>
+                            <div class="arrow reps" style="--reps-pos: 6.5;">
+                                <div class="label-reps">
+                                    <span>Reps</span>
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="label pro">Pro</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+            <h3 class="fancy">States View</h3>
+            <div id="chartdiv"></div>
+        </section>
 
-    <!-- Chart code -->
-    <script>
-        am5.ready(function () {
+        <section id="index-middle2">
+            <h3 class="fancy">Sentiment Moves</h3>
+            <div id="cfr-trend">
+                <div id="cfr-trend-header">
+                    <h2>12 Months Sentiment Trend</h2>
+                </div>
+                <div id="cfr-trend-content">
+                    <div id="cfr-trend-chart1">
+                        <canvas id="cfr-trend-chart2"></canvas>
+                        <div class="cfr-chart-legend">
+                            <div id="cfr-avg-legend" class="cfr-legend">
+                                <p class="line-legend"></p>
+                                <p class="text-legend">Average</p>
+                            </div>
+                            <div id="cfr-dems-legend" class="cfr-legend">
+                                <p class="line-legend"></p>
+                                <p class="text-legend">Dems</p>
+                            </div>
+                            <div id="cfr-reps-legend" class="cfr-legend">
+                                <p class="line-legend"></p>
+                                <p class="text-legend"> Reps </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cfr-trend-text">
+                        <p>The overall sentiment last month has decreased moderately, mainly driven
+                            by anti-crypto views expressed by <span class="dems-text">Democrats</span>. Overall,
+                            Democrats in Congress have
+                            slightly anti-crypto view.</p>
+                        </br>
+                        </br>
+                        <p>The sentiment of <span class="reps-text">Republicans</span> in Congress towards crypto has
+                            remained stable over
+                            the last month with an overall view of slightly positive.
+                        </p>
+                    </div>
+                </div>
+                <script>
 
-            var root = am5.Root.new("chartdiv");
+                    function generateMonthLabels() {
+                        const currentDate = new Date();
+                        const monthLabels = [];
+                        for (let i = 11; i >= 0; i--) {
+                            const newDate = new Date(currentDate);
+                            newDate.setMonth(currentDate.getMonth() - (i + 1));
+                            monthLabels.push(newDate.toLocaleString('default', { month: 'short' }));
+                        }
+                        monthLabels[monthLabels.length - 1] += ` ${currentDate.getFullYear()}`;
+                        return monthLabels;
+                    }
 
-            root.setThemes([
-                am5themes_Animated.new(root)
-            ]);
+                    const ctx = document.getElementById('cfr-trend-chart2').getContext('2d');
 
-            var chart = root.container.children.push(am5map.MapChart.new(root, {
-                panX: "rotateX",
-                panY: "none",
-                projection: am5map.geoAlbersUsa(),
-                layout: root.horizontalLayout,
-            }));
+                    function drawBackgroundSections(chart, ctx) {
+                        const yScale = chart.scales.y;
+                        const xScale = chart.scales.x;
+                        const yAxisTop = yScale.getPixelForValue(11);
+                        const yAxisBottom = yScale.getPixelForValue(1);
+                        const sectionHeight = (yAxisBottom - yAxisTop) / 5;
+                        const leftOffset = xScale.getPixelForValue(xScale.min);
 
-            var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
-                geoJSON: am5geodata_usaLow,
-                valueField: "value",
-                calculateAggregates: true
-            }));
+                        const colors = [
+                            'rgba(242, 169, 0, 0.2)',
+                            'rgba(208, 135, 27, 0.2)',
+                            'rgba(157, 84, 68, 0.2)',
+                            'rgba(106, 33, 108, 0.2)',
+                            'rgba(72, 0, 136, 0.2)',
+                        ];
 
-            polygonSeries.mapPolygons.template.setAll({
-                tooltipHTML: "<div style='text-align: center; color: #FFFFFF;'>{name}<br><b>{value}</b></div>"
-            });
+                        const sectionTexts = ['Strongly Pro', 'Slightly Pro', 'Neutral', 'Slightly Anti', 'Strongly Anti'];
 
-            /* polygonSeries.mapPolygons.template.events.on("pointerover", function (ev) {
-                heatLegend.showValue(ev.target.dataItem.get("value"));
-            }); */
+                        ctx.save();
+                        for (let i = 0; i < 5; i++) {
+                            const yPos = yAxisTop + i * sectionHeight;
 
-            polygonSeries.mapPolygons.template.events.on("pointerup", function (ev) {
-                var stateId = ev.target.dataItem.dataContext.id;
-                window.location.href = './html/state.html?state=' + stateId;
-            });
+                            // Draw background color
+                            ctx.fillStyle = colors[i];
+                            ctx.fillRect(leftOffset, yPos, chart.width - leftOffset, sectionHeight);
 
-            polygonSeries.set("heatRules", [{
-                target: polygonSeries.mapPolygons.template,
-                dataField: "value",
-                min: am5.color(0x6f2da8),
-                max: am5.color(0xf2a900),
-                key: "fill"
-            }]);
+                            // Draw title
+                            ctx.fillStyle = colors[i].replace('0.2', '0.15');
+                            ctx.font = '2rem Arial';
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            ctx.fillText(sectionTexts[i], chart.width / 2, yPos + sectionHeight / 2);
+                        }
+                        ctx.restore();
+                    }
+                    const chart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: generateMonthLabels(),
+                            datasets: [
+                                {
+                                    label: 'Dems',
+                                    data: [3, 4, 5, 2, 3, 6, 4, 5, 4, 6, 5, 3],
+                                    borderColor: '#00AEF3',
+                                    backgroundColor: 'transparent',
+                                    borderWidth: 3,
+                                },
+                                {
+                                    label: 'Reps',
+                                    data: [3, 5, 6, 2, 3, 6, 6, 7, 6, 5, 5, 4],
+                                    borderColor: '#E81B23',
+                                    backgroundColor: 'transparent',
+                                    borderWidth: 3,
+                                },
+                                {
+                                    label: 'Average',
+                                    data: [2, 4, 6, 5, 3, 7, 4, 3, 5, 7, 8, 4],
+                                    borderColor: 'gray',
+                                    borderWidth: 3,
+                                },
+                            ],
 
-            polygonSeries.data.setAll([
-                { id: "US-AL", value: 9, name: "Alabama" },
-                { id: "US-AK", value: 8 },
-                { id: "US-AZ", value: 7 },
-                { id: "US-AR", value: 6 },
-                { id: "US-CA", value: 5 },
-                { id: "US-CO", value: 4 },
-                { id: "US-CT", value: 3 },
-                { id: "US-DE", value: 7 },
-                { id: "US-FL", value: 1 },
-                { id: "US-GA", value: 8 },
-                { id: "US-HI", value: 1 },
-                { id: "US-ID", value: 1 },
-                { id: "US-IL", value: 1 },
-                { id: "US-IN", value: 6 },
-                { id: "US-IA", value: 2 },
-                { id: "US-KS", value: 2 },
-                { id: "US-KY", value: 4 },
-                { id: "US-LA", value: 4 },
-                { id: "US-ME", value: 1 },
-                { id: "US-MD", value: 5 },
-                { id: "US-MA", value: 6 },
-                { id: "US-MI", value: 10 },
-                { id: "US-MN", value: 4 },
-                { id: "US-MS", value: 2 },
-                { id: "US-MO", value: 5 },
-                { id: "US-MT", value: 10 },
-                { id: "US-NE", value: 0.1 },
-                { id: "US-NV", value: 1 },
-                { id: "US-NH", value: 1 },
-                { id: "US-NJ", value: 8 },
-                { id: "US-NM", value: 2.5 },
-                { id: "US-NY", value: 1 },
-                { id: "US-NC", value: 8 },
-                { id: "US-ND", value: 6 },
-                { id: "US-OH", value: 1 },
-                { id: "US-OK", value: 3 },
-                { id: "US-OR", value: 3 },
-                { id: "US-PA", value: 1 },
-                { id: "US-RI", value: 1 },
-                { id: "US-SC", value: 4 },
-                { id: "US-SD", value: 7 },
-                { id: "US-TN", value: 5 },
-                { id: "US-TX", value: 0 },
-                { id: "US-UT", value: 5 },
-                { id: "US-VT", value: 6 },
-                { id: "US-VA", value: 7 },
-                { id: "US-WA", value: 5 },
-                { id: "US-WV", value: 1 },
-                { id: "US-WI", value: 5 },
-                { id: "US-WY", value: 7.5 }
-            ]);
+                        },
+                        options: {
 
-            var heatLegend = am5.HeatLegend.new(root, {
-                orientation: "horizontal",
-                startColor: am5.color(0x6f2da8),
-                endColor: am5.color(0xf2a900),
-                startText: "",
-                endText: "",
-                stepCount: 10000
-            });
+                            scales: {
+                                y: {
+                                    type: 'linear',
+                                    min: 1,
+                                    max: 11,
+                                    grid: {
+                                        drawBorder: false,
+                                        drawOnChartArea: true,
+                                        drawTicks: false,
+                                        color: (context) => {
+                                            if (context.tick.value === 1 || context.tick.value === 6 || context.tick.value === 11) {
+                                                return 'rgba(0,0,0,0.2)';
+                                            } else {
+                                                return 'rgba(0,0,0,0)';
+                                            }
+                                        },
+                                    },
+                                    ticks: {
+                                        callback: function (value, index) {
+                                            if (value === 1) return 'Anti';
+                                            if (value === 6) return 'Neutral';
+                                            if (value === 11) return 'Pro';
+                                            return '';
+                                        },
+                                        color: function (context) {
+                                            if (context.tick.value === 1) return '#480088';
+                                            if (context.tick.value === 6) return '#9D5444';
+                                            if (context.tick.value === 11) return '#F2a900';
+                                            return 'rgba(0, 0, 0, 0)';
+                                        },
+                                        font: function (context) {
+                                            return {
+                                                size: 16,
+                                                family: 'Arial',
+                                                style: 'bold',
+                                            };
+                                        },
+                                        padding: 15,
+                                    },
+                                },
+                                x: {
+                                    grid: {
+                                        color: 'transparent',
+                                    },
+                                    ticks: {
+                                        font: function (context) {
+                                            return {
+                                                size: 13,
+                                                family: 'Arial',
+                                                style: 'bold',
+                                            };
+                                        },
+                                        padding: 12,
+                                    },
+                                },
+                            },
+                            plugins: {
+                                legend: {
+                                    display: false,
 
-            am5.dom.getElement("legend").appendChild(heatLegend.dom);
+                                },
+                            },
 
-            heatLegend.startLabel.setAll({
-                fontSize: 12,
-                fill: heatLegend.get("startColor")
-            });
+                        },
 
-            heatLegend.endLabel.setAll({
-                fontSize: 12,
-                fill: heatLegend.get("endColor")
-            });
+                        plugins: [
+                            {
+                                id: 'backgroundSections',
+                                beforeDraw: (chartInstance, _options, _args) => {
+                                    const ctx = chartInstance.ctx;
+                                    drawBackgroundSections(chartInstance, ctx);
+                                },
+                            },
+                        ],
+                    });
 
-            polygonSeries.events.on("datavalidated", function () {
-                heatLegend.set("startValue", polygonSeries.getPrivate("valueLow"));
-                heatLegend.set("endValue", polygonSeries.getPrivate("valueHigh"));
-            });
+                </script>
+            </div>
+        </section>
+        <section id="index3">
+            <section id="index3-1">
+                <div id="movers-pro-header">
+                    <h2>Monthly Pro Movers</h2>
+                </div>
+                <div id-="pro-movers-tables-sec" class="movers-tables-sec">
+                    <div id="pro-movers" class="movers">
+                        <div id="pro-movers-table" class="movers-tables">
+                            <h3 id="pro-movers-header" class="movers-header">
+                                <p class="movers-party"></p>
+                                <p class="movers-img">.</p>
+                                <p class="movers-name">Name</p>
+                                <p class="movers-state">State</p>
+                                <p class="movers-rating">Current Sentiment</p>
+                                <p class="movers-quote"> Recent Remark</p>
+                                <p class="movers-link">Link</p>
+                            </h3>
+                            <div id="pro-movers-text1" class="movers-text">
+                                <div class="movers-party-div">
+                                    <p class="movers-party"></p>
+                                </div>
 
-        });
+                                <div class="movers-img-cont">
+                                    <img class="movers-image" src="./assets/BryanSteil.jpeg">
+                                </div>
+                                <p class="movers-name">Bryan Steil</p>
+                                <p class="movers-state">WI</p>
+                                <div class="movers-rating-div">
+                                    <p class="movers-rating">Slightly Pro</p>
+                                </div>
+                                <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
+                                    responsible
+                                    innovation for
+                                    #digitalassets. The White House should work with Congress to avoid over-regulation
+                                    and
+                                    ensure the US leads
+                                    the way on #crypto."</p>
+                                <a href="espn.com" target="_blank" class="movers-link movers-link-text">Link</a>
+                            </div>
+                            <div id="pro-movers-text2" class="movers-text">
+                                <div class="movers-party-div">
+                                    <p class="movers-party"></p>
+                                </div>
+                                <div class="movers-img-cont">
+                                    <img class="movers-image" src="./assets/BryanSteil.jpeg">
+                                </div>
+                                <p class="movers-name">Bryan Steil</p>
+                                <p class="movers-state">WI</p>
+                                <div class="movers-rating-div">
+                                    <p class="movers-rating">Slightly Pro</p>
+                                </div>
+                                <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
+                                    responsible
+                                    innovation for
+                                    #digitalassets. The White House should work with Congress to avoid over-regulation
+                                    and
+                                    ensure the US leads
+                                    the way on #crypto."</p>
+                                <a href="espn.com" target="_blank" class="movers-link movers-link-text">Link</a>
+                            </div>
+                            <div id="pro-movers-text3" class="movers-text">
+                                <div class="movers-party-div">
+                                    <p class="movers-party"></p>
+                                </div>
+                                <div class="movers-img-cont">
+                                    <img class="movers-image" src="./assets/BryanSteil.jpeg">
+                                </div>
+                                <p class="movers-name">Bryan Steil</p>
+                                <p class="movers-state">WI</p>
+                                <div class="movers-rating-div">
+                                    <p class="movers-rating">Slightly Pro</p>
+                                </div>
+                                <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
+                                    responsible
+                                    innovation for
+                                    #digitalassets. The White House should work with Congress to avoid over-regulation
+                                    and
+                                    ensure the US leads
+                                    the way on #crypto."</p>
+                                <a href="espn.com" target="_blank" class="movers-link movers-link-text">Link</a>
+                            </div>
+                            <div id="pro-movers-text4" class="movers-text">
+                                <div class="movers-party-div">
+                                    <p class="movers-party"></p>
+                                </div>
+                                <div class="movers-img-cont">
+                                    <img class="movers-image" src="./assets/BryanSteil.jpeg">
+                                </div>
+                                <p class="movers-name">Bryan Steil</p>
+                                <p class="movers-state">WI</p>
+                                <div class="movers-rating-div">
+                                    <p class="movers-rating">Slightly Pro</p>
+                                </div>
+                                <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
+                                    responsible
+                                    innovation for
+                                    #digitalassets. The White House should work with Congress to avoid over-regulation
+                                    and
+                                    ensure the US leads
+                                    the way on #crypto."</p>
+                                <a href="espn.com" target="_blank" class="movers-link movers-link-text">Link</a>
+                            </div>
+                            <div id="pro-movers-text1" class="movers-text">
+                                <div class="movers-party-div">
+                                    <p class="movers-party"></p>
+                                </div>
+                                <div class="movers-img-cont">
+                                    <img class="movers-image" src="./assets/BryanSteil.jpeg">
+                                </div>
+                                <p class="movers-name">Bryan Steil</p>
+                                <p class="movers-state">WI</p>
+                                <div class="movers-rating-div">
+                                    <p class="movers-rating">Slightly Pro</p>
+                                </div>
+                                <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
+                                    responsible
+                                    innovation for
+                                    #digitalassets. The White House should work with Congress to avoid over-regulation
+                                    and
+                                    ensure the US leads
+                                    the way on #crypto."</p>
+                                <a href="espn.com" target="_blank" class="movers-link movers-link-text">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        am5.on("stateClicked", function (data) {
-            window.location.href = './html/state.html?state=' + data.stateId;
-        });
+            <section id="index3-2">
+                <div id="movers-anti-header">
+                    <h2>Monthly Anti-Movers</h2>
+                </div>
+                <div id-="anti-movers-tables-sec" class="movers-tables-sec">
+                    <div id="anti-movers" class="movers">
+                        <div id="anti-movers-table" class="movers-tables">
+                            <h3 id="anti-movers-header" class="movers-header">
+                                <p class="movers-party"></p>
+                                <p class="movers-img">.</p>
+                                <p class="movers-name">Name</p>
+                                <p class="movers-state">State</p>
+                                <p class="movers-rating">Current Sentiment</p>
+                                <p class="movers-quote"> Recent Remark</p>
+                                <p class="movers-link">Link</p>
+                            </h3>
+                            <div id="anti-movers-text1" class="movers-text">
+                                <div class="movers-party-div">
+                                    <p class="movers-party"></p>
+                                </div>
+                                <div class="movers-img-cont">
+                                    <img class="movers-image" src="./assets/BryanSteil.jpeg">
+                                </div>
+                                <p class="movers-name">Bryan Steil</p>
+                                <p class="movers-state">WI</p>
 
-    </script>
+                                    <p class="movers-rating">Slightly Pro</p>
 
-
-
-    <div class="map-container">
-        <div id="chartdiv"></div>
-        <div class="custom-legend">
-            <span class="label" style="color: var(--strongly-anti);">Anti</span>
-            <div class="gradient"></div>
-            <span class="label" style="color: var(--strongly-pro);">Pro</span>
-        </div>
+                                <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
+                                    responsible
+                                    innovation for
+                                    #digitalassets. The White House should work with Congress to avoid over-regulation
+                                    and
+                                    ensure the US leads
+                                    the way on #crypto."</p>
+                                <a href="espn.com" target="_blank" class="movers-link movers-link-text">Link</a>
+                            </div>
+                            <div id="anti-movers-text2" class="movers-text">
+                                <div class="movers-party-div">
+                                    <p class="movers-party"></p>
+                                </div>
+                                <div class="movers-img-cont">
+                                    <img class="movers-image" src="./assets/BryanSteil.jpeg">
+                                </div>
+                                <p class="movers-name">Bryan Steil</p>
+                                <p class="movers-state">WI</p>
+                                <p class="movers-rating">Slightly Pro</p>
+                                <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
+                                    responsible
+                                    innovation for
+                                    #digitalassets. The White House should work with Congress to avoid over-regulation
+                                    and
+                                    ensure the US leads
+                                    the way on #crypto."</p>
+                                <a href="espn.com" target="_blank" class="movers-link movers-link-text">Link</a>
+                            </div>
+                            <div id="anti-movers-text3" class="movers-text">
+                                <div class="movers-party-div">
+                                    <p class="movers-party"></p>
+                                </div>
+                                <div class="movers-img-cont">
+                                    <img class="movers-image" src="./assets/BryanSteil.jpeg">
+                                </div>
+                                <p class="movers-name">Bryan Steil</p>
+                                <p class="movers-state">WI</p>
+                                <div class="movers-rating-div">
+                                    <p class="movers-rating">Slightly Pro</p>
+                                </div>
+                                <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
+                                    responsible
+                                    innovation for
+                                    #digitalassets. The White House should work with Congress to avoid over-regulation
+                                    and
+                                    ensure the US leads
+                                    the way on #crypto."</p>
+                                <a href="espn.com" target="_blank" class="movers-link movers-link-text">Link</a>
+                            </div>
+                            <div id="anti-movers-text4" class="movers-text">
+                                <div class="movers-party-div">
+                                    <p class="movers-party"></p>
+                                </div>
+                                <div class="movers-img-cont">
+                                    <img class="movers-image" src="./assets/BryanSteil.jpeg">
+                                </div>
+                                <p class="movers-name">Bryan Steil</p>
+                                <p class="movers-state">WI</p>
+                                <div class="movers-rating-div">
+                                    <p class="movers-rating">Slightly Pro</p>
+                                </div>
+                                <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
+                                    responsible
+                                    innovation for
+                                    #digitalassets. The White House should work with Congress to avoid over-regulation
+                                    and
+                                    ensure the US leads
+                                    the way on #crypto."</p>
+                                <a href="espn.com" target="_blank" class="movers-link movers-link-text">Link</a>
+                            </div>
+                            <div id="anti-movers-text1" class="movers-text">
+                                <div class="movers-party-div">
+                                    <p class="movers-party"></p>
+                                </div>
+                                <div class="movers-img-cont">
+                                    <img class="movers-image" src="./assets/BryanSteil.jpeg">
+                                </div>
+                                <p class="movers-name">Bryan Steil</p>
+                                <p class="movers-state">WI</p>
+                                <div class="movers-rating-div">
+                                    <p class="movers-rating">Slightly Pro</p>
+                                </div>
+                                <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
+                                    responsible
+                                    innovation for
+                                    #digitalassets. The White House should work with Congress to avoid over-regulation
+                                    and
+                                    ensure the US leads
+                                    the way on #crypto."</p>
+                                <a href="espn.com" target="_blank" class="movers-link movers-link-text">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
     </div>
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>
+
 
 </body>
 
