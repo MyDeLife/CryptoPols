@@ -2,7 +2,7 @@ $(function () {
     console.log("Requesting politicians data...");
     const state = getUrlParameter("state");
     $.ajax({
-        url: "http://localhost/dashboard/devcodes/CryptoPols/db/fetch_politicians.php",
+        url: "http://localhost/dashboard/devcodes/CryptoPols/db/fetch_politicians.php", //http://cryptopols.com/db/fetch_politicians.php //http://localhost/dashboard/devcodes/CryptoPols/db/fetch_politicians.php
         dataType: "json",
         data: { state: state },
         success: function (politicians) {

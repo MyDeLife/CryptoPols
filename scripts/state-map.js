@@ -52,7 +52,7 @@ am5.ready(function () {
     });
 
     $.ajax({
-        url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_states.php", //http://cryptopols.com/db/fetch_states.php
+        url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_states.php", //http://cryptopols.com/db/fetch_states.php //http://localhost/dashboard/devcodes/cryptopols/db/fetch_states.php
         dataType: "json",
         success: function (statesData) {
             console.log("States Data:", statesData);
