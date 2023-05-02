@@ -5,6 +5,8 @@
 :root {
     --black: black;
     --white: white;
+    --state-gray: #757575;
+    /* rgba(117, 117, 117) */
     --gray: rgb(244, 244, 244);
     --blue: rgb(48, 110, 180);
     --dark-brown: #51372e;
@@ -46,7 +48,9 @@ h1,
 h2,
 h3,
 h4,
+h5,
 nav p,
+.nav-bar a,
 .label-dems span,
 .label-reps span,
 .text-legend {
@@ -71,3 +75,31 @@ p {
     margin: 0 auto 1.5% auto;
     line-height: 2.2rem
 }
+
+.fancy {
+    --b: 0.3rem;
+    /* control the border thickness */
+    --w: 200rem;
+    /* control the width of the line*/
+    --g: 2rem;
+    /* control the gap */
+    --c: var(--light-brown);
+
+    width: fit-content;
+    padding: 0 1em;
+    line-height: 1.6em;
+    border: 1px solid;
+    color: var(--dark-brown);
+    background:
+        conic-gradient(from 45deg at left, var(--c) 25%, #0000 0) 0,
+        conic-gradient(from -135deg at right, var(--c) 25%, #0000 0) 100%;
+    background-size: 51% 100%;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    border-image:
+        linear-gradient(#0000 calc(50% - var(--b)/2),
+            var(--c) 0 calc(50% + var(--b)/2),
+            #0000 0) 1/0 var(--w)/calc(var(--w) + var(--g));
+    margin-inline: auto;
+}
+

@@ -1,44 +1,77 @@
 $(function () {
-    const politicians = [
-        { name: 'Politician 1', party: 'Democrat', office: 'Senator', district: '', cfr: 'Neutral' },
-        { name: 'Politician 2', party: 'Democrat', office: 'Senator', district: '', cfr: 'Slightly Pro-Crypto' },
-        { name: 'Bryan Steil', party: 'Republican', office: 'Rep.', district: '1', cfr: 'Strongly Pro-Crypto' },
-        { name: 'Politician 4', party: 'Independent', office: 'Rep.', district: '2', cfr: 'Slightly Anti-Crypto' },
-        { name: 'Politician 5', party: 'Republican', office: 'Rep.', district: '3', cfr: 'Strongly Anti-Crypto' },
-        { name: 'Politician 6', party: 'Democrat', office: 'Rep.', district: '4', cfr: 'Strongly Pro-Crypto' },
-        { name: 'Politician 7', party: 'Republican', office: 'Rep.', district: '5', cfr: 'Slightly Pro-Crypto' },
-        { name: 'Politician 8', party: 'Republican', office: 'Rep.', district: '6', cfr: 'Neutral' },
-        { name: 'Politician 9', party: 'Republican', office: 'Rep.', district: '7', cfr: 'Slightly Anti-Crypto' },
-        { name: 'Politician 10', party: 'Democrat', office: 'Rep.', district: '8', cfr: 'Strongly Anti-Crypto' },
-    ];
+    console.log("Requesting politicians data...");
+    const state = getUrlParameter("state");
+    $.ajax({
+        url: "http://localhost/dashboard/devcodes/CryptoPols/db/fetch_politicians.php",
+        dataType: "json",
+        data: { state: state },
+        success: function (politicians) {
+            console.log("Politicians Data:", politicians);
+            politicians.forEach(politician => {
+                const row = $('<tr>');
+                row.append(`<td class="party" data-party="${politician.party}"><div class="party-icon party-${politician.party.replace(/\s+/g, '')}" title="${politician.party}"></div></td>`);
+                row.append(`<td><span class="name-link" onclick="openPoliticianPage('${politician.name}')">${politician.name}</span></td>`);
+                row.append(`<td class="office"><span>${politician.office}</span></td>`);
+                row.append(`<td class="district"><span>${politician.district}</span></td>`);
+                row.append(`<td class="cfr" data-cfr="${politician.cfr}"><div class="cfr-inner">${politician.cfr}</div></td>`);
+                $('#politician-table tbody').append(row);
+            });
+            
+            console.log("tablesorter plugin:", $.tablesorter);
+            initTablesorter();
+        },
+        error: function (jqXHR, textStatus, errorThrown) { 
+            console.log("Error:", textStatus, errorThrown);
+            console.log("Response:", jqXHR.responseText); 
+        }
+    });
+});
 
-    const partyColors = {
-        'Republican': 'red',
-        'Democrat': 'blue',
-        'Green': 'green',
-        'Independent': 'yellow',
-    };
 
-    const cfrColors = {
-        'Strongly Pro-Crypto': 'var(--strongly-pro',
-        'Slightly Pro-Crypto': 'var(--slightly-pro',
-        'Neutral': 'var(--neutral',
-        'Slightly Anti-Crypto': 'var(--slightly-anti)',
-        'Strongly Anti-Crypto': 'var(--strongly-anti)',
-    };
-    politicians.forEach(politician => {
-        const row = $('<tr>');
-        row.append(`<td><span class="name-link" onclick="openPoliticianPage('${politician.name}')">${politician.name}</span></td>`);
-        row.append(`<td><div class="party-icon" style="background-color: ${partyColors[politician.party]}" title="${politician.party}"></div></td>`);
-        row.append(`<td class="office"><span>${politician.office}</span></td>`);
-        row.append(`<td class="district"><span>${politician.district}</span></td>`);
-        row.append(`<td class="cfr" style="background-color: ${cfrColors[politician.cfr]}">${politician.cfr}</td>`);
-        $('#politician-table tbody').append(row);
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+
+function initTablesorter() {
+    $.tablesorter.addParser({
+        id: "partySort",
+        is: function (s) {
+            return false;
+        },
+        format: function (s, table, cell) {
+            const partyOrder = ["Dem", "Rep", "Ind", "Grn"];
+            return partyOrder.indexOf($(cell).attr("data-party"));
+        },
+        type: "numeric"
     });
 
-    $("#politician-table").tablesorter();
+    $.tablesorter.addParser({
+        id: "cfrSort",
+        is: function (s) {
+            return false;
+        },
+        format: function (s, table, cell) {
+            const cfrOrder = ["Strongly Anti-Crypto", "Slightly Anti-Crypto", "Neutral", "Slightly Pro-Crypto", "Strongly Pro-Crypto"];
+            return cfrOrder.indexOf($(cell).attr("data-cfr"));
+        },
+        type: "numeric"
+    });
+
+    $("#politician-table").tablesorter({
+        headerTemplate: "{content}<span class='header-arrow header-arrow-up'>&#x25B2;</span><span class='header-arrow header-arrow-down'>&#x25BC;</span>",
+        headers: {
+            0: {
+                sorter: "partySort"
+            },
+            4: {
+                sorter: "cfrSort"
+            }
+        }
+    });
 
     window.openPoliticianPage = function (name) {
         window.location.href = `politician.html?name=${encodeURIComponent(name)}`;
     };
-});
+}

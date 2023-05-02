@@ -7,29 +7,52 @@
     <title>State Data</title>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/theme.blue.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/WM6k+q1it2f7/7x8Wj9E9vKv5F5geVBf5IRw6z" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="../styles/state.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/global.css">
 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WDQ4V9VZBT');
+    </script>
+
 </head>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 <header>
-    <img id="CPlogo" src="../assets/CP logo - dummy.jpg">
-    <h1>CryptoPols</h1>
-    <nav>
-        <p>Home</p>
-        <p>State</p>
-        <p>Politician</p>
-    </nav>
+    <div id="header-content">
+        <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header"
+                src="../assets/CP Logo wo 2048.png"></a>
+        <div id="header-title">
+            <h1>Crypto<span>Pols</span></h1>
+            <p>...monitoring crypto sentiment of US politicians in Congress</p>
+        </div>
+        <nav>
+            <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
+            <p>State</p>
+            <p>Politician</p>
+            <p class="nav-bar"><a href="https://cryptopols.com/html/methodology.html">Methodology</a></p>
+        </nav>
+    </div>
 </header>
 
 <body>
     <div id="state-info">
-        <h2 id="state-name">State</h2>
+        <h2 id="state-name"></h2>
         <script>
             function getQueryParam(param) {
                 var searchParams = new URLSearchParams(window.location.search);
@@ -38,8 +61,9 @@
 
             function setStateName() {
                 var stateId = getQueryParam("state");
+                var stateAbbr = stateId.substring(3);
                 var stateNameElement = document.getElementById("state-name");
-                stateNameElement.textContent = "State: " + stateId;
+                stateNameElement.textContent = "State: " + stateAbbr;
             }
 
             setStateName();
@@ -48,8 +72,8 @@
         <table id="politician-table" class="tablesorter">
             <thead>
                 <tr id="politician-table">
-                    <th id="pol-name">Name</th>
                     <th id="party">Party</th>
+                    <th id="pol-name">Name</th>
                     <th id="office">Office</th>
                     <th id="district">District</th>
                     <th id="cfr" title="Crypto Favorability Rating">CFR</th>
@@ -59,7 +83,6 @@
             </tbody>
         </table>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
         <script src="../scripts/state-table.js"></script>

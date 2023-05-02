@@ -1,7 +1,3 @@
-* {
-    /border: 1px solid black
-}
-
 body {
     width: 120rem;
 }
@@ -13,7 +9,7 @@ h3.fancy {
 
 #index-page {
     margin: 0 auto 0 auto;
-    padding-top: 8%;
+    padding-top: 3%;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -239,12 +235,11 @@ h3.fancy {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    padding: 3% 0 0 5%;
+    width: 90%;
+    padding: 2% 0 0 2%;
     border-width: 0.2rem;
     border-top-style: solid;
-    border-left-style: solid;
-    border-image: linear-gradient(166deg, var(--dark-brown)20%, white 20%) 1;
+    border-image: linear-gradient(90deg, var(--dark-brown)30%, white 70%) 1;
 }
 
 
@@ -339,36 +334,6 @@ h3.fancy {
 
 
 
-.fancy {
-    --b: 0.3rem;
-    /* control the border thickness */
-    --w: 200rem;
-    /* control the width of the line*/
-    --g: 2rem;
-    /* control the gap */
-    --c: var(--light-brown);
-
-    width: fit-content;
-    padding: 0 1em;
-    line-height: 1.6em;
-    border: 1px solid;
-    color: var(--dark-brown);
-    background:
-        conic-gradient(from 45deg at left, var(--c) 25%, #0000 0) 0,
-        conic-gradient(from -135deg at right, var(--c) 25%, #0000 0) 100%;
-    background-size: 51% 100%;
-    background-origin: border-box;
-    background-repeat: no-repeat;
-    border-image:
-        linear-gradient(#0000 calc(50% - var(--b)/2),
-            var(--c) 0 calc(50% + var(--b)/2),
-            #0000 0) 1/0 var(--w)/calc(var(--w) + var(--g));
-    margin-inline: auto;
-}
-
-
-
-
 #index3 {
     display: flex;
     flex-direction: column;
@@ -379,12 +344,13 @@ h3.fancy {
 
 #index3-1,
 #index3-2 {
-    margin-top: 5%;
+    margin-top: 10%;
     width: 95%;
     height: 100%;
 }
 
-#movers-pro-header, #movers-anti-header {
+#movers-pro-header,
+#movers-anti-header {
     color: var(--dark-brown)
 }
 
@@ -396,28 +362,25 @@ h3.fancy {
 }
 
 #pro-movers {
-    padding: 4% 0 0 4%;
+    padding: 2% 0 0 2%;
     border-width: 0.2rem;
     border-top-style: solid;
-    border-left-style: solid;
-    border-image: linear-gradient(166deg, var(--dark-brown)20%, white 20%) 1;
-    background: linear-gradient(45deg, var(--light-brown, white))
+    border-image: linear-gradient(90deg, var(--dark-brown)15%, white 30%) 1;
 }
 
 #anti-movers {
-    padding: 4% 0 0 4%;
+    padding: 2% 0 0 2%;
     border-width: 0.2rem;
     border-top-style: solid;
-    border-left-style: solid;
-    border-image: linear-gradient(166deg, var(--dark-brown)20%, white 20%) 1;
+    border-image: linear-gradient(90deg, var(--dark-brown)15%, white 30%) 1;
 }
 
 .movers {
-    flex: 1;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
+
 }
 
 .movers-tables {
@@ -474,17 +437,14 @@ h3.fancy {
 
 .movers-name,
 .movers-state,
-.movers-rating,
+.movers-rating-div,
 .movers-quote,
 .movers-link {
     border: 1px solid var(--dark-brown);
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.movers-img {
-    border: 1px solid var(--dark-brown);
-    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
-}
+
 
 
 .movers-party-div {
@@ -495,6 +455,7 @@ h3.fancy {
     height: 100%;
 }
 
+
 .movers-party:not(.movers-header .movers-party) {
     width: 0.8rem;
     background-color: var(--dems);
@@ -502,6 +463,11 @@ h3.fancy {
     margin-right: 1.1rem;
     padding: 0.2rem;
     height: 4rem;
+}
+
+.movers-img {
+    border: 1px solid var(--dark-brown);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .movers-img-cont {
@@ -528,18 +494,24 @@ h3.fancy {
     text-align: center;
 }
 
-.movers-rating {
-    width: 18%;
-    text-align: center;
+
+.movers-rating-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid var(--dark-brown);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+     height: 100%;
 }
 
+
 .movers-rating:not(.movers-header .movers-rating) {
-    width: 70%;
-    background-color: var(--slightly-pro);
+    width: 80%;
+    background-color: var(--dems);
     border-radius: 1rem;
-    margin-right: 1rem auto;
-    padding: 1rem;
-    height: 3rem;
+    height: 4rem;
 }
 
 .movers-quote {

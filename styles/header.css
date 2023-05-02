@@ -1,12 +1,11 @@
 * {
-    /border: 1px solid black;
+    /border: 1px solid black
 }
 
 header {
     border-bottom: 0.1rem solid var(--dark-brown);
     margin: 0 auto 0% auto;
     display: flex;
-    align-items: center;
     position: fixed;
     z-index: 100;
     background-color: var(--gray);
@@ -16,27 +15,28 @@ header {
 
 #header-content {
     display: flex;
-    justify-content: space-between;
-    max-width: 120rem;
-    width: 90vw;
+    max-width: 130rem;
+    width: 100%;
     flex-wrap: wrap;
 }
 
 #header-title {
-    display: flex;
-    flex-direction: row;
+    margin: 1% 0% 0% 3%;
+    text-align: left;
+}
 
-align-items: center;}
+#CPlogo-header {
+    
+        margin: 1.2% 0% 0% 1%;
+}
 
-#CPlogo {
-    height: 4.5rem;
-    margin: 5%
+#CP-img-header {
+height: 5rem;
 }
 
 h1 {
-    margin: auto 0 auto 1% !important;
     color: var(--dark-brown);
-    font-size: 3.3rem !important;
+    font-size: 3.8rem !important;
 }
 
 h1 span {
@@ -49,20 +49,24 @@ font-family: 'Segoe UI',
 }
 
 #header-content p:not(nav p) {
-    margin: 2.8% auto 0 7%;
     font-style:italic;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--dark-brown)
 }
 
 nav {
+    margin: 0 0 0 10%;
+    padding-bottom: 1.5%;
     display: flex;
     align-items: center;
-    gap: 25%;
+    width: 40%;
+    gap: 1%;
     color: var(--dark-brown)
 }
 
-nav p {
-    font-size: 1.6rem;
+
+.nav-bar a{
+    text-decoration: none;
+    color: inherit;
 }

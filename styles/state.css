@@ -1,3 +1,25 @@
+
+#state-info {
+    padding-top: 10rem;
+    padding-left: 5rem;
+}
+
+.tablesorter th {
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: relative;
+    background-color: var(--light-brown);
+    border: 0.2rem solid var(--dark-brown) !important;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
+
+
+
+
+tbody {
+    font-size: 1.4rem;
+}
+
 #state-info {
     display: flex;
     flex-direction: column;
@@ -8,44 +30,114 @@
     margin-bottom: 3%;
 }
 
-
 #politician-table {
-    border-radius: 1rem;
-    background-color: var(--light-brown);
-    width: 80%;
+    width: 95%;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
     border: 0.1rem solid var(--dark-brown);
     text-align: left;
     line-height: 2rem;
-    padding: 2%
+}
+
+.tablesorter {
+    border-collapse: collapse;
+    width: 100%;
 }
 
 
+.tablesorter td,
+.tablesorter th,
+.cfr-inner {
+    border: 0.1rem solid var(--dark-brown);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+        font-family: var(--text-header);
+}
+
+.tablesorter-header .header-arrow {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.6em;
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tablesorter-header .header-arrow-up {
+    color: var(--dark-brown);
+
+    margin-top: -0.6rem;
+    margin-right: 0.5rem;
+}
+
+.tablesorter-headerAsc .header-arrow-up {
+    color: var(--white);
+}
+
+.tablesorter-header .header-arrow-down {
+    color: var(--dark-brown);
+
+    margin-top: 0.6rem;
+    margin-right: 0.5rem;
+}
+
+.tablesorter-headerDesc .header-arrow-down {
+    color: var(--white);
+}
+
+.tablesorter tr:nth-child(odd) {
+    background-color: var(--white);
+}
+
+.tablesorter tr:nth-child(even) {
+    background-color: var(--gray);
+}
+
+#party,
+.party {
+    width: 7%;
+}
+
+.party-icon {
+    width: 50%;
+    height: 1.5rem;
+    border-radius: 0.3rem;
+}
+
+.party-Rep {
+    background-color: var(--reps);
+}
+
+.party-Dem {
+    background-color: var(--dems);
+}
+
+.party-Ind {
+    background-color: yellow;
+}
+
+.party-Grn {
+    background-color: green;
+}
+
 #pol-name {
-    width: 15rem;
+    width: 20%;
 }
 
 .name-link {
     cursor: pointer;
+    font-weight: bold;
 }
 
-#party {
-    width: 8rem
-}
 
-.party-icon {
-    width: 1.5rem;
-    height: 1rem;
-    border-radius: 0.3rem;
-}
 
 #office {
-    width: 8rem;
+    width: 10%;
 }
 
 #district,
 .district {
-    width: 8rem;
+    width: 10%;
     text-align: center;
 }
 
@@ -55,21 +147,34 @@
 
 .cfr {
     text-align: center;
-    color: white;
-    width: 18rem;
+    width: 20%;
     max-height: 80%;
-}
-
-
-.cfr {
-    border-radius: 1rem;
     padding: 0.5% 0% 0.5% 0%;
 }
 
-th {
-    font-size: 1.5rem
+.cfr-inner {
+    display: inline-block;
+    width: 70%;
+    border-radius: 1rem;
+    color: white;
 }
 
-tbody {
-    font-size: 1.4rem;
+[data-cfr='Strongly Pro-Crypto'] .cfr-inner {
+    background-color: var(--strongly-pro);
+}
+
+[data-cfr='Slightly Pro-Crypto'] .cfr-inner {
+    background-color: var(--slightly-pro);
+}
+
+[data-cfr='Neutral'] .cfr-inner {
+    background-color: var(--neutral);
+}
+
+[data-cfr='Slightly Anti-Crypto'] .cfr-inner {
+    background-color: var(--slightly-anti);
+}
+
+[data-cfr='Strongly Anti-Crypto'] .cfr-inner {
+    background-color: var(--strongly-anti);
 }
