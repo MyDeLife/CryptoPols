@@ -39,7 +39,7 @@ am5.ready(function () {
     }
 
     polygonSeries.mapPolygons.template.setAll({
-        tooltipHTML: "<div style='text-align: center; color: #FFFFFF;'>{name}<br><b>{sentiment}</b></div>",
+        tooltipHTML: "<div style='text-align: center; color: #FFFFFF; font-weight: bold; font-family: Tahoma';>{name}<br><b style='font-weight: bold; font-family: Tahoma'>{sentiment}</b></div>",
     });
 
     polygonSeries.mapPolygons.template.adapters.add("fill", function (fill, target) {
@@ -52,7 +52,7 @@ am5.ready(function () {
     });
 
     $.ajax({
-        url: "http://cryptopols.com/db/fetch_states.php",
+        url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_states.php", //http://cryptopols.com/db/fetch_states.php
         dataType: "json",
         success: function (statesData) {
             console.log("States Data:", statesData);
