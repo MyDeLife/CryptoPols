@@ -11,169 +11,86 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/feedback_form.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/map.js"
+        integrity="sha384-815g/HikmJUGX93doo/NaTq+Er/NF2eDc+/VTVW4ZFi9oKyrCrYLTUNvKAyBl3zp"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"
+        integrity="sha384-y1PcnxlRTNN8nWPIwZhGnP+R7+G03QLwH1BMTP3tW7cvzB5T13slWKzsQPbZQVME"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"
+        integrity="sha384-nfzyaOLFmcZkQKqFmHo2EA7pW1MvSVkCnMuZ8ulKD0s7BJFfazFnVsMPVCoiicfe"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"
+        integrity="sha384-YAshAm4KKjf8V01c4sdNbPYiwU0D0Q82fjMHhKw8VvP0ecY4fxXsZAHxC4r4Ei+T"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"
+        integrity="sha384-53a24yPsbuetevkv1BJQbmQ1IhgvoxToLcQCRdfAMWYyx4JzmpoXXLw3scCSxEHO"
+        crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WDQ4V9VZBT');
+    </script>
+
 </head>
-
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <header>
     <div id="header-content">
+        <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header"
+                src="./assets/CP Logo wo 2048.png"></a>
         <div id="header-title">
-            <img id="CPlogo" src="./assets/CP Logo wo 2048.png">
             <h1>Crypto<span>Pols</span></h1>
+            <p>...monitoring crypto sentiment of US politicians in Congress</p>
         </div>
-        <p>...monitoring crypto sentiment of US politicians in Congress</p>
         <nav>
-            <p>Home</p>
+            <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
             <p>State</p>
             <p>Politician</p>
+            <p class="nav-bar"><a href="https://cryptopols.com/html/methodology.html">Methodology</a></p>
         </nav>
     </div>
 </header>
 
 <body>
-    <div id="index-page">
 
+    <div style="text-align: center; padding-bottom: 3rem; width: 100%; padding-top: 12rem; height: relative;">
+        <h1
+            style="color: rgb(245, 7, 7); font-size: 50px; border: 4px solid; text-align: center; padding-bottom: 1rem; width: 90%; height: relative;">
+            <br><i class="fas fa-tools" style="color:rgb(84, 82, 82); padding-left: 5px; padding-right: 5px;"></i> SITE
+            IN
+            DEVELOPMENT - <br> ALL DATA CURRENTLY NON-FACTUAL <br><br>
+            <p style="color: black; width:70%; font-weight: normal; font-size: 18px;"><em><span
+                        style="text-decoration: underline;">Note</span>: This website is being built during buildspace
+                    n&w s3
+                    which is currently ongoing. We are seeking early <a href="" id="contact-link"
+                        style="text-decoration: none;">feedback</a> on the website design from users on the first drafts
+                    of the
+                    layouts, tables and data points. Thank you for your participation!</em></p>
+        </h1>
+    </div>
 
-        <!-- Chart code -->
         <script>
-            am5.ready(function () {
+            var contactLink = document.getElementById('contact-link');
 
-                var root = am5.Root.new("chartdiv");
-
-                root.setThemes([
-                    am5themes_Animated.new(root)
-                ]);
-
-                var chart = root.container.children.push(am5map.MapChart.new(root, {
-                    panX: "rotateX",
-                    panY: "none",
-                    projection: am5map.geoAlbersUsa(),
-                    layout: root.horizontalLayout,
-                }));
-
-                var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
-                    geoJSON: am5geodata_usaLow,
-                    valueField: "value",
-                    calculateAggregates: true
-                }));
-
-                polygonSeries.mapPolygons.template.setAll({
-                    tooltipHTML: "<div style='text-align: center; color: #FFFFFF;'>{name}<br><b>{value}</b></div>"
-                });
-
-                /* polygonSeries.mapPolygons.template.events.on("pointerover", function (ev) {
-                    heatLegend.showValue(ev.target.dataItem.get("value"));
-                }); */
-
-                polygonSeries.mapPolygons.template.events.on("pointerup", function (ev) {
-                    var stateId = ev.target.dataItem.dataContext.id;
-                    window.location.href = './html/state.html?state=' + stateId;
-                });
-
-                const stronglyAntiColor = am5.color(getComputedStyle(document.documentElement).getPropertyValue("--strongly-anti"));
-                const stronglyProColor = am5.color(getComputedStyle(document.documentElement).getPropertyValue("--strongly-pro"));
-
-                polygonSeries.set("heatRules", [{
-                    target: polygonSeries.mapPolygons.template,
-                    dataField: "value",
-                    min: stronglyAntiColor,
-                    max: stronglyProColor,
-                    key: "fill"
-                }]);
-
-                polygonSeries.data.setAll([
-                    { id: "US-AL", value: 9, name: "Alabama" },
-                    { id: "US-AK", value: 8 },
-                    { id: "US-AZ", value: 7 },
-                    { id: "US-AR", value: 6 },
-                    { id: "US-CA", value: 5 },
-                    { id: "US-CO", value: 4 },
-                    { id: "US-CT", value: 3 },
-                    { id: "US-DE", value: 2 },
-                    { id: "US-FL", value: 1 },
-                    { id: "US-GA", value: 11 },
-                    { id: "US-HI", value: 10 },
-                    { id: "US-ID", value: 9 },
-                    { id: "US-IL", value: 8 },
-                    { id: "US-IN", value: 7 },
-                    { id: "US-IA", value: 6 },
-                    { id: "US-KS", value: 5 },
-                    { id: "US-KY", value: 4 },
-                    { id: "US-LA", value: 3 },
-                    { id: "US-ME", value: 2 },
-                    { id: "US-MD", value: 1 },
-                    { id: "US-MA", value: 11 },
-                    { id: "US-MI", value: 10 },
-                    { id: "US-MN", value: 9 },
-                    { id: "US-MS", value: 8 },
-                    { id: "US-MO", value: 7 },
-                    { id: "US-MT", value: 6 },
-                    { id: "US-NE", value: 5 },
-                    { id: "US-NV", value: 4 },
-                    { id: "US-NH", value: 3 },
-                    { id: "US-NJ", value: 2 },
-                    { id: "US-NM", value: 1 },
-                    { id: "US-NY", value: 11 },
-                    { id: "US-NC", value: 10 },
-                    { id: "US-ND", value: 9 },
-                    { id: "US-OH", value: 8 },
-                    { id: "US-OK", value: 7 },
-                    { id: "US-OR", value: 6 },
-                    { id: "US-PA", value: 5 },
-                    { id: "US-RI", value: 4 },
-                    { id: "US-SC", value: 3 },
-                    { id: "US-SD", value: 2 },
-                    { id: "US-TN", value: 1 },
-                    { id: "US-TX", value: 11 },
-                    { id: "US-UT", value: 10 },
-                    { id: "US-VT", value: 9 },
-                    { id: "US-VA", value: 8 },
-                    { id: "US-WA", value: 7 },
-                    { id: "US-WV", value: 6 },
-                    { id: "US-WI", value: 5 },
-                    { id: "US-WY", value: 4 }
-                ]);
-
-                var heatLegend = am5.HeatLegend.new(root, {
-                    orientation: "horizontal",
-                    startColor: am5.color(0x55009f),
-                    endColor: am5.color(0xF2a900),
-                    startText: "",
-                    endText: "",
-                    stepCount: 10000
-                });
-
-                am5.dom.getElement("legend").appendChild(heatLegend.dom);
-
-                heatLegend.startLabel.setAll({
-                    fontSize: 15,
-                    fill: heatLegend.get("startColor")
-                });
-
-                heatLegend.endLabel.setAll({
-                    fontSize: 15,
-                    fill: heatLegend.get("endColor")
-                });
-
-                polygonSeries.events.on("datavalidated", function () {
-                    heatLegend.set("startValue", polygonSeries.getPrivate("valueLow"));
-                    heatLegend.set("endValue", polygonSeries.getPrivate("valueHigh"));
-                });
-
+            contactLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById('contact-button').click();
             });
-
-            am5.on("stateClicked", function (data) {
-                window.location.href = './html/state.html?state=' + data.stateId;
-            });
-
         </script>
-
+        
+    <div id="index-page">
 
         <section id="index-middle1">
             <div class="map-container">
@@ -433,7 +350,7 @@
                                     <img class="movers-image" src="./assets/BryanSteil.jpeg">
                                 </div>
                                 <p class="movers-name">Bryan Steil</p>
-                                <p class="movers-state">WI</p>
+                                <p class="movers-state">MI</p>
                                 <div class="movers-rating-div">
                                     <p class="movers-rating">Slightly Pro</p>
                                 </div>
@@ -559,10 +476,12 @@
                                     <img class="movers-image" src="./assets/BryanSteil.jpeg">
                                 </div>
                                 <p class="movers-name">Bryan Steil</p>
-                                <p class="movers-state">WI</p>
-
-                                    <p class="movers-rating">Slightly Pro</p>
-
+                                <p class="movers-state">IL</p>
+                                <div class="movers-rating-div">
+                                    <div class="movers-rating-div1">
+                                        <p class="movers-rating">Slightly Pro</p>
+                                    </div>
+                                </div>
                                 <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
                                     responsible
                                     innovation for
@@ -580,8 +499,12 @@
                                     <img class="movers-image" src="./assets/BryanSteil.jpeg">
                                 </div>
                                 <p class="movers-name">Bryan Steil</p>
-                                <p class="movers-state">WI</p>
-                                <p class="movers-rating">Slightly Pro</p>
+                                <p class="movers-state">IL</p>
+                                <div class="movers-rating-div">
+                                    <div class="movers-rating-div1">
+                                        <p class="movers-rating">Slightly Pro</p>
+                                    </div>
+                                </div>
                                 <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
                                     responsible
                                     innovation for
@@ -599,9 +522,11 @@
                                     <img class="movers-image" src="./assets/BryanSteil.jpeg">
                                 </div>
                                 <p class="movers-name">Bryan Steil</p>
-                                <p class="movers-state">WI</p>
+                                <p class="movers-state">NY</p>
                                 <div class="movers-rating-div">
-                                    <p class="movers-rating">Slightly Pro</p>
+                                    <div class="movers-rating-div1">
+                                        <p class="movers-rating">Slightly Pro</p>
+                                    </div>
                                 </div>
                                 <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
                                     responsible
@@ -622,7 +547,9 @@
                                 <p class="movers-name">Bryan Steil</p>
                                 <p class="movers-state">WI</p>
                                 <div class="movers-rating-div">
-                                    <p class="movers-rating">Slightly Pro</p>
+                                    <div class="movers-rating-div1">
+                                        <p class="movers-rating">Slightly Pro</p>
+                                    </div>
                                 </div>
                                 <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
                                     responsible
@@ -643,7 +570,9 @@
                                 <p class="movers-name">Bryan Steil</p>
                                 <p class="movers-state">WI</p>
                                 <div class="movers-rating-div">
-                                    <p class="movers-rating">Slightly Pro</p>
+                                    <div class="movers-rating-div1">
+                                        <p class="movers-rating">Slightly Pro</p>
+                                    </div>
                                 </div>
                                 <p class="movers-quote">"Congress is developing nonpartisan solutions that promote
                                     responsible
@@ -660,7 +589,115 @@
             </section>
         </section>
     </div>
+
+    <!-- contact button & contact section (must include - in all html) -->
+    <button id="contact-button">give feedback</button>
+
+
+    <section class="contact" id="contact">
+        <div class="close-button-area" id="close-button-area">
+            <button id="close-button" type="submit"><i class="fas fa-window-close"></i></button>
+        </div>
+        <div class="column right contact-us">
+
+            <div class="text" id="contact-us-text">Give Feedback</div>
+            <form id="contactForm">
+                <div class="fields">
+                    <div class="field name">
+                        <input type="text" name="name" placeholder="*Name" required>
+                    </div>
+                    <div class="field email">
+                        <input type="email" name="email" placeholder="Email (optional)">
+                    </div>
+                </div>
+                <div class="field">
+                    <input type="text" name="subject" placeholder="*Subject" required>
+                </div>
+                <div class="field textarea">
+                    <textarea cols="30" rows="10" name="message" placeholder="*Message..." required></textarea>
+                </div>
+                <div class="button-area" id="send-message-btn-area">
+                    <button id="send-message-btn" type="submit">Send <i class="fas fa-paper-plane"></i></button>
+
+                    <div id="responseMessage" style="display:none;"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+        <script>
+            $(document).ready(function () {
+                    $('#contactForm').on('submit', function (event) {
+                        event.preventDefault();
+
+                        var formData = new FormData(event.target);
+                        var request = new XMLHttpRequest();
+
+                        request.onreadystatechange = function () {
+                            if (request.readyState === 4) {
+                                var responseMessage = $('#responseMessage');
+                                if (request.status === 200) {
+                                    responseMessage.text('Email to CryptoPols sent successfully!');
+                                    disableFormFields();
+                                    document.getElementById('send-message-btn').style.display = 'none';
+                                } else {
+                                    responseMessage.text('An error occurred while sending the email. Please try again later.');
+                                    document.getElementById('send-message-btn').style.display = 'none';
+                                }
+                                responseMessage.show();
+                            }
+                        };
+
+                        request.open('POST', 'send_email.php');
+                        request.send(formData);
+                    });
+
+                    function disableFormFields() {
+                        var formElements = document.getElementById("contactForm").elements;
+                        for (var i = 0; i < formElements.length; i++) {
+                            if (formElements[i].id !== 'send-message-btn') {
+                                formElements[i].disabled = true;
+                            }
+                        }
+                    }
+
+                    $('#contact-button').on('click', function () {
+                        $('.contact').addClass('visible contact-form-scaled');
+                        $(this).hide();
+                    });
+
+                    $('#close-button').on('click', function () {
+                        $('.contact').removeClass('visible contact-form-scaled');
+                        $('#contact-button').show();
+                        enableFormFields();
+                    });
+
+
+                    function enableFormFields() {
+                        var formElements = document.getElementById("contactForm").elements;
+                        for (var i = 0; i < formElements.length; i++) {
+                            formElements[i].disabled = false;
+                        }
+
+                        // Reset the form
+                        var form = document.getElementById('contactForm');
+                        form.reset();
+
+                        // Hide the response message and reset its text
+                        var responseMessage = document.getElementById('responseMessage');
+                        responseMessage.style.display = 'none';
+                        responseMessage.textContent = '';
+
+                        // Show the send button
+                        document.getElementById('send-message-btn').style.display = 'block';
+                    }
+                });
+        </script>
+
+
+    <script src="./scripts/state-map.js"></script>
+    <script src="./scripts/state-table.js"></script>
     <script src="./scripts/index.js"></script>
+
 </body>
 
 </html>
