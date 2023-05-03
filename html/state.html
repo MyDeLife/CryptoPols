@@ -32,7 +32,7 @@
     </script>
 
 </head>
-
+<body class="state-body">
 <header>
     <div id="header-content">
         <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header"
@@ -50,9 +50,14 @@
     </div>
 </header>
 
-<body>
+<main id="state-main-contain">
     <div id="state-info">
+        <div id="state-header">
         <h2 id="state-name"></h2>
+        <div id="state-sentiment-contain">
+        <h2 id="state-sentiment-label">State Sentiment:</h2>
+        <p id="state-sentiment"></p>
+        </div></div>
         <script>
             function getQueryParam(param) {
                 var searchParams = new URLSearchParams(window.location.search);
@@ -68,7 +73,7 @@
 
             setStateName();
         </script>
-
+        <div id="politician-table-contain">
         <table id="politician-table" class="tablesorter">
             <thead>
                 <tr id="politician-table">
@@ -82,12 +87,14 @@
             <tbody> <!-- Rows added here via state-table.js -->
             </tbody>
         </table>
+        </div>
 
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
         <script src="../scripts/state-table.js"></script>
 
     </div>
+    </main>
 </body>
 
 </html>

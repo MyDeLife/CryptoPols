@@ -5,7 +5,7 @@
 :root {
     --black: black;
     --white: white;
-    --state-gray: #757575;
+    --not-enough-data: #c0c0c0;
     /* rgba(117, 117, 117) */
     --gray: rgb(244, 244, 244);
     --blue: rgb(48, 110, 180);
