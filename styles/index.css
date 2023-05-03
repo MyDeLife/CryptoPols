@@ -42,11 +42,10 @@ h3.fancy {
 
 #us-avg h2 {
     text-align: center;
-    margin-bottom: 8%;
+    margin-bottom: 10%;
 }
 
 #congress-avg {
-    background-color: var(--slightly-pro);
     font-family: var(--text-header);
     height: 4rem;
     width: 60%;
