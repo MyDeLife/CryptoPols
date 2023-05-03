@@ -33,6 +33,8 @@ am5.ready(function () {
                 return am5.color("#844D9E");
             case "Strongly Anti":
                 return am5.color("#480088");
+            case "Neutral":
+                return am5.color("#9D5444");
             default:
                 return am5.color("#C0C0C0");
         }
