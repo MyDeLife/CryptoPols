@@ -26,15 +26,15 @@ am5.ready(function () {
             case "Strongly Pro":
                 return am5.color("#F2a900");
             case "Slightly Pro":
-                return am5.color("#FEC94D");
-            case "Neutral":
-                return am5.color("#C0C0C0");
-            case "Slightly Anti":
-                return am5.color("#844D9E");
-            case "Strongly Anti":
-                return am5.color("#480088");
+                return am5.color("#D0871B");
             case "Neutral":
                 return am5.color("#9D5444");
+            case "Slightly Anti":
+                return am5.color("#6A216C");
+            case "Strongly Anti":
+                return am5.color("#480088");
+            case "Not enough data":
+                return am5.color("#C0C0C0");
             default:
                 return am5.color("#C0C0C0");
         }

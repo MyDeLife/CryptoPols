@@ -1,6 +1,6 @@
 // update congress average sentiment
 $.ajax({
-    url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php",
+    url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php", //http://cryptopols.com/db/fetch_country.php // http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php
     dataType: "json",
     success: function (data) {
         const divElement = document.getElementById('congress-avg');
@@ -25,6 +25,9 @@ $.ajax({
             case 'Strongly Anti':
                 divElement.style.backgroundColor = style.getPropertyValue('--strongly-anti').trim();
                 break;
+            case 'Not enough data':
+                divElement.style.backgroundColor = style.getPropertyValue('--not-enough-data').trim();
+                break;
             default:
                 console.error('Unexpected Sentiment Value:', currentSentiment);
         }
@@ -37,7 +40,7 @@ $.ajax({
 
 // update party ratings
 $.ajax({
-    url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php",
+    url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php", //http://cryptopols.com/db/fetch_country.php // http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php
     dataType: "json",
     success: function (data) {
         const demsArrow = document.querySelector('.arrow.dems');

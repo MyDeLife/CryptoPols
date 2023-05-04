@@ -1,6 +1,8 @@
+
 $(function () {
     console.log("Requesting politicians data...");
-    const state = getUrlParameter("state");
+    const state = getUrlParameter("state").substring(3);
+
     $.ajax({
         url: "http://localhost/dashboard/devcodes/CryptoPols/db/fetch_politicians.php", //http://cryptopols.com/db/fetch_politicians.php //http://localhost/dashboard/devcodes/CryptoPols/db/fetch_politicians.php
         dataType: "json",
@@ -12,14 +14,17 @@ $(function () {
             politicians.forEach(politician => {
                 const row = $('<tr>');
 
-
                 const imageURL = `${baseURL}${politician.gov_track}-200px.jpeg`;
                 console.log('Image URL:', imageURL);
                 row.append(`<td class="party" data-party="${politician.party}"><div class="party-icon party-${politician.party.replace(/\s+/g, '')}" title="${politician.party}"></div></td>`);
                 row.append(`<td class="table-img-name"><img class="table-profile-img" src="${imageURL}" alt="photo unavailable"/><span class="name-link" onclick="openPoliticianPage('${politician.name}')"> ${politician.name}</span></td>`);
 
                 row.append(`<td class="office"><span>${politician.office}</span></td>`);
-                row.append(`<td class="district"><span>${politician.district}</span></td>`);
+
+                // Check if the district value is 0, if so, display an empty cell
+                const districtDisplayValue = politician.district === "0" ? "" : politician.district;
+                row.append(`<td class="district"><span>${districtDisplayValue}</span></td>`);
+
                 row.append(`<td class="cfr" data-cfr="${politician.cfr}"><div class="cfr-inner">${politician.cfr}</div></td>`);
                 $('#politician-table tbody').append(row);
             });
@@ -27,6 +32,7 @@ $(function () {
             console.log("tablesorter plugin:", $.tablesorter);
             initTablesorter();
         },
+
         error: function (jqXHR, textStatus, errorThrown) { 
             console.log("Error:", textStatus, errorThrown);
             console.log("Response:", jqXHR.responseText); 
@@ -75,7 +81,11 @@ function initTablesorter() {
             4: {
                 sorter: "cfrSort"
             }
-        }
+        },
+                sortList: [
+            [2, 1], // First, sort by the Office column (index 2)
+            [3, 0], // Then, sort by the District column (index 3)
+        ],
     });
 
     window.openPoliticianPage = function (name) {
