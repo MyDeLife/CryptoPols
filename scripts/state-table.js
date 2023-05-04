@@ -17,7 +17,7 @@ $(function () {
                 const imageURL = `${baseURL}${politician.gov_track}-200px.jpeg`;
                 console.log('Image URL:', imageURL);
                 row.append(`<td class="party" data-party="${politician.party}"><div class="party-icon party-${politician.party.replace(/\s+/g, '')}" title="${politician.party}"></div></td>`);
-                row.append(`<td class="table-img-name"><img class="table-profile-img" src="${imageURL}" alt="photo unavailable"/><span class="name-link" onclick="openPoliticianPage('${politician.name}')"> ${politician.name}</span></td>`);
+                row.append(`<td class="table-img-name"><span class="name-link" onclick="openPoliticianPage('${politician.name}')"><img class="table-profile-img" src="${imageURL}" alt="no photo"/> ${politician.name}</span></td>`);
 
                 row.append(`<td class="office"><span>${politician.office}</span></td>`);
 
@@ -93,20 +93,3 @@ function initTablesorter() {
     };
 }
 
-/*<img id="pol-pic" class="profile-sec" src="../assets/BryanSteil.jpeg"></img>
-
- 
-    document.addEventListener('DOMContentLoaded', function () {
-    const baseURL = 'https://memberguide.gpo.gov/pictorialimages/';
-        const polPic = document.getElementById('pol-pic');
-        const politicianName = document.getElementById('politician-name').textContent.toLowerCase();
-        const state = document.getElementById('p-state').textContent.toLowerCase();
-        const district = document.getElementById('p-district').textContent;
-
-        const [firstName, lastName] = politicianName.split(' ');
-
-        const imageURL = `${baseURL}117_rp_${state}_${district}_${lastName}_${firstName}.jpg`;
-
-        polPic.src = imageURL;
-        });
-  */

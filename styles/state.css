@@ -1,62 +1,7 @@
 * {
     /border: 2px solid;
-    /font-family: var(--text-header) !important;
+    font-family: var(--text-header) !important;
     
-}
-
-#politician-table,
-#politician-table th,
-#politician-table td {
-    
-}
-
-#state-main-contain {
-    /* height: calc(100% - 5rem);
-    overflow: hidden; */
-    
-}
-
-#politician-table-contain {
-    height: calc(100vh - 20rem);
-    max-height: calc(100vh - 20rem);
-    width: 85%;
-    margin-left: 5%;
-    margin-right: auto;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    /* For smooth scrolling on iOS devices */
-
-    border-radius: 0.5rem;
-    border: 0.2rem dotted var(--light-brown);
-    
-}
-
-#state-info {
-    padding-top: 10rem;
-    padding-left: 5rem;
-}
-
-
-.tablesorter th {
-    cursor: pointer;
-    font-size: 1.5rem;
-    position: sticky;
-    top: 0;
-    background-color: var(--light-brown);
-    z-index: 10;
-}
-
-thead {
-    height: 3rem;
-
-
-}
-
-
-tbody {
-    font-size: 1.4rem;
-    font-family: ;
-    max-height: ;
 }
 
 #state-info {
@@ -82,7 +27,12 @@ tbody {
     margin-left: 3%;
     margin-right: 20%;
     width: 30%;
-    letter-spacing: 0.1rem;
+    
+}
+
+#state-info {
+    padding-top: 10rem;
+    padding-left: 5rem;
 }
 
 #state-sentiment-contain {
@@ -95,17 +45,14 @@ tbody {
     letter-spacing: 0.1rem;
 }
 
-#state-sentiment-label {
-
-}
+#state-sentiment-label {}
 
 #state-sentiment {
     background-color: var(--slightly-pro);
-    font-family: var(--text-header);
     height: 3rem;
     width: 40%;
-    /*margin: -4% auto 2% auto; */
     margin-top: 2.5%;
+    padding-right: 7%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -118,6 +65,25 @@ tbody {
     border-radius: 1rem;
 }
 
+
+#state-main-contain {
+    /* height: calc(100% - 5rem);
+    overflow: hidden; */
+    
+}
+
+#politician-table-contain {
+    height: inherit;
+    max-height: calc(100vh - 20rem);
+    width: 85%;
+    margin-left: 5%;
+    margin-right: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    /* For smooth scrolling on iOS devices */
+    background-color: var(--not-enough-data);
+}
+
 #politician-table {
     width: 100%;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
@@ -127,23 +93,34 @@ tbody {
     overflow: auto;
     max-height: calc(100% - 6rem);
     /* adjust the max-height value as needed */
-
 }
 
 .tablesorter {
-    border-collapse: collapse;
     width: 100%;
+}
+
+thead {
+    height: 3rem;
+}
+
+tbody {
+    font-size: 1.4rem;
 
 }
 
+.tablesorter th {
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--light-brown);
+    z-index: 10;
+}
 
 .tablesorter td,
 .tablesorter th,
 .cfr-inner {
-    border: 0.1rem solid var(--dark-brown);
-    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
-    padding: 0.5rem;
-    font-family: var(--text-header);
+    padding: 0.5rem;  
 }
 
 .tablesorter-header .header-arrow {
@@ -158,7 +135,6 @@ tbody {
 
 .tablesorter-header .header-arrow-up {
     color: var(--dark-brown);
-
     margin-top: -0.6rem;
     margin-right: 0.5rem;
 }
@@ -196,6 +172,7 @@ tbody {
     height: 1.5rem;
     border-radius: 0.3rem;
     margin-left: 35%;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 
 }
 
@@ -217,17 +194,36 @@ tbody {
 
 #pol-name {
     width: 20%;
+    
 }
 
 .name-link {
     cursor: pointer;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  
+}
+
+.table-profile-img {
+    height: 3.8rem;
+    width: 3.2rem;
+    border-radius: 0.5rem;
+    margin-right: 4%;
+    font-size: 1rem;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.table-img-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #district,
 .district {
     width: 7%;
-    text-align: center;
+    text-align: center;  
 }
 
 
@@ -254,6 +250,8 @@ tbody {
     width: 70%;
     border-radius: 1rem;
     color: white;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--gray)
 }
 
 [data-cfr='Strongly Pro'] .cfr-inner {
@@ -280,16 +278,5 @@ tbody {
     background-color: var(--not-enough-data);
 }
 
-.table-profile-img {
-    height: 3.8rem;
-    width: 3.2rem;
-    border-radius: 0.5rem;
-}
 
-.name-link {}
 
-.table-img-name {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
