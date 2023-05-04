@@ -11,6 +11,35 @@ function fetchStateName(stateAbbr) {
             if (stateData) {
                 const fullStateName = stateData.full_name;
                 setStateName(fullStateName);
+
+                // Set the state sentiment text content
+                const stateSentimentElement = document.getElementById("state-sentiment");
+                stateSentimentElement.textContent = stateData.sentiment;
+
+                // Set the background color based on the state sentiment value
+                const style = getComputedStyle(document.documentElement);
+                switch (stateData.sentiment) {
+                    case 'Strongly Pro':
+                        stateSentimentElement.style.backgroundColor = style.getPropertyValue('--strongly-pro').trim();
+                        break;
+                    case 'Slightly Pro':
+                        stateSentimentElement.style.backgroundColor = style.getPropertyValue('--slightly-pro').trim();
+                        break;
+                    case 'Neutral':
+                        stateSentimentElement.style.backgroundColor = style.getPropertyValue('--neutral').trim();
+                        break;
+                    case 'Slightly Anti':
+                        stateSentimentElement.style.backgroundColor = style.getPropertyValue('--slightly-anti').trim();
+                        break;
+                    case 'Strongly Anti':
+                        stateSentimentElement.style.backgroundColor = style.getPropertyValue('--strongly-anti').trim();
+                        break;
+                    case 'Not enough data':
+                        stateSentimentElement.style.backgroundColor = style.getPropertyValue('--not-enough-data').trim();
+                        break;
+                    default:
+                        console.error('Unexpected Sentiment Value:', stateData.sentiment);
+                }
             } else {
                 setStateName(null);
             }
@@ -24,6 +53,8 @@ function fetchStateName(stateAbbr) {
     });
 }
 
+
+
 function setStateName(fullStateName) {
     const stateId = getQueryParam("state");
     const stateAbbr = stateId.substring(3);
@@ -32,11 +63,13 @@ function setStateName(fullStateName) {
     if (fullStateName !== null && fullStateName !== "") {
         stateNameElement.textContent = fullStateName;
     } else if (stateAbbr !== null && stateAbbr !== "") {
-        stateNameElement.textContent = stateAbbr;
+        stateNameElement.textContent = "State: " + stateAbbr;
     } else {
         stateNameElement.textContent = "State: Unknown";
     }
 }
+
+
 
 function getQueryParam(param) {
     const searchParams = new URLSearchParams(window.location.search);

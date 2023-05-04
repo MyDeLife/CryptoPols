@@ -88,8 +88,9 @@ function initTablesorter() {
         ],
     });
 
-    window.openPoliticianPage = function (name) {
+    /* IMPORTANT: Re-introduce when releasing Politicians page:
+    /*window.openPoliticianPage = function (name) {
         window.location.href = `politician.html?name=${encodeURIComponent(name)}`;
-    };
+    };*/
 }
 
