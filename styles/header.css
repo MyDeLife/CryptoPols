@@ -101,7 +101,7 @@ nav {
     overflow: hidden;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 10rem;
+    min-width: 14rem;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
     z-index: 1;
     font-size: 1.2rem;

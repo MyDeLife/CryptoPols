@@ -10,38 +10,32 @@
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/global.css">
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
-            gtag('config', 'G-WDQ4V9VZBT');
-        </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WDQ4V9VZBT');
+    </script>
 
 </head>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-<header>
-    <div id="header-content">
-        <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header" src="../assets/CP Logo wo 2048.png"></a>
-        <div id="header-title">
-            <h1>Crypto<span>Pols</span></h1>
-            <p>...monitoring crypto sentiment of US politicians in Congress</p>
-        </div>
-        <nav>
-            <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
-            <p>State</p>
-            <p>Politician</p>
-            <p class="nav-bar"><a href="https://cryptopols.com/html/methodology.html">Methodology</a></p>
-        </nav>
-    </div>
-</header>
-
 <body>
+    <!-- header.html start -->
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("header.html");
+        });
+    </script>
+    <div id="nav-placeholder"></div>
+    <!-- header.html end -->
+
     <section>
         <h2>Sentiment Assessment Parameters</h2>
         <p>This section describes the evaluation criteria used to assess the sentiment by US politicians towards the
@@ -56,8 +50,9 @@
             will be published on this website upon completion. CryptoPols relies on its user base to conduct holistic,
             transparent and equitable assessments. Your opinion on the assessment paramaters and sources used to
             evaluate are important to us, as we are looking to establish a methodology that has gained broad
-            consensus. Feel free to provide any feedback by clicking the button on the bottom right of the 
-            <a href="https://cryptopols.com/">Home</a> page.</p>
+            consensus. Feel free to provide any feedback by clicking the button on the bottom right of the
+            <a href="https://cryptopols.com/">Home</a> page.
+        </p>
         </br>
         <h5 class="fancy">Pro-Crypto Parameters</h5>
         <div id="pro-assess">

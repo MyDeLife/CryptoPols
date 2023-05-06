@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/global.css">
 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
     <script>
@@ -19,29 +23,20 @@
 
         gtag('config', 'G-WDQ4V9VZBT');
     </script>
-    
+
 </head>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-<header>
-    <div id="header-content">
-        <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header" src="../assets/CP Logo wo 2048.png"></a>
-        <div id="header-title">
-            <h1>Crypto<span>Pols</span></h1>
-            <p>...monitoring crypto sentiment of US politicians in Congress</p>
-        </div>
-        <nav>
-            <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
-            <p>State</p>
-            <p>Politician</p>
-            <p class="nav-bar"><a href="https://cryptopols.com/html/methodology.html">Methodology</a></p>
-        </nav>
-    </div>
-</header>
 
 <body>
+    <!-- header.html start -->
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("header.html");
+        });
+    </script>
+    <div id="nav-placeholder"></div>
+    <!-- header.html end -->
+
     <div id="content">
         <div id="pol-name">
             <div id="party-color">.</div>
