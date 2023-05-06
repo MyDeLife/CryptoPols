@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="../styles/state.css">
-    <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/global.css">
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -36,22 +35,12 @@
 </head>
 
 <body class="state-body">
-    <header>
-        <div id="header-content">
-            <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header"
-                    src="../assets/CP Logo wo 2048.png"></a>
-            <div id="header-title">
-                <h1>Crypto<span>Pols</span></h1>
-                <p>...monitoring crypto sentiment of US politicians in Congress</p>
-            </div>
-            <nav>
-                <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
-                <p>State</p>
-                <p>Politician</p>
-                <p class="nav-bar"><a href="https://cryptopols.com/html/methodology.html">Methodology</a></p>
-            </nav>
-        </div>
-    </header>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("header.html");
+        });
+    </script>
+    <div id="nav-placeholder"></div>
 
     <main id="state-main-contain">
         <div id="state-info">
@@ -83,6 +72,7 @@
                 src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
             <script src="../scripts/state-table.js"></script>
             <script src="../scripts/state-name.js"></script>
+
 
         </div>
     </main>
