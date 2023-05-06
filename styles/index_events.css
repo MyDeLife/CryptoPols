@@ -1,0 +1,330 @@
+/* general styles - applicable to both public & legislative */
+
+.divider {
+    height: 0.6rem;
+    background: linear-gradient(var(--light-brown) 20%, var(--dark-brown) 50%, var(--light-brown) 80%);
+}
+
+#rec-events-sec {
+    display: flex;
+    gap: 5%
+}
+
+.rec-events-cont1 {
+    width: 50%;
+    text-align: center;
+}
+
+.rec-events-cont1 h2 {
+    text-align: center;
+}
+
+.rec-events-cont2 {
+    height: 65rem;
+    width: 100%;
+    margin: 0rem auto 20rem auto;
+    background-color: var(--gray);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 0.1rem solid var(--dark-brown);
+    border-radius: 2%;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    color: var(--dark-brown);
+}
+
+.rec-events-cont3 {
+    margin: 3rem 1rem 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /*border-bottom: 1px solid var(--dark-brown);*/
+}
+
+.rec-events-text:not(#rec-event-quote) {
+    font-family: var(--text-header);
+}
+
+.rec-events-div1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rec-events-div2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0rem 0rem 1rem 0rem;
+    padding-bottom: 1%;
+    border-bottom: 1px solid var(--light-brown);
+}
+
+.rec-event-pol-name {
+    font-size: 1.8rem;
+    margin-bottom: 2%;
+}
+
+.rec-event-pol-office {
+    font-size: 1.2rem;
+}
+
+
+
+.rec-event-act {
+    font-size: 1.2rem;
+}
+
+
+.rec-events-div3 {
+    display: flex;
+    margin: 0rem 0 0.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--light-brown);
+}
+
+.rec-event-quote {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: left;
+}
+
+.rec-events-div4 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.rec-events-div4-1 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 50%;
+    margin-top: 0.5rem;
+}
+
+
+
+.rec-event-sentiment-label {
+    margin: 0rem 0.8rem 0 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    font-family: var(--text-header);
+    font-size: 1.6rem;
+}
+
+.rec-event-sentiment {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    width: 50%;
+    background-color: var(--slightly-pro);
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    font-size: 1.4rem;
+    font-family: var(--text-header);
+    padding: 1%
+}
+
+.rec-event-src-logo {
+    font-size: 1.6rem;
+    margin-right: 2%;
+
+}
+
+.rec-event-link {
+    color: blue;
+    text-decoration: underline;
+    font-size: 1.3rem;
+    margin-right: 1.5%;
+}
+
+
+
+/* public statement */
+
+.rec-events-div2-1.pub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rec-events-div2-1-1.pub {
+    display: flex;
+    flex-direction: row;
+}
+
+.rec-event-pol-party.pub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1rem;
+    margin-top: 1%;
+    height: 95%;
+}
+
+.rec-event-pol-party-color.pub {
+    width: 0.6rem;
+    background-color: var(--dems);
+    border-radius: 1rem;
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+    margin-bottom: 0.3rem;
+    height: 100%;
+}
+
+.rec-event-pol-image-div.pub {
+    margin-top: 1%;
+    margin-right: 1rem;
+}
+
+.rec-event-pol-image.pub {
+    height: 5rem;
+    border-radius: 10%;
+}
+
+.rec-events-div2-1.pub {
+    padding: 0% 0% 0% 1%;
+}
+
+.rec-events-div2-1-2.pub {
+    text-align: left;
+    width: 25rem;
+    padding: 0% 0% 1.0% 0%;
+}
+
+.rec-events-div2-1-2.pub,
+.rec-events-div2-2.pub {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.rec-events-div2-2.pub {
+    text-align: right;
+    padding: 0.7% 1% 1.0% 0%;
+}
+
+.rec-events-div4-2.pub {
+    display: flex;
+    align-items: flex-start;
+    justify-content: right;
+    flex-direction: row;
+    width: 50%;
+    margin-top: 0.5rem;
+}
+
+.rec-event-date.pub {
+    font-size: 1.4rem;
+    margin-bottom: 6.5%;
+}
+
+
+
+/* legislative action */
+
+.rec-events-div2-3.leg {
+    width: 20%;
+    margin: 0% 1% 0% 1%;
+}
+
+.rec-event-seal.leg {
+    height: 5rem;
+}
+
+.rec-events-div2-1.leg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rec-events-div2-1-2.leg {
+    text-align: right;
+    width: 25rem;
+    padding: 0% 0% 1.0% 0%;
+}
+
+.rec-events-div2-1-1.leg {
+    display: flex;
+    flex-direction: row;
+}
+
+.rec-event-pol-image-div.leg {
+    margin-top: 1%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.rec-event-pol-image.leg {
+    height: 5rem;
+    border-radius: 10%;
+}
+
+.rec-event-pol-party.leg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1rem;
+    margin-top: 1%;
+    height: 95%;
+}
+
+.rec-event-pol-party-color.leg {
+    width: 0.6rem;
+    background-color: var(--dems);
+    border-radius: 1rem;
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+    margin-bottom: 0.3rem;
+    height: 100%;
+}
+
+.rec-events-div3-1.leg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0% 0% 0% 1%;
+    min-width: 20%;
+    border-right: 1px solid var(--light-brown)
+}
+
+.rec-event-act.leg {
+    font-size: 1.6rem;
+    margin-bottom: 10%;
+    line-height: 1.9rem;
+}
+
+.rec-events-div4-2.leg {
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    flex-direction: row;
+    margin: 0.3rem 0rem 0 1.35rem;
+}
+
+.rec-event-date.leg {
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

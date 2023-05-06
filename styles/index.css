@@ -1,3 +1,7 @@
+* {
+    /border: 1px solid black
+}
+
 body {
     width: 120rem;
 }
@@ -194,6 +198,8 @@ h3.fancy {
 #chartdiv:hover {
     cursor: pointer;
 }
+
+
 
 #index-middle2 {
     margin: 5% auto 0 auto;
@@ -502,7 +508,7 @@ h3.fancy {
     background-color: white;
     border: 1px solid var(--dark-brown);
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
-     height: 100%;
+    height: 100%;
 }
 
 
