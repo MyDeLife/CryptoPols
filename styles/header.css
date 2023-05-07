@@ -10,12 +10,11 @@ header {
     z-index: 100;
     background-color: var(--gray);
     width: 100vw;
-
 }
 
 #header-content {
     display: flex;
-    max-width: 130rem;
+    /*max-width: 130rem;*/
     width: 100%;
     flex-wrap: wrap;
 }
@@ -23,22 +22,23 @@ header {
 
 
 #header-title {
-    margin: 1% 0% 0% 1%;
+    margin: 0.3% 0% 0% 1%;
     text-align: left;
 }
 
 #CPlogo-header {
 
-    margin: 1.2% 0.2% 0% 2%;
+    margin: 0.5% 0.2% 0% 2%;
 }
 
 #CP-img-header {
-    height: 5rem;
+    height: 6rem;
 }
 
 h1 {
     color: var(--dark-brown);
-    font-size: 3.8rem !important;
+    font-size: 3.4rem !important;
+    
 }
 
 h1 span {
@@ -52,20 +52,20 @@ h1 span {
 
 #header-content p:not(nav p) {
     font-style: italic;
-    font-weight: bold;
+
     font-size: 1.3rem;
-    color: var(--dark-brown)
+    color: var(--dark-brown);
+    margin-top: -2%
 }
 
 nav {
-    margin: 0 0 0 13%;
-    padding-bottom: 1.5%;
+    margin: 0 0 0 45%;
+   
     display: flex;
     align-items: center;
-    width: 40%;
     gap: 1%;
     color: var(--dark-brown);
-    justify-content: flex-end;
+    justify-content: center;
 
 }
 
@@ -73,7 +73,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 
 }
 
@@ -97,6 +96,7 @@ nav {
     position: relative;
     display: inline-block;
     margin-right: 2%;
+    align-items: center;
 }
 
 .nav-dropdown-content {
