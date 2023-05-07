@@ -8,11 +8,23 @@ body {
 
 h3.fancy {
     font-size: 1.3rem;
-    margin-bottom: 5%;
+    margin: 5% auto;
+    font-weight: bold;
+    padding: 0.5rem
+}
+
+#rec-events-fancy-header {
+    line-height: 1.4rem;
+}
+
+#last-6-months {
+    font-family: var(--text-header);
+    font-size: 1.3rem;
+    font-weight: normal;
 }
 
 #index-page {
-    margin: 0 auto 0 auto;
+    margin: 2rem auto 0 auto;
     padding-top: 3%;
     width: 90%;
     display: flex;
@@ -26,13 +38,13 @@ h3.fancy {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90vh;
+    height: 80vh;
 }
 
 .map-container {
     display: flex;
     flex-direction: row;
-    margin: 0 auto 5% auto;
+    margin: 0 auto 0 auto;
     width: 90%;
 }
 
@@ -77,10 +89,13 @@ h3.fancy {
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-
 }
+
+#demrep-content h2 {
+text-align: center;
+}
+
 
 .map-legend {
     width: 80%;
@@ -89,7 +104,6 @@ h3.fancy {
     justify-content: center;
     position: relative;
     margin: 2% auto 7% auto;
-
 }
 
 .gradient-container {
@@ -189,10 +203,10 @@ h3.fancy {
 }
 
 #chartdiv {
-    width: 90%;
-    height: 60%;
+    width: 75%;
+    height: 90%;
     pointer-events: all;
-    margin: 0 3% 2% 3%;
+
 }
 
 #chartdiv:hover {

@@ -74,7 +74,7 @@
 
 #politician-table-contain {
     height: inherit;
-    max-height: calc(100vh - 35rem);
+    max-height: 70vh;
     width: 85%;
     margin-left: 5%;
     margin-right: auto;

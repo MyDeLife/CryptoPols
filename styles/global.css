@@ -46,8 +46,9 @@ body {
     /* ensures that the footer does not overlap with the main content of each page */
     min-height: 100vh;
     /* ensures that the footer does not overlap with the main content of each page */
-    max-width: 100vw;
-    margin: 0;
+    width: 100vw;
+    max-width: 140rem;
+    margin: 0 auto;
     padding: 0 0 5% 0;
 }
 
@@ -84,17 +85,16 @@ p {
 }
 
 .fancy {
-    --b: 0.3rem;
+    --b: 0.5rem;
     /* control the border thickness */
-    --w: 200rem;
+    --w: 500rem;
     /* control the width of the line*/
-    --g: 2rem;
+    --g: 3rem;
     /* control the gap */
     --c: var(--light-brown);
 
-    width: fit-content;
-    padding: 0 1em;
-    line-height: 1.6em;
+    width: 18rem;
+    text-align: center;
     border: 1px solid;
     color: var(--dark-brown);
     background:
@@ -107,5 +107,28 @@ p {
         linear-gradient(#0000 calc(50% - var(--b)/2),
             var(--c) 0 calc(50% + var(--b)/2),
             #0000 0) 1/0 var(--w)/calc(var(--w) + var(--g));
-    margin-inline: auto;
 }
+
+
+
+
+html::-webkit-scrollbar-track,
+div::-webkit-scrollbar-track {
+    background: var(--white);
+
+}
+
+html::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb {
+    background: var(--light-brown);
+    border-radius: 0.5rem;
+}
+
+div::-webkit-scrollbar {
+    width: 1.0rem;
+}
+
+html::-webkit-scrollbar {
+    width: 1.2rem;
+}
+
