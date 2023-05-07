@@ -1,0 +1,88 @@
+* {
+    /border: 2px solid;
+}
+
+footer {
+    background-color: var(--gray);
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.1rem solid var(--dark-brown);
+
+
+}
+
+#footer-content {
+
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    color: var(--dark-brown);
+
+}
+
+#footer-content p {
+    font-family: var(--text-header);
+    font-size: 1.4rem;
+}
+
+
+
+
+/* icons area */
+
+.icons {
+    width: 20%;
+    background: var(--gray);
+    display: flex;
+    align-items: center;
+    margin-right:4%;
+
+}
+
+.icons .socials ion-icon {
+    font-size: 2.0rem;
+    color: var(--dark-brown);
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+
+}
+
+ion-icon:hover,
+ion-icon:active,
+ion-icon:focus {
+    transition: all 0.8s;
+
+}
+
+#twitter:hover,
+#twitter:active,
+#twitter:focus {
+
+    color: var(--light-brown)
+}
+
+#github:hover,
+#github:active,
+#github:focus {
+
+    color: var(--light-brown)
+}
+
+#email:hover,
+#email:active,
+#email:focus {
+
+    color: var(--light-brown)
+}
