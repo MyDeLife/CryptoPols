@@ -26,11 +26,11 @@ am5.ready(function () {
             case "Strongly Pro":
                 return am5.color("#F2a900");
             case "Slightly Pro":
-                return am5.color("#D0871B");
+                return am5.color("#be7b15");
             case "Neutral":
                 return am5.color("#9D5444");
             case "Slightly Anti":
-                return am5.color("#6A216C");
+                return am5.color("#9b4e9e");
             case "Strongly Anti":
                 return am5.color("#480088");
             case "Not enough data":
