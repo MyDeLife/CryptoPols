@@ -2,6 +2,7 @@
     /border: 2px solid;
 }
 
+
 footer {
     background-color: var(--gray);
     width: 100%;
@@ -9,8 +10,8 @@ footer {
     display: flex;
     justify-content: space-between;
     border-top: 0.1rem solid var(--dark-brown);
-
-
+    position: absolute;
+    bottom: 0;
 }
 
 #footer-content {

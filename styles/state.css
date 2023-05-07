@@ -1,5 +1,4 @@
 * {
-    /border: 2px solid;
     font-family: var(--text-header) !important;
     
 }
@@ -50,7 +49,7 @@
 #state-sentiment {
     height: 3.5rem;
     width: 42%;
-    margin-top: 2.5%;
+    margin-top: 1.5%;
     margin-left: 3%;
     font-size: 2rem !important;
     font-weight: bold;
@@ -75,7 +74,7 @@
 
 #politician-table-contain {
     height: inherit;
-    max-height: calc(100vh - 20rem);
+    max-height: calc(100vh - 35rem);
     width: 85%;
     margin-left: 5%;
     margin-right: auto;
@@ -83,6 +82,10 @@
     -webkit-overflow-scrolling: touch;
     /* For smooth scrolling on iOS devices */
     background-color: var(--not-enough-data);
+    border: 0.2rem solid transparent;
+        border-bottom: 0.3rem solid transparent;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 #politician-table {

@@ -13,16 +13,18 @@
     --light-brown: #d4c7bd;
     --strongly-pro: #F2a900;
     /* rgba(242, 169, 0) */
-    --slightly-pro: #D0871B;
+    --slightly-pro: #be7b15;
     /* rgba(208, 135, 27)*/
     --neutral: #9D5444;
     /* rgba(157, 84, 68) */
-    --slightly-anti: #6A216C;
+    --slightly-anti: #9b4e9e;
     /* rgba(106, 33, 108 */
     --strongly-anti: #480088;
     /* rgba(72, 0, 136) */
     --dems: #00AEF3;
     --reps: #E81B23;
+    --inds: #f2e20d;
+    --grns: #00bf06;
     --text-body: Georgia,
         'Times New Roman',
         Times,
@@ -40,8 +42,13 @@ html {
 }
 
 body {
+    position: relative;
+    /* ensures that the footer does not overlap with the main content of each page */
+    min-height: 100vh;
+    /* ensures that the footer does not overlap with the main content of each page */
     max-width: 100vw;
     margin: 0;
+    padding: 0 0 5% 0;
 }
 
 h1,
@@ -102,4 +109,3 @@ p {
             #0000 0) 1/0 var(--w)/calc(var(--w) + var(--g));
     margin-inline: auto;
 }
-
