@@ -7,6 +7,7 @@ header {
     margin: 0 auto 0% auto;
     display: flex;
     position: fixed;
+    top: 0;
     z-index: 100;
     background-color: var(--gray);
     width: 100vw;

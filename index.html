@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./styles/index_events.css">
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/feedback_form.css">
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -682,6 +683,12 @@
             });
         </script>
 
+    <div id="footer-placeholder"></div>
+    <script>
+        $(function () {
+            $("#footer-placeholder").load("./html/footer.html");
+        });
+    </script>
 
         <script src="./scripts/state-map.js"></script>
         <script src="./scripts/state-table.js"></script>
