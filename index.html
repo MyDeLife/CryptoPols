@@ -49,21 +49,6 @@
     <div id="nav-placeholder"></div>
     <!-- header.html end -->
 
-    <div style="text-align: center; padding-bottom: 3rem; width: 100%; padding-top: 12rem; height: relative;">
-        <h1
-            style="color: rgb(245, 7, 7); font-size: 50px; border: 4px solid; text-align: center; padding-bottom: 1rem; width: 90%; height: relative;">
-            <br><i class="fas fa-tools" style="color:rgb(84, 82, 82); padding-left: 5px; padding-right: 5px;"></i> SITE
-            IN
-            DEVELOPMENT - <br> ALL DATA CURRENTLY NON-FACTUAL <br><br>
-            <p style="color: black; width:70%; font-weight: normal; font-size: 18px;"><em><span
-                        style="text-decoration: underline;">Note</span>: This website is being built during buildspace
-                    n&w s3
-                    which is currently ongoing. We are seeking early <a href="" id="contact-link"
-                        style="text-decoration: none;">feedback</a> on the website design from users on the first drafts
-                    of the
-                    layouts, tables and data points. Thank you for your participation!</em></p>
-        </h1>
-    </div>
 
     <script>
         var contactLink = document.getElementById('contact-link');
@@ -111,75 +96,24 @@
             <div id="chartdiv"></div>
         </section>
 
-        <h3 class="fancy">Recent Events</h3>
+        <h3 id="rec-events-fancy-header" class="fancy">Recent Events<span id="last-6-months"></br>last 6 months</span></h3>
         <section id="rec-events-sec">
             <div id="rec-events-pub" class="rec-events-cont1">
                 <h2>Public Statements</h2>
-                <input type="text" id="search-input" placeholder="Search by politician, state or party" />
+                <input type="text" id="search-input-pub" placeholder="Enter politician name..." />
                 <div class="rec-events-cont2 pub">
                     <div id="rec-events-data-pub" class="pub"></div>
                 </div>
             </div>
-
-
-
-
             <div id="rec-events-leg" class="rec-events-cont1">
                 <h2>Legislative Actions</h2>
+                <input type="text" id="search-input-leg" placeholder="Enter politician name..." />
                 <div class="rec-events-cont2 leg">
-                    <div class="rec-events-cont3 leg">
-                        <div class="rec-events-div1 leg">
-                        </div>
-                        <div class="rec-events-div2 leg">
-                            <div class="rec-events-div2-3 leg">
-                                <img class="rec-event-seal leg" src="./assets/seal_house.svg.png">
-                            </div>
-                            <div class="rec-events-div2-1 leg">
-                                <div class="rec-events-div2-1-2 leg">
-                                    <div class="rec-event-pol-name rec-events-text leg">Debbie Wasserman Schultz</div>
-                                    <div class="rec-event-pol-office rec-events-text leg">House of Rep</div>
-                                </div>
-                                <div class="rec-events-div2-1-1 leg">
-                                    <div class="rec-event-pol-image-div leg">
-                                        <img class="rec-event-pol-image leg" src="./assets/BryanSteil.jpeg">
-                                    </div>
-                                    <div class="rec-event-pol-party rec-events-text leg">
-                                        <p class="rec-event-pol-party-color leg"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rec-events-div3 leg">
-                            <div class="rec-events-div3-1 leg">
-                                <div class="rec-event-act rec-events-text leg">Bill Cosponsor</div>
-                                <div class="rec-event-link rec-events-text leg">Link</div>
-                            </div>
-                            <div class="rec-event-quote rec-events-text leg">"Glad to join my colleagues on this
-                                bipartisan letter to @SecYellen. It's important that we encourage innovation and
-                                allow digital asset technologies to flourish by not having an overly broad
-                                definition of a crypto "broker" for the purpose of digital asset reporting
-                                requirements."</div>
-                        </div>
-                        <div class="rec-events-div4 leg">
-                            <div class="rec-events-div4-2 leg">
-                                <div class="rec-events-div2-2 leg">
-                                    <div class="rec-event-date rec-events-text leg">Mar 23, 2023</div>
-
-                                </div>
-                            </div>
-                            <div class="rec-events-div4-1 leg">
-                                <div class="rec-event-sentiment-label rec-events-text leg">Sentiment</div>
-                                <div class="rec-event-sentiment rec-events-text leg">Slightly Pro</div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="divider">
-                    </div>
+                    <div id="rec-events-data-leg" class="leg"></div>
                 </div>
             </div>
         </section>
+
 
         <!--
         <section id="index-middle2">
