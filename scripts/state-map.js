@@ -30,7 +30,7 @@ am5.ready(function () {
             case "Neutral":
                 return am5.color("#9D5444");
             case "Slightly Anti":
-                return am5.color("#9b4e9e");
+                return am5.color("#8a3d8d");
             case "Strongly Anti":
                 return am5.color("#480088");
             case "Not enough data":

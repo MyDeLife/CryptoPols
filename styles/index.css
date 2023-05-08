@@ -8,24 +8,27 @@ body {
 
 h3.fancy {
     font-size: 1.3rem;
-    margin: 5% auto;
     font-weight: bold;
-    padding: 0.5rem
+    padding: 0.5rem;
+    margin: 5% auto
 }
 
 #rec-events-fancy-header {
-    line-height: 1.4rem;
+    line-height: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #last-6-months {
     font-family: var(--text-header);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: normal;
 }
 
 #index-page {
     margin: 2rem auto 0 auto;
-    padding-top: 3%;
+    padding-top: 6rem;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -54,6 +57,12 @@ h3.fancy {
     flex-direction: column;
     justify-content: space-between;
     margin: 0
+}
+
+#us-avg h2,
+#demrep-content h2,
+#us-avg .notation {
+    color: var(--dark-brown)
 }
 
 #us-avg h2 {
@@ -95,7 +104,6 @@ h3.fancy {
 #demrep-content h2 {
 text-align: center;
 }
-
 
 .map-legend {
     width: 80%;

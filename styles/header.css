@@ -3,33 +3,42 @@
 }
 
 header {
-    border-bottom: 0.1rem solid var(--dark-brown);
-    margin: 0 auto 0% auto;
+    width: 100vw;
+    margin: 0 auto;
     display: flex;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 100;
     background-color: var(--gray);
-    width: 100vw;
+    border-bottom: 0.1rem solid var(--dark-brown);
 }
 
 #header-content {
+    width: 100vw;
+    max-width: 140rem;
+    margin: 0 auto;
     display: flex;
-    /*max-width: 130rem;*/
-    width: 100%;
-    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+.logo-title {
+    display: flex;
+}
 
 
 #header-title {
     margin: 0.3% 0% 0% 1%;
     text-align: left;
+    width: 40rem;
+}
+
+#header-title p {
+    margin-left: 2%
 }
 
 #CPlogo-header {
-
-    margin: 0.5% 0.2% 0% 2%;
+    margin: auto 2% auto 3%;
 }
 
 #CP-img-header {
@@ -39,7 +48,7 @@ header {
 h1 {
     color: var(--dark-brown);
     font-size: 3.4rem !important;
-    
+
 }
 
 h1 span {
@@ -53,18 +62,16 @@ h1 span {
 
 #header-content p:not(nav p) {
     font-style: italic;
-
     font-size: 1.3rem;
     color: var(--dark-brown);
     margin-top: -2%
 }
 
 nav {
-    margin: 0 0 0 45%;
-   
+    margin: 0 5% 0 0;
+    gap: 20%;
     display: flex;
     align-items: center;
-    gap: 1%;
     color: var(--dark-brown);
     justify-content: center;
 
@@ -96,8 +103,8 @@ nav {
 .nav-dropdown {
     position: relative;
     display: inline-block;
-    margin-right: 2%;
     align-items: center;
+
 }
 
 .nav-dropdown-content {
@@ -109,8 +116,9 @@ nav {
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
     z-index: 1;
     font-size: 1.2rem;
-    transform: translateY(-10px);
+    transform: translateY(-1.5rem);
     transition: opacity 0.5s ease, visibility 0.1s ease, transform 0.2s ease-in;
+    right: 0;
 }
 
 .nav-dropdown-content a {
@@ -120,21 +128,21 @@ nav {
     display: block;
     font-family: var(--text-header);
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-1.5rem);
     transition: opacity 0.3s, transform 0.3s;
     will-change: opacity, transform;
 }
 
 .nav-dropdown-content a:nth-child(1) {
-    transition-delay: 0.1s;
+    transition-delay: 0.12s;
 }
 
 .nav-dropdown-content a:nth-child(2) {
-    transition-delay: 0.2s;
+    transition-delay: 0.24s;
 }
 
 .nav-dropdown-content a:nth-child(3) {
-    transition-delay: 0.3s;
+    transition-delay: 0.36s;
 }
 
 .nav-dropdown:hover .nav-dropdown-content a {

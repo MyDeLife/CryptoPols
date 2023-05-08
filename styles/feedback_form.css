@@ -19,8 +19,8 @@ body {}
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60vw;
-    height: 60vh;
+    width: 40rem;
+    height: 33rem;
     background-color: white;
     z-index: 999;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -34,31 +34,30 @@ body {}
 }
 
 #contact-button {
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
-    z-index: 1000;
-    height: 10rem;
+
+    height: 6.5rem;
     max-height: 15rem;
-    width: 10rem;
+    width: 6.5rem;
     max-width: 15rem;
     border-radius: 50%;
     background-color: var(--dark-brown);
     border: none;
     color: white;
+    margin: auto
 }
 
 .contact-button.show {
-    bottom: 3%;
+    top: 3%;
     opacity: 1;
     pointer-events: auto;
 }
 
 #contact-button:hover {
     cursor: pointer;
-    border: 0.1rem solid rgb(234, 227, 227);
-    transition: all 0.2s;
-    transform: scale(1.10);
+    border: 0.1rem solid var(--dark-brown);
+    transition: all 0.5s;
+    background-color: transparent;
+    color: var(--dark-brown)
 }
 
 .contact-us {
@@ -67,7 +66,7 @@ body {}
     justify-content: center;
     flex-direction: column;
     max-width: 100%;
-    font-size: 2rem;
+    font-size: 2.2rem;
 
 }
 
@@ -133,6 +132,7 @@ body {}
 .contact .right form .textarea textarea {
     padding-top: 0.8rem;
     resize: none;
+    height: 10rem;
 }
 
 .contact .right form .button-area {
@@ -156,14 +156,15 @@ body {}
     border: 0.5rem solid var(--dark-brown);
     transition: all 0.3s ease;
     display: block;
-    margin-top: 2%;
+    margin-top: 16%;
+    font-family: var(--text-header);
 }
 
 .right form .button-area button:hover {
     font-size: 1.7rem;
     background: transparent;
     border: 0.25rem solid var(--light-brown);
-    color: var(--colorSand);
+    color: var(--dark-brown);
 }
 
 #close-button-area {
@@ -184,7 +185,8 @@ body {}
 
 #close-button:hover {
     cursor: pointer;
-    color: var(--light-brown)
+    color: var(--light-brown);
+    transition: all 0.3s;
 }
 
 #close-button:hover::after {
@@ -200,7 +202,6 @@ body {}
     display: flex;
     justify-content: center;
     flex-direction: column;
-
 }
 
 .fa-paper-plane {
