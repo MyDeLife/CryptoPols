@@ -89,9 +89,11 @@
         <div id="state-info">
             <div id="state-header">
                 <h2 id="state-name"></h2>
-                <div id="state-sentiment-contain">
-                    <h2 id="state-sentiment-label">State Sentiment</h2>
-                    <p id="state-sentiment"></p>
+                <div id="statename-div1">
+                    <div id="statename-div2"></div>
+                </div>
+                <p id="state-sentiment" data-tooltip="Average of all members of Congress in this state"></p>
+                <div id="state-sentiment-contain">                    
                 </div>
             </div>
 
@@ -119,14 +121,13 @@
 
         </div>
     </main>
-
     <!-- footer.html start -->
-    <div id="footer-placeholder"></div>
     <script>
         $(function () {
             $("#footer-placeholder").load("footer.html");
         });
     </script>
+    <div id="footer-placeholder"></div>
     <!-- footer.html end -->
 </body>
 

@@ -34,10 +34,13 @@ body {}
 }
 
 #contact-button {
-
-    height: 6.5rem;
+    font-family: var(--text-header);
+    padding-bottom: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    height: 6rem;
     max-height: 15rem;
-    width: 6.5rem;
+    width: 6rem;
     max-width: 15rem;
     border-radius: 50%;
     background-color: var(--dark-brown);

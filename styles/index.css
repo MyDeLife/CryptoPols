@@ -10,7 +10,7 @@ h3.fancy {
     font-size: 1.3rem;
     font-weight: bold;
     padding: 0.5rem;
-    margin: 5% auto
+    margin: 5rem auto
 }
 
 #rec-events-fancy-header {
@@ -41,7 +41,7 @@ h3.fancy {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80vh;
+    height: 100vh;
 }
 
 .map-container {
@@ -67,24 +67,47 @@ h3.fancy {
 
 #us-avg h2 {
     text-align: center;
-    margin-bottom: 10%;
 }
 
 #congress-avg {
     font-family: var(--text-header);
-    height: 4rem;
+    height: 5rem;
     width: 60%;
-    margin: -4% auto 2% auto;
+    margin: 0% auto;
+    padding-bottom: 0.2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: var(--white);
-    font-size: 250%;
+    font-size: 3rem;
     font-style: bold;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
     border: 0.1rem solid var(--light-brown);
     border-radius: 2rem;
+    cursor: default;
+}
+
+#congress-avg:before {
+    content: attr(data-tooltip);
+    display: none;
+    position: absolute;
+    top: 19rem;
+    left: 42rem;
+    transform: translateX(-50%);
+    padding: 0.4rem;
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+    font-size: 1.3rem;
+    border: 0.1rem solid var(--dark-brown);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+    width: 25rem;
+    line-height: 1.6rem;
+}
+
+#congress-avg:hover:before {
+    display: block;
 }
 
 #us-avg .notation {
@@ -111,7 +134,7 @@ text-align: center;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin: 2% auto 7% auto;
+    margin: 0% auto;
 }
 
 .gradient-container {
@@ -132,6 +155,9 @@ text-align: center;
     border: 0.1rem solid var(--light-brown);
     border-radius: 2rem;
 }
+.map-legend {
+    margin-top: 4.5rem;
+}
 
 .map-legend .label {
     font-size: 150%;
@@ -142,7 +168,7 @@ text-align: center;
     font-size: 1.1rem;
     padding: 15% 20% 15% 20%;
     border-radius: 0.5rem;
-    color: white;
+    color: white !important;
 }
 
 .label-dems span {
@@ -155,7 +181,7 @@ text-align: center;
 
 .arrow {
     position: absolute;
-    top: -3.5rem;
+    top: -3.2rem;
     width: 2rem;
     height: 3rem;
     text-align: center;
@@ -211,8 +237,8 @@ text-align: center;
 }
 
 #chartdiv {
-    width: 75%;
-    height: 90%;
+    width: 90%;
+    height: 70%;
     pointer-events: all;
 
 }
