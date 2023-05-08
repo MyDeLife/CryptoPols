@@ -92,8 +92,8 @@ h3.fancy {
     content: attr(data-tooltip);
     display: none;
     position: absolute;
-    top: 19rem;
-    left: 42rem;
+    top: 19.5rem;
+    left: 30%;
     transform: translateX(-50%);
     padding: 0.4rem;
     background-color: var(--light-brown);
