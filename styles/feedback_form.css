@@ -26,6 +26,7 @@ body {}
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     border-radius: 1rem;
     padding: 0.5rem;
+    background-color: var(--light-brown);
     /* Add other desired styles for the pop-up */
 }
 
@@ -59,7 +60,7 @@ body {}
     cursor: pointer;
     border: 0.1rem solid var(--dark-brown);
     transition: all 0.5s;
-    background-color: transparent;
+    background-color: var(--white);
     color: var(--dark-brown)
 }
 
@@ -114,7 +115,7 @@ body {}
 .contact .right form .textarea textarea {
     height: 100%;
     width: 100%;
-    border: 0.1rem solid lightgrey;
+    border: 0.1rem solid var(--light-brown);
     border-radius: 0.5rem;
     outline: none;
     padding: 0 1.2rem;
@@ -129,7 +130,7 @@ body {}
 
 .contact .right form .field input:focus,
 .contact .right form .textarea textarea:focus {
-    border: 0.25rem solid var(--light-brown)
+    border: 0.25rem solid var(--dark-brown)
 }
 
 .contact .right form .textarea textarea {
@@ -165,7 +166,7 @@ body {}
 
 .right form .button-area button:hover {
     font-size: 1.7rem;
-    background: transparent;
+    background: var(--white);
     border: 0.25rem solid var(--light-brown);
     color: var(--dark-brown);
 }
@@ -188,7 +189,7 @@ body {}
 
 #close-button:hover {
     cursor: pointer;
-    color: var(--light-brown);
+    color: var(--white);
     transition: all 0.3s;
 }
 

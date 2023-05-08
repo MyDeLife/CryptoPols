@@ -33,7 +33,8 @@
         Tahoma,
         Geneva,
         Verdana,
-        sans-serif
+        sans-serif;
+    --text-logo-name: 'Limelight';
 }
 
 html {

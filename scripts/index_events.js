@@ -114,19 +114,23 @@ $(document).ready(function () {
             method: "GET",
             dataType: "json",
             success: function (data) {
-                let publicStatementsHtml = "";
-                let legislativeActionsHtml = "";
+                let eventsHtmlPub = "";
+                let eventsHtmlLeg = "";
+                const daysAgo185 = new Date();
+                daysAgo185.setDate(daysAgo185.getDate() - 185);
 
                 data.forEach(function (eventData) {
-                    if (eventData.engagement_cat === 'Public Statement') {
-                        publicStatementsHtml += renderEvent(eventData);
-                    } else if (eventData.engagement_cat === 'Legislative Action') {
-                        legislativeActionsHtml += renderLegislativeAction(eventData);
+                    const eventDate = new Date(eventData.date);
+                    if (eventDate >= daysAgo185) {
+                        if (eventData.engagement_cat === 'Public Statement') {
+                            eventsHtmlPub += renderEvent(eventData);
+                        } else if (eventData.engagement_cat === 'Legislative Action') {
+                            eventsHtmlLeg += renderLegislativeAction(eventData);
+                        }
                     }
                 });
-
-                $("#rec-events-data-pub").html(publicStatementsHtml);
-                $("#rec-events-data-leg").html(legislativeActionsHtml);
+                $("#rec-events-data-pub").html(eventsHtmlPub);
+                $("#rec-events-data-leg").html(eventsHtmlLeg);
             },
             error: function (error) {
                 console.error("Error fetching events:", error);

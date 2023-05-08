@@ -1,6 +1,10 @@
-* {
+*:not(#header-title h1, #header-title span) {
     font-family: var(--text-header) !important;
 
+}
+
+body {
+    background-color: var(--gray);
 }
 
 #state-main-contain {
@@ -292,7 +296,7 @@ tbody {
     border-radius: 1rem;
     color: white;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
-    border: 0.1rem solid var(--gray)
+    border: 0.1rem solid var(--light-brown)
 }
 
 [data-cfr='Strongly Pro'] .cfr-inner {

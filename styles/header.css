@@ -28,21 +28,25 @@ header {
 
 
 #header-title {
-    margin: 0.3% 0% 0% 1%;
+    margin: 1% 0% 0% 1%;
     text-align: left;
     width: 40rem;
+    
 }
 
-#header-title p {
-    margin-left: 2%
+#header-title h1,
+#header-title span
+ {
+font-family: var(--text-logo-name);
 }
+
 
 #CPlogo-header {
     margin: auto 2% auto 3%;
 }
 
 #CP-img-header {
-    height: 6rem;
+    height: 5.5rem;
 }
 
 h1 {
@@ -61,10 +65,11 @@ h1 span {
 }
 
 #header-content p:not(nav p) {
-    font-style: italic;
     font-size: 1.3rem;
     color: var(--dark-brown);
-    margin-top: -2%
+    margin-top: -3.5%;
+    margin-left: 2%;
+    font-family: var(--text-header);
 }
 
 nav {
