@@ -37,7 +37,6 @@ $.ajax({
     }
 });
 
-
 // update party ratings
 $.ajax({
     url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php", //http://cryptopols.com/db/fetch_country.php // http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php
@@ -56,15 +55,3 @@ $.ajax({
         console.error("Error:", textStatus, errorThrown);
     }
 });
-
-
-
-
-// pop-up for quote to show entire text
-
-document.querySelectorAll(".movers-quote").forEach((quote) => {
-    quote.addEventListener("click", () => {
-        alert(quote.textContent);
-    });
-});
-

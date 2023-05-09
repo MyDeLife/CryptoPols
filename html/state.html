@@ -9,23 +9,21 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/theme.blue.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/state.css">
-    <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/header.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/state.css?v=1.0.0">
+    <link rel="stylesheet" href="../styles/global.css?v=1.0.0">
+    <link rel="stylesheet" href="../styles/header.css?v=1.0.0">
 
+    <!-- EXTERNAL SCRIPTS-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"
         crossorigin="anonymous"></script>
 
-
-
-    <!-- Google tag (gtag.js) -->
+    <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -34,59 +32,38 @@
 
         gtag('config', 'G-WDQ4V9VZBT');
     </script>
-
 </head>
 
 <body class="state-body">
-    <!-- header start -->
-<header>
-    <div id="header-content">
-        <div class="logo-title">
-            <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header"
-                    src="https://github.com/MyDeLife/CryptoPols/blob/main/assets/CP%20Logo%20wo%202048.png?raw=true"></a>
-            <div id="header-title">
-                <h1>Crypto<span>Pols</span></h1>
-                <p>...monitoring crypto sentiment of US politicians in Congress</p>
+
+    <!-- HEADER-->
+    <header>
+        <div id="header-content">
+            <div class="logo-title">
+                <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header"
+                        src="https://github.com/MyDeLife/CryptoPols/blob/main/assets/CP%20Logo%20wo%202048.png?raw=true"></a>
+                <div id="header-title">
+                    <h1>Crypto<span>Pols</span></h1>
+                    <p>...monitoring crypto sentiment of US politicians in Congress</p>
+                </div>
             </div>
+
+            <nav>
+                <div class="nav-dropdown">
+                    <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
+                </div>
+                <div class="nav-dropdown">
+                    <p class="nav-bar no-cursor"><a>About</a></p>
+                    <div class="nav-dropdown-content">
+                        <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
+                        <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+                    </div>
+                </div>
+            </nav>
         </div>
+    </header>
 
-        <nav>
-            <div class="nav-dropdown">
-                <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
-            </div>
-
-            <!-- <div class="nav-dropdown">
-                <p class="nav-bar">State</p>
-                <div class="nav-dropdown-content">
-                    <a href="state1.html">State 1</a>
-                    <a href="state2.html">State 2</a>
-                    <a href="state3.html">State 3</a>
-                </div>
-            </div>
-        
-
-            <div class="nav-dropdown">
-                <p class="nav-bar no-cursor">Politician</p>
-                <div class="nav-dropdown-content">
-                </div>
-            </div>
-
-            -->
-
-            <div class="nav-dropdown">
-                <p class="nav-bar no-cursor"><a>About</a></p>
-                <div class="nav-dropdown-content">
-                    <!-- <a href="state1.html">Team</a> -->
-                    <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
-                    <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
-
-    <!-- header end -->
-
+    <!-- STATE-TABLE -->
     <main id="state-main-contain">
         <div id="state-info">
             <div id="state-header">
@@ -95,7 +72,7 @@
                     <div id="statename-div2"></div>
                 </div>
                 <p id="state-sentiment" data-tooltip="Average of all members of Congress in this state"></p>
-                <div id="state-sentiment-contain">                    
+                <div id="state-sentiment-contain">
                 </div>
             </div>
 
@@ -110,27 +87,27 @@
                             <th id="cfr" title="Crypto Favorability Rating">Crypto Sentiment</th>
                         </tr>
                     </thead>
-                    <tbody> <!-- Rows added here via state-table.js -->
+                    <tbody> <!-- rows added here via state-table.js -->
                     </tbody>
                 </table>
             </div>
-
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
-            <script src="../scripts/state-table.js"></script>
-            <script src="../scripts/state-name.js"></script>
-
-
         </div>
     </main>
-    <!-- footer.html start -->
+
+    <!-- FOOTER -->
     <script>
         $(function () {
             $("#footer-placeholder").load("footer.html");
         });
     </script>
     <div id="footer-placeholder"></div>
-    <!-- footer.html end -->
+
+    <!-- INTERNAL SCRIPTS-->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
+    <script src="../scripts/state-table.js?v=1.0.0"></script>
+    <script src="../scripts/state-name.js?v=1.0.0"></script>
+
 </body>
 
 </html>

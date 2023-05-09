@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    /*display events in public statement streamer*/
+    //display events in public statement streamer
     function renderEvent(eventData) {
         const formattedDate = formatDate(eventData.date);
         const baseURL = 'https://www.govtrack.us/static/legislator-photos/';
@@ -49,7 +49,7 @@ $(document).ready(function () {
         return eventHtml;
     }
 
-    /*display events in legislative action streamer*/
+    // display events in legislative action streamer
     function renderLegislativeAction(eventData) {
         const formattedDate = formatDate(eventData.date);
         const sealImage = eventData.office === 'sen' ? './assets/seal_senate.png' : './assets/seal_house.svg.png';
@@ -106,11 +106,10 @@ $(document).ready(function () {
         return eventHtml;
     }
 
-
-    /* fetch data from database*/
+    // fetch data from database
     function fetchEvents() {
         $.ajax({
-            url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_events.php",
+            url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_events.php", //http://cryptopols.com/db/fetch_events.php // http://localhost/dashboard/devcodes/cryptopols/db/fetch_events.php
             method: "GET",
             dataType: "json",
             success: function (data) {
@@ -138,9 +137,7 @@ $(document).ready(function () {
         });
     }
 
-
-
-    /* filter for public statement streamer */
+    // filter for public statement streamer
     function filterEventsPub() {
         const searchTerm = $("#search-input-pub").val().toLowerCase();
         $(".rec-events-cont3.pub").each(function () {
@@ -166,8 +163,7 @@ $(document).ready(function () {
 
     $("#search-input-pub").on("keyup", filterEventsPub);
 
-
-    /* filter for legislative action streamer */
+    // filter for legislative action streamer
     function filterEventsLeg() {
         const searchTerm = $("#search-input-leg").val().toLowerCase();
         $(".rec-events-cont3.leg").each(function () {
@@ -193,7 +189,7 @@ $(document).ready(function () {
 
     $("#search-input-leg").on("keyup", filterEventsLeg);
 
-    /* update date format from database to mmmm dd, yyyy */
+    // update date format from db to mmmm dd, yyyy
     function formatDate(dateString) {
         const months = [
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -206,19 +202,15 @@ $(document).ready(function () {
 
         return `${month} ${day}, ${year}`;
     }
-    /* update office format from db*/
+
+    // update office format from db
     function formatOffice(office) {
         if (office === 'sen') {
             return 'Senate';
         } else if (office === 'rep') {
             return 'House of Rep';
         } else {
-            return office; // Fallback in case an unknown value is encountered
+            return office;
         }
     }
 });
-
-
-
-
-

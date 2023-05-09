@@ -207,6 +207,7 @@ tbody {
 .party {
     width: 7%;
     text-align: center;
+    color: var(--dark-brown)
 }
 
 .party-icon {
@@ -215,7 +216,6 @@ tbody {
     border-radius: 0.3rem;
     margin-left: 35%;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
-
 }
 
 .party-Rep {
@@ -236,7 +236,7 @@ tbody {
 
 #pol-name {
     width: 20%;
-
+color: var(--dark-brown)
 }
 
 .name-link {
@@ -281,6 +281,7 @@ tbody {
 #cfr,
 #district {
     text-align: center;
+    color: var(--dark-brown)
 }
 
 .cfr {

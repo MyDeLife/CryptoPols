@@ -8,13 +8,14 @@
     <title>CryptoPols</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/index_events.css">
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/footer.css">
-    <link rel="stylesheet" href="./styles/feedback_form.css">
+    <link rel="stylesheet" href="./styles/index.css?v=1.0.0">
+    <link rel="stylesheet" href="./styles/index_events.css?v=1.0.0">
+    <link rel="stylesheet" href="./styles/global.css?v=1.0.0">
+    <link rel="stylesheet" href="./styles/header.css?v=1.0.0">
+    <link rel="stylesheet" href="./styles/footer.css?v=1.0.0">
+    <link rel="stylesheet" href="./styles/feedback_form.css?v=1.0.0">
 
+    <!-- EXTERNAL SCRIPTS-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
@@ -27,7 +28,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
     <script src="https://cdn.amcharts.com/lib/5/index.js" crossorigin="anonymous"></script>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -39,18 +40,17 @@
 
 </head>
 
-
 <body>
-    <!-- header.html start -->
+
+    <!-- HEADER -->
     <script>
         $(function () {
             $("#nav-placeholder").load("./html/header.html");
         });
     </script>
     <div id="nav-placeholder"></div>
-    <!-- header.html end -->
 
-
+    <!-- GIVE FEEDBACK -->
     <script>
         var contactLink = document.getElementById('contact-link');
 
@@ -62,11 +62,14 @@
 
     <div id="index-page">
 
+        <!-- US SENTIMENT & MAP -->
         <section id="index-middle1">
             <div class="map-container">
                 <div id="us-avg">
                     <h2>Sentiment in Congress</h2>
-                    <div id="congress-avg" data-tooltip="Average of all members of Congress in the Senate and House of Representatives"></div>
+                    <div id="congress-avg"
+                        data-tooltip="Average of all members of Congress in the Senate and House of Representatives">
+                    </div>
                 </div>
                 <div id="demrep-content">
                     <h2>Sentiment by Party</h2>
@@ -95,6 +98,7 @@
             <div id="chartdiv"></div>
         </section>
 
+        <!-- RECENT EVENTS -->
         <h3 id="rec-events-fancy-header" class="fancy">Recent Events<span id="last-6-months"></br>last 6 months</span>
         </h3>
         <section id="rec-events-sec">
@@ -113,6 +117,7 @@
                 </div>
             </div>
         </section>
+
     </div>
 
     <!--
@@ -581,7 +586,7 @@
 -->
 
 
-
+    <!-- FOOTER -->
     <script>
         $(function () {
             $("#footer-placeholder").load("./html/footer.html");
@@ -589,10 +594,11 @@
     </script>
     <div id="footer-placeholder"></div>
 
-    <script src="./scripts/state-map.js"></script>
-    <script src="./scripts/state-table.js"></script>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/index_events.js"></script>
+    <!-- INTERNAL SCRIPTS -->
+    <script src="./scripts/state-map.js?v=1.0.0"></script>
+    <script src="./scripts/state-table.js?v=1.0.0"></script>
+    <script src="./scripts/index.js?v=1.0.0"></script>
+    <script src="./scripts/index_events.js?v=1.0.0"></script>
 
 </body>
 

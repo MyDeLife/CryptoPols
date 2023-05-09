@@ -1,3 +1,4 @@
+// fetch state data
 function fetchStateName(stateAbbr) {
     console.log("Requesting state name...");
 
@@ -12,11 +13,11 @@ function fetchStateName(stateAbbr) {
                 const fullStateName = stateData.full_name;
                 setStateName(fullStateName);
 
-                // Set the state sentiment text content
+                // set the state sentiment text content
                 const stateSentimentElement = document.getElementById("state-sentiment");
                 stateSentimentElement.textContent = stateData.sentiment;
 
-                // Set the background color based on the state sentiment value
+                // set the background color based on the state sentiment value
                 const style = getComputedStyle(document.documentElement);
                 switch (stateData.sentiment) {
                     case 'Strongly Pro':
@@ -53,8 +54,7 @@ function fetchStateName(stateAbbr) {
     });
 }
 
-
-
+// set state full_name
 function setStateName(fullStateName) {
     const stateId = getQueryParam("state");
     const stateAbbr = stateId.substring(3);
@@ -68,8 +68,6 @@ function setStateName(fullStateName) {
         stateNameElement.textContent = "State: Unknown";
     }
 }
-
-
 
 function getQueryParam(param) {
     const searchParams = new URLSearchParams(window.location.search);

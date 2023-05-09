@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/header.css?v=1.0.0">
+    <link rel="stylesheet" href="../styles/global.css?v=1.0.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
+    <!--EXTERNAL SCRIPTS-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-
 </head>
 
 <header>
@@ -27,49 +27,27 @@
             </div>
         </div>
 
-        
-
+        <!-- NAVBAR -->
         <nav>
             <div class="nav-dropdown">
                 <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
             </div>
-
-            <!-- <div class="nav-dropdown">
-                <p class="nav-bar">State</p>
-                <div class="nav-dropdown-content">
-                    <a href="state1.html">State 1</a>
-                    <a href="state2.html">State 2</a>
-                    <a href="state3.html">State 3</a>
-                </div>
-            </div>
-        
-
-            <div class="nav-dropdown">
-                <p class="nav-bar no-cursor">Politician</p>
-                <div class="nav-dropdown-content">
-                </div>
-            </div>
-
-            -->
-
             <div class="nav-dropdown">
                 <p class="nav-bar no-cursor"><a>About</a></p>
                 <div class="nav-dropdown-content">
-                    <!-- <a href="state1.html">Team</a> -->
                     <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
                     <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
                 </div>
             </div>
-            <!-- contact button & contact section (must include - in all html) -->
+
+            <!-- GIVE FEEDBACK -->
             <button id="contact-button">give feedback</button>
-            
-            
             <section class="contact" id="contact">
                 <div class="close-button-area" id="close-button-area">
                     <button id="close-button" type="submit"><i class="fas fa-window-close"></i></button>
                 </div>
                 <div class="column right contact-us">
-            
+
                     <div class="text" id="contact-us-text">Give Feedback</div>
                     <form id="contactForm">
                         <div class="fields">
@@ -88,12 +66,14 @@
                         </div>
                         <div class="button-area" id="send-message-btn-area">
                             <button id="send-message-btn" type="submit">Send <i class="fas fa-paper-plane"></i></button>
-            
+
                             <div id="responseMessage" style="display:none;"></div>
                         </div>
                     </form>
                 </div>
             </section>
+
+            <!-- GIVE FEEDBACK SCRIPT -->
             <script>
                 $(document).ready(function () {
                     $('#contactForm').on('submit', function (event) {
@@ -141,7 +121,6 @@
                         enableFormFields();
                     });
 
-
                     function enableFormFields() {
                         var formElements = document.getElementById("contactForm").elements;
                         for (var i = 0; i < formElements.length; i++) {
@@ -167,7 +146,6 @@
 </header>
 
 <body>
-
 </body>
 
 </html>

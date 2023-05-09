@@ -1,4 +1,4 @@
-
+// fetch state politicians data
 $(function () {
     console.log("Requesting politicians data...");
     const state = getUrlParameter("state").substring(3);
@@ -33,20 +33,19 @@ $(function () {
             initTablesorter();
         },
 
-        error: function (jqXHR, textStatus, errorThrown) { 
+        error: function (jqXHR, textStatus, errorThrown) {
             console.log("Error:", textStatus, errorThrown);
-            console.log("Response:", jqXHR.responseText); 
+            console.log("Response:", jqXHR.responseText);
         }
     });
 });
-
 
 function getUrlParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
 }
 
-
+// set table sorting with default settings
 function initTablesorter() {
     $.tablesorter.addParser({
         id: "partySort",
@@ -82,15 +81,16 @@ function initTablesorter() {
                 sorter: "cfrSort"
             }
         },
-                sortList: [
+        sortList: [
             [2, 1], // First, sort by the Office column (index 2)
             [3, 0], // Then, sort by the District column (index 3)
         ],
     });
 
-    /* IMPORTANT: Re-introduce when releasing Politicians page:
-    /*window.openPoliticianPage = function (name) {
+    // IMPORTANT: re-introduce when releasing Politicians page:
+     /*
+    window.openPoliticianPage = function (name) {
         window.location.href = `politician.html?name=${encodeURIComponent(name)}`;
-    };*/
+    };
+    */
 }
-
