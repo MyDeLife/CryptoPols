@@ -1,4 +1,4 @@
-<img src="./assets/cp logo 128px.png">
+<img src="./assets/CP Logo 128px.png">
 
 # CryptoPols
 
@@ -91,9 +91,6 @@ This project is licensed under the MIT License. Please see the [LICENSE](LICENSE
 <br>
 ## 7. Links
 - [Website](https://cryptopols.com/)
-<br>
 - [Twitter](https://twitter.com/_cryptopols)
-<br>
 - [Indiegogo](https://www.indiegogo.com/projects/cryptopols/x/33602943#/) (funding campaign)
-<br>
 - [Email](mydelife.cryptopols@gmail.com)
