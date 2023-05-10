@@ -41,7 +41,7 @@ h3.fancy {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 65rem;
 }
 
 .map-container {
@@ -71,7 +71,7 @@ h3.fancy {
 
 #congress-avg {
     font-family: var(--text-header);
-    height: 5rem;
+    height: 4.5rem;
     width: 60%;
     margin: 0% auto;
     padding-bottom: 0.2rem;
@@ -210,7 +210,6 @@ text-align: center;
 .dems-text,
 .label-dems span {
     background-color: var(--dems);
-
 }
 
 .arrow.reps .label,
@@ -238,9 +237,9 @@ text-align: center;
 
 #chartdiv {
     width: 90%;
-    height: 70%;
+    height: 100%;
     pointer-events: all;
-
+    margin-top: -2rem
 }
 
 #chartdiv:hover {
