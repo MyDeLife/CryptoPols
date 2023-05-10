@@ -60,14 +60,32 @@ function initTablesorter() {
     });
 
     $.tablesorter.addParser({
-        id: "cfrSort",
+        id: "nameSort",
         is: function (s) {
             return false;
         },
         format: function (s, table, cell) {
-            const cfrOrder = ["Strongly Anti-Crypto", "Slightly Anti-Crypto", "Neutral", "Slightly Pro-Crypto", "Strongly Pro-Crypto"];
+            return $(cell).text().toLowerCase();
+        },
+        type: "text"
+    });
+
+    $.tablesorter.addParser({
+        id: "cfrSort",
+        is: function (s) {
+            return false;
+        },
+
+        format: function (s, table, cell) {
+            const cfrOrder = ["Strongly Anti", "Slightly Anti", "Neutral", "Slightly Pro", "Strongly Pro", "Not enough data"];
+            const cfrIndex = cfrOrder.indexOf(s);
+
+            if (cfrIndex === cfrOrder.length - 1) {
+                return "";
+            }            
             return cfrOrder.indexOf($(cell).attr("data-cfr"));
         },
+        
         type: "numeric"
     });
 
@@ -77,20 +95,23 @@ function initTablesorter() {
             0: {
                 sorter: "partySort"
             },
+            1: { // "name" column
+                sorter: "nameSort"
+            },
             4: {
                 sorter: "cfrSort"
             }
         },
         sortList: [
             [2, 1], // First, sort by the Office column (index 2)
-            [3, 0], // Then, sort by the District column (index 3)
-        ],
+            [3, 0], // Then, sort by the District column (index 3),
+        ]
     });
 
     // IMPORTANT: re-introduce when releasing Politicians page:
-     /*
-    window.openPoliticianPage = function (name) {
-        window.location.href = `politician.html?name=${encodeURIComponent(name)}`;
-    };
-    */
+    /*
+   window.openPoliticianPage = function (name) {
+       window.location.href = `politician.html?name=${encodeURIComponent(name)}`;
+   };
+   */
 }
