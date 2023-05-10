@@ -196,12 +196,17 @@ $(document).ready(function () {
             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
         ];
         const date = new Date(dateString);
-        const month = months[date.getMonth()];
-        const day = date.getDate();
-        const year = date.getFullYear();
+
+        // Add timezone offset to make the date UTC
+        const utcDate = new Date(date.getTime() + date.getTimezoneOffset() * 60000);
+
+        const month = months[utcDate.getMonth()];
+        const day = utcDate.getDate();
+        const year = utcDate.getFullYear();
 
         return `${month} ${day}, ${year}`;
     }
+
 
     // update office format from db
     function formatOffice(office) {
