@@ -22,19 +22,19 @@ body {}
     width: 40rem;
     height: 33rem;
     background-color: white;
-    z-index: 999;
+    z-index: 999999;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     border-radius: 1rem;
     padding: 0.5rem;
     background-color: var(--light-brown);
-    /* Add other desired styles for the pop-up */
+    
 }
 
 .contact.visible {
     display: block;
 }
 
-#contact-button {
+.contact-button:not(#feedback-link) {
     font-family: var(--text-header);
     padding-bottom: 0.8rem;
     font-size: 1.2rem;
@@ -56,7 +56,7 @@ body {}
     pointer-events: auto;
 }
 
-#contact-button:hover {
+.contact-button:hover {
     cursor: pointer;
     border: 0.1rem solid var(--dark-brown);
     transition: all 0.5s;
@@ -221,3 +221,4 @@ body {}
     font-weight: bold;
     margin-top: 3%;
 }
+

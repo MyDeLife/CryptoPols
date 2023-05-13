@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/header.css?v=1.0.1">
     <link rel="stylesheet" href="../styles/global.css?v=1.0.1">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.0.1">
+    <link rel="stylesheet" href="../styles/feedback_form.css?v=1.0.1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -27,8 +29,68 @@
             </div>
         </div>
 
+      <!--HAMBURGER MENU-->
+    <div id="hamburger-icon" class="hamburger-icon" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    
+    <nav id="ham-navbar" class="ham-navbar">
+        <div id="ham-menu-contain">
+            <ul>
+                <li><a href="https://cryptopols.com/" onclick="toggleMenu()">Home</a></li>
+                <hr class="ham-menu-line">
+                <li class="ham-menu-dropdown-contain">
+                    <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About <span
+                            class="fas fa-caret-down"></span>
+                    </a>
+                    <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                        <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/methodology.html"
+                            onclick="toggleMenu()">Methodology</a>
+                        <a class="ham-menu-dropdown-link" href="https://www.indiegogo.com/project/preview/02f99799#/"
+                            onclick="toggleMenu()">Support
+                            CryptoPols</a>
+                    </div>
+                </li>
+                <hr class="ham-menu-line">
+                <li><a href="#" class="contact-button" id="feedback-link">Give Feedback</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <script>
+       
+       
+
+
+        function toggleMenu() {
+            document.getElementById("ham-navbar").classList.toggle("show");
+            document.getElementById("hamburger-icon").classList.toggle("change");
+        }
+
+        function toggleDrop(event) {
+                event.stopPropagation();  // stop event propagation
+
+                var dropdown = document.getElementById("ham-menu-dropdown-about");
+                var caret = event.currentTarget.querySelector(".fas");
+
+                if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                    dropdown.style.display = "flex";
+                    caret.classList.remove("fa-caret-down");
+                    caret.classList.add("fa-caret-up");
+                } else {
+                    dropdown.style.display = "none";
+                    caret.classList.remove("fa-caret-up");
+                    caret.classList.add("fa-caret-down");
+                }
+            }
+
+    </script>
+
+
         <!-- NAVBAR -->
-        <nav>
+        <nav id="main-nav">
             <div class="nav-dropdown">
                 <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
             </div>
@@ -41,7 +103,7 @@
             </div>
 
             <!-- GIVE FEEDBACK -->
-            <button id="contact-button">give feedback</button>
+            <button class="contact-button">give feedback</button>
             <section class="contact" id="contact">
                 <div class="close-button-area" id="close-button-area">
                     <button id="close-button" type="submit"><i class="fas fa-window-close"></i></button>
@@ -72,6 +134,7 @@
                     </form>
                 </div>
             </section>
+
 
             <!-- GIVE FEEDBACK SCRIPT -->
             <script>
@@ -110,14 +173,14 @@
                         }
                     }
 
-                    $('#contact-button').on('click', function () {
+                    $('.contact-button').on('click', function () {
                         $('.contact').addClass('visible contact-form-scaled');
                         $(this).hide();
                     });
 
                     $('#close-button').on('click', function () {
                         $('.contact').removeClass('visible contact-form-scaled');
-                        $('#contact-button').show();
+                        $('.contact-button').show();
                         enableFormFields();
                     });
 
@@ -143,9 +206,13 @@
             </script>
         </nav>
     </div>
+
 </header>
 
 <body>
+
+
+
 </body>
 
 </html>

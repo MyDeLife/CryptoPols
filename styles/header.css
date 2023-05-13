@@ -31,13 +31,12 @@ header {
     margin: 1% 0% 0% 1%;
     text-align: left;
     width: 40rem;
-    
+
 }
 
 #header-title h1,
-#header-title span
- {
-font-family: var(--text-logo-name);
+#header-title span {
+    font-family: var(--text-logo-name) !important;
 }
 
 
@@ -49,13 +48,13 @@ font-family: var(--text-logo-name);
     height: 5.5rem;
 }
 
-h1 {
+#header-content h1 {
     color: var(--dark-brown);
     font-size: 3.4rem !important;
 
 }
 
-h1 span {
+#header-content h1 span {
     color: #b1a296;
     font-family: 'Segoe UI',
         Tahoma,
@@ -72,7 +71,8 @@ h1 span {
     font-family: var(--text-header);
 }
 
-nav {
+
+nav:not(.ham-navbar) {
     margin: 0 5% 0 0;
     gap: 20%;
     display: flex;
@@ -121,7 +121,7 @@ nav {
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
     z-index: 1;
     font-size: 1.2rem;
-
+    transform: translateY(-1.5rem);
     transition: opacity 0.5s ease, visibility 0.1s ease, transform 0.2s ease-in;
     right: 0;
 }
