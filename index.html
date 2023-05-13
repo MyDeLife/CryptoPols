@@ -41,86 +41,88 @@
 </head>
 
 <body>
+    <div class="body-contain">
 
-    <!-- HEADER -->
-    <script>
-        $(function () {
-            $("#nav-placeholder").load("./html/header.html");
-        });
-    </script>
-    <div id="nav-placeholder"></div>
+        <!-- HEADER -->
+        <script>
+            $(function () {
+                $("#nav-placeholder").load("./html/header.html");
+            });
+        </script>
+        <div id="nav-placeholder"></div>
 
-    <!-- GIVE FEEDBACK -->
-    <script>
-        var contactLink = document.getElementById('contact-link');
+        <!-- GIVE FEEDBACK -->
+        <script>
+            var contactLink = document.getElementById('contact-link');
 
-        contactLink.addEventListener('click', function (event) {
-            event.preventDefault();
-            document.getElementById('contact-button').click();
-        });
-    </script>
+            contactLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById('contact-button').click();
+            });
+        </script>
 
-    <div id="index-page">
+        <div id="index-page">
 
-        <!-- US SENTIMENT & MAP -->
-        <section id="index-middle1">
-            <div class="map-container">
-                <div id="us-avg">
-                    <h2>Sentiment in Congress</h2>
-                    <div id="congress-avg"
-                        data-tooltip="Average of all members of Congress in the Senate and House of Representatives">
-                    </div>
-                </div>
-                <div id="demrep-content">
-                    <h2>Sentiment by Party</h2>
-                    <div class="map-legend">
-                        <span class="label anti">Anti</span>
-                        <div class="gradient-container">
-                            <div class="gradient"></div>
-                            <div class="arrow dems">
-                                <div class="label-dems">
-                                    <span>Dems</span>
-                                    <i class="fas fa-arrow-down"></i>
-                                </div>
-                            </div>
-                            <div class="arrow reps">
-                                <div class="label-reps">
-                                    <span>Reps</span>
-                                    <i class="fas fa-arrow-down"></i>
-                                </div>
-                            </div>
+            <!-- US SENTIMENT & MAP -->
+            <section id="index-middle1">
+                <div class="map-container">
+                    <div id="us-avg">
+                        <h2>Sentiment in US Congress</h2>
+                        <div id="congress-avg"
+                            data-tooltip="Average of all members of Congress in the Senate and House of Representatives">
                         </div>
-                        <span class="label pro">Pro</span>
+                    </div>
+                    <div id="demrep-content">
+                        <h2>Sentiment by Party</h2>
+                        <div class="map-legend">
+                            <span class="label anti">Anti</span>
+                            <div class="gradient-container">
+                                <div class="gradient"></div>
+                                <div class="arrow dems">
+                                    <div class="label-dems">
+                                        <span>Dems</span>
+                                        <i class="fas fa-arrow-down"></i>
+                                    </div>
+                                </div>
+                                <div class="arrow reps">
+                                    <div class="label-reps">
+                                        <span>Reps</span>
+                                        <i class="fas fa-arrow-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="label pro">Pro</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <h3 class="fancy">US Map</h3>
-            <div id="chartdiv"></div>
-        </section>
+                <h3 class="fancy">US Map</h3>
+                <div id="chartdiv"></div>
+            </section>
 
-        <!-- RECENT EVENTS -->
-        <h3 id="rec-events-fancy-header" class="fancy">Recent Events<span id="last-6-months"></br>last 6 months</span>
-        </h3>
-        <section id="rec-events-sec">
-            <div id="rec-events-pub" class="rec-events-cont1">
-                <h2>Public Statements</h2>
-                <input type="text" id="search-input-pub" placeholder="Enter politician name..." />
-                <div class="rec-events-cont2 pub">
-                    <div id="rec-events-data-pub" class="pub"></div>
+            <!-- RECENT EVENTS -->
+            <h3 id="rec-events-fancy-header" class="fancy">Recent Events<span id="last-6-months"></br>last 6
+                    months</span>
+            </h3>
+            <section id="rec-events-sec">
+                <div id="rec-events-pub" class="rec-events-cont1">
+                    <h2>Public Statements</h2>
+                    <input type="text" id="search-input-pub" placeholder="Enter politician name..." />
+                    <div class="rec-events-cont2 pub">
+                        <div id="rec-events-data-pub" class="pub"></div>
+                    </div>
                 </div>
-            </div>
-            <div id="rec-events-leg" class="rec-events-cont1">
-                <h2>Legislative Actions</h2>
-                <input type="text" id="search-input-leg" placeholder="Enter politician name..." />
-                <div class="rec-events-cont2 leg">
-                    <div id="rec-events-data-leg" class="leg"></div>
+                <div id="rec-events-leg" class="rec-events-cont1">
+                    <h2>Legislative Actions</h2>
+                    <input type="text" id="search-input-leg" placeholder="Enter politician name..." />
+                    <div class="rec-events-cont2 leg">
+                        <div id="rec-events-data-leg" class="leg"></div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-    </div>
+        </div>
 
-    <!--
+        <!--
         <section id="index-middle2">
             <h3 class="fancy">Sentiment Moves</h3>
             <div id="cfr-trend">
@@ -586,20 +588,21 @@
 -->
 
 
-    <!-- FOOTER -->
-    <script>
-        $(function () {
-            $("#footer-placeholder").load("./html/footer.html");
-        });
-    </script>
-    <div id="footer-placeholder"></div>
+        <!-- FOOTER -->
+        <script>
+            $(function () {
+                $("#footer-placeholder").load("./html/footer.html");
+            });
+        </script>
+        <div id="footer-placeholder"></div>
 
-    <!-- INTERNAL SCRIPTS -->
-    <script src="./scripts/state-map.js?v=1.0.1"></script>
-    <script src="./scripts/state-table.js?v=1.0.1"></script>
-    <script src="./scripts/index.js?v=1.0.1"></script>
-    <script src="./scripts/index_events.js?v=1.0.1"></script>
+        <!-- INTERNAL SCRIPTS -->
+        <script src="./scripts/state-map.js?v=1.0.1"></script>
+        <script src="./scripts/state-table.js?v=1.0.1"></script>
+        <script src="./scripts/index.js?v=1.0.1"></script>
+        <script src="./scripts/index_events.js?v=1.0.1"></script>
 
+    </div>
 </body>
 
 </html>

@@ -13,14 +13,16 @@ footer {
     z-index: 100;
     background-color: var(--gray);
     border-top: 0.1rem solid var(--dark-brown);
+    align-items: center;
+    justify-content: center;
 }
 
 #footer-content {
-    width: 100vw;
+    width: 90%;
+    /* you can adjust this as needed */
+    box-sizing: border-box;
     max-width: 140rem;
-    margin: 0;
     display: flex;
-    left: 0;
     justify-content: space-between;
     color: var(--dark-brown);
 }
