@@ -15,11 +15,13 @@
     <link rel="stylesheet" href="../styles/state.css?v=1.0.1">
     <link rel="stylesheet" href="../styles/global.css?v=1.0.1">
     <link rel="stylesheet" href="../styles/header.css?v=1.0.1">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- EXTERNAL SCRIPTS-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"
         crossorigin="anonymous"></script>
 
@@ -35,79 +37,88 @@
 </head>
 
 <body class="state-body">
+    <div class="body-contain">
 
-    <!-- HEADER-->
-    <header>
-        <div id="header-content">
-            <div class="logo-title">
-                <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header"
-                        src="https://github.com/MyDeLife/CryptoPols/blob/main/assets/CP%20Logo%20wo%202048.png?raw=true"></a>
-                <div id="header-title">
-                    <h1>Crypto<span>Pols</span></h1>
-                    <p>...monitoring crypto sentiment of US politicians in Congress</p>
-                </div>
-            </div>
-
-            <nav>
-                <div class="nav-dropdown">
-                    <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
-                </div>
-                <div class="nav-dropdown">
-                    <p class="nav-bar no-cursor"><a>About</a></p>
-                    <div class="nav-dropdown-content">
-                        <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
-                        <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+        <!-- HEADER-->
+        <header>
+            <div id="header-content">
+                <div class="logo-title">
+                    <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header"
+                            src="https://github.com/MyDeLife/CryptoPols/blob/main/assets/CP%20Logo%20wo%202048.png?raw=true"></a>
+                    <div id="header-title">
+                        <h1>Crypto<span>Pols</span></h1>
+                        <p>...monitoring crypto sentiment of US politicians in Congress</p>
                     </div>
                 </div>
-            </nav>
-        </div>
-    </header>
 
-    <!-- STATE-TABLE -->
-    <main id="state-main-contain">
-        <div id="state-info">
-            <div id="state-header">
-                <h2 id="state-name"></h2>
-                <div id="statename-div1">
-                    <div id="statename-div2"></div>
+                <nav>
+                    <div class="nav-dropdown">
+                        <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
+                    </div>
+                    <div class="nav-dropdown">
+                        <p class="nav-bar no-cursor"><a>About</a></p>
+                        <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
+                            <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- STATE-TABLE -->
+        <main id="state-main-contain">
+            <div id="state-info">
+                <div id="state-info1">
+                    <div id="state-header">
+                        <h2 id="state-name"></h2>
+                        <div id="statename-div1">
+                            <div id="statename-div2"></div>
+                        </div>
+                        <p id="state-sentiment" data-tooltip="Average of all members of Congress in this state"></p>
+                        <div id="state-sentiment-contain">
+                        </div>
+                    </div>
+                    <div class="select-wrapper">
+                        <select id="state-select">
+                            <option id="dropdown-placeholder" style="color: #ffffff" value="">Select a state...</option>
+                        </select>
+                    </div>
                 </div>
-                <p id="state-sentiment" data-tooltip="Average of all members of Congress in this state"></p>
-                <div id="state-sentiment-contain">
+
+                <div id="politician-table-contain">
+                    <table id="politician-table" class="tablesorter">
+                        <thead>
+                            <tr id="politician-table">
+                                <th id="party">Party</th>
+                                <th id="pol-name">Name</th>
+                                <th id="office">Office</th>
+                                <th id="district">District</th>
+                                <th id="cfr" title="Crypto Favorability Rating">Crypto Sentiment</th>
+                            </tr>
+                        </thead>
+                        <tbody> <!-- rows added here via state-table.js -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
+        </main>
 
-            <div id="politician-table-contain">
-                <table id="politician-table" class="tablesorter">
-                    <thead>
-                        <tr id="politician-table">
-                            <th id="party">Party</th>
-                            <th id="pol-name">Name</th>
-                            <th id="office">Office</th>
-                            <th id="district">District</th>
-                            <th id="cfr" title="Crypto Favorability Rating">Crypto Sentiment</th>
-                        </tr>
-                    </thead>
-                    <tbody> <!-- rows added here via state-table.js -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </main>
+        <!-- FOOTER -->
+        <script>
+            $(function () {
+                $("#footer-placeholder").load("footer.html");
+            });
+        </script>
+        <div id="footer-placeholder"></div>
 
-    <!-- FOOTER -->
-    <script>
-        $(function () {
-            $("#footer-placeholder").load("footer.html");
-        });
-    </script>
-    <div id="footer-placeholder"></div>
+        <!-- INTERNAL SCRIPTS-->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
+        <script src="../scripts/state-table.js?v=1.0.1"></script>
+        <script src="../scripts/state-name.js?v=1.0.1"></script>
 
-    <!-- INTERNAL SCRIPTS-->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
-    <script src="../scripts/state-table.js?v=1.0.1"></script>
-    <script src="../scripts/state-name.js?v=1.0.1"></script>
-
+    </div>
 </body>
 
 </html>

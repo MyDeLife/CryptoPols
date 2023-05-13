@@ -19,6 +19,12 @@ body {
     align-items: center;
 }
 
+#state-info1 {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
 #state-header {
     width: 80%;
     display: flex;
@@ -80,7 +86,7 @@ body {
     border-radius: 1rem;
     position: relative;
     cursor: default;
-    
+
 }
 
 #state-sentiment:before {
@@ -136,6 +142,50 @@ body {
     max-height: calc(100% - 6rem);
     /* adjust the max-height value as needed */
 }
+
+/* STATE DROPDOWN*/
+.select-wrapper {
+    margin: 1rem 0.3rem 0 0;
+}
+
+#dropdown-placeholder {
+    color: var(--dark-brown) !important;
+}
+
+.select2-dropdown {
+    width: 18rem !important;
+}
+
+
+.select2-container--default .select2-selection--single {
+    border: 0.1rem solid var(--GRAY) !important;
+    -webkit-box-shadow: 10px 10px 25px 0px #000000;
+    box-shadow: 3px 5px 5px 0px #000000;
+    width: 18rem !important;
+    font-size: 1.4rem;
+    color: var(--dark-brown) !important;
+ }
+
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: var(--dark-brown) !important;
+}
+
+.select2-results__options {
+    font-size: 1.4rem;
+    max-height: 2rem;
+    overflow-y: auto;
+    color: var(--dark-brown);
+    font-family: var(--text-header) !important;
+}
+
+.select2-results__option--highlighted {
+    background-color: var(--light-brown) !important;
+    color: var(--dark-brown) !important;
+}
+
+
+/*POLITICIANS TABLE*/
 
 .tablesorter {
     width: 100%;
@@ -236,7 +286,7 @@ tbody {
 
 #pol-name {
     width: 20%;
-color: var(--dark-brown)
+    color: var(--dark-brown)
 }
 
 .name-link {
@@ -255,6 +305,14 @@ color: var(--dark-brown)
     margin-right: 4%;
     font-size: 1rem;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: var(--text-header);
+    font-weight: bold;
+    line-height: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--light-brown);
 }
 
 .table-img-name {
