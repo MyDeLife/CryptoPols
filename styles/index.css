@@ -67,6 +67,7 @@ h3.fancy {
 
 #us-avg h2 {
     text-align: center;
+    text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 #congress-avg {
@@ -126,6 +127,7 @@ h3.fancy {
 
 #demrep-content h2 {
 text-align: center;
+text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .map-legend {
