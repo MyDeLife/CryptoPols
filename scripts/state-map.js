@@ -49,10 +49,14 @@ am5.ready(function () {
         return getColorBySentiment(target.dataItem.dataContext.sentiment);
     });
 
-    polygonSeries.mapPolygons.template.events.on("pointerup", function (ev) {
-        var stateId = ev.target.dataItem.dataContext.id;
-        window.location.href = './html/state.html?state=' + stateId;
-    });
+    if (!window.matchMedia("(max-width: 768px)").matches) {
+        // screen width is larger than 768px
+        polygonSeries.mapPolygons.template.events.on("pointerup", function (ev) {
+            var stateId = ev.target.dataItem.dataContext.id;
+            window.location.href = './html/state.html?state=' + stateId;
+        });
+    }
+
 
     $.ajax({
         url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_states.php", //http://cryptopols.com/db/fetch_states.php //http://localhost/dashboard/devcodes/cryptopols/db/fetch_states.php

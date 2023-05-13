@@ -9,16 +9,23 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/index.css?v=1.0.1">
+    <link rel="stylesheet" href="./styles/index_mobile.css?v=1.0.1">
     <link rel="stylesheet" href="./styles/index_events.css?v=1.0.1">
+    <link rel="stylesheet" href="./styles/index_events_mobile.css?v=1.0.1">
     <link rel="stylesheet" href="./styles/global.css?v=1.0.1">
+    <link rel="stylesheet" href="./styles/global_mobile.css?v=1.0.1">
     <link rel="stylesheet" href="./styles/header.css?v=1.0.1">
+    <link rel="stylesheet" href="./styles/header_mobile.css?v=1.0.1">
     <link rel="stylesheet" href="./styles/footer.css?v=1.0.1">
+    <link rel="stylesheet" href="./styles/footer_mobile.css?v=1.0.1">
     <link rel="stylesheet" href="./styles/feedback_form.css?v=1.0.1">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- EXTERNAL SCRIPTS-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"
         crossorigin="anonymous"></script>
 
@@ -57,7 +64,7 @@
 
             contactLink.addEventListener('click', function (event) {
                 event.preventDefault();
-                document.getElementById('contact-button').click();
+                document.getElementsByClassName('contact-button').click();
             });
         </script>
 
@@ -97,6 +104,11 @@
                 </div>
                 <h3 class="fancy">US Map</h3>
                 <div id="chartdiv"></div>
+                <div class="select-wrapper">
+                    <select id="state-select">
+                        <option id="dropdown-placeholder" value="">Select a state...</option>
+                    </select>
+                </div>
             </section>
 
             <!-- RECENT EVENTS -->
@@ -598,7 +610,7 @@
 
         <!-- INTERNAL SCRIPTS -->
         <script src="./scripts/state-map.js?v=1.0.1"></script>
-        <script src="./scripts/state-table.js?v=1.0.1"></script>
+        <script src="./scripts/index_state_dd.js?v=1.0.1"></script>
         <script src="./scripts/index.js?v=1.0.1"></script>
         <script src="./scripts/index_events.js?v=1.0.1"></script>
 
