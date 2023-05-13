@@ -1,0 +1,393 @@
+@media (max-width: 768px) {
+
+    /* general styles - applicable to both public & legislative */
+
+    * {
+        /border: 1px solid black
+    }
+
+    .divider {
+        height: 0.6rem;
+        background: linear-gradient(var(--light-brown) 20%, var(--dark-brown) 50%, var(--light-brown) 80%);
+    }
+
+
+    #rec-events-sec {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8%;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .rec-events-cont1 {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rec-events-cont1 h2 {
+        text-align: center;
+        margin: 0 0 0.5rem 0;
+        color: var(--dark-brown);
+        font-size: 2.7rem;
+        text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    #search-input-pub,
+    #search-input-leg {
+        font-family: var(--text-header);
+        width: 18rem;
+        margin: 0.5rem 0 2rem 0;
+        border-radius: 0.5rem;
+    }
+
+    .rec-events-cont2 {
+        height: 50rem;
+        width: 100%;
+        margin: 0rem auto 6rem auto;
+        background-color: var(--gray);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        /*border-right: 1rem solid var(--gray);*/
+        border-top: 2rem solid var(--light-brown);
+        border-bottom: 2rem solid var(--light-brown);
+        /*border-radius: 2%;*/
+        color: var(--dark-brown);
+    }
+
+    .rec-events-cont3 {
+        margin: 3rem 0rem 3rem 0rem;
+        display: flex;
+        flex-direction: column;
+        /*border-bottom: 1px solid var(--dark-brown);*/
+    }
+
+    .rec-events-text:not(#rec-event-quote) {
+        font-family: var(--text-header);
+    }
+
+    .rec-events-div1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .rec-events-div2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0rem 0rem 1rem 0rem;
+        padding-bottom: 1%;
+        border-bottom: 1px solid var(--light-brown);
+    }
+
+    .rec-event-pol-party-color {
+        width: 0.6rem;
+        border-radius: 1rem;
+        padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+        margin-bottom: 0.3rem;
+        height: 100%;
+    }
+
+    [data-party='Democrat'].rec-event-pol-party-color {
+        background-color: var(--dems);
+    }
+
+    [data-party='Republican'].rec-event-pol-party-color {
+        background-color: var(--reps);
+    }
+
+    [data-party='Independent'].rec-event-pol-party-color {
+        background-color: var(--inds);
+    }
+
+    [data-party='Green'].rec-event-pol-party-color {
+        background-color: var(--grns);
+    }
+
+
+    .rec-event-pol-name {
+        font-size: 1.6rem;
+        margin-bottom: 2%;
+    }
+
+    .rec-event-pol-office {
+        font-size: 1.2rem;
+    }
+
+    .rec-event-pol-office a {
+        color: blue;
+        text-decoration: none;
+        font-family: var(--text-header);
+    }
+
+    .rec-event-act {
+        font-size: 1.2rem;
+    }
+
+
+    .rec-events-div3 {
+        display: flex;
+        margin: 0rem 0 0.5rem 0;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--light-brown);
+    }
+
+    .rec-event-quote {
+        margin-left: 1rem;
+        font-size: 1.3rem;
+        font-style: italic;
+        text-align: left;
+    }
+
+    .rec-events-div4 {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 0.5rem;
+    }
+
+    .rec-events-div4-1 {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 0.5rem;
+        width: 65%;
+    }
+
+
+
+    .rec-event-sentiment-label {
+        margin: 0rem 0.4rem 0 1.2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: bold;
+        font-family: var(--text-header);
+        font-size: 1.4rem;
+    }
+
+    .rec-event-sentiment {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        width: 10rem;
+        border-radius: 1rem;
+        border: 0.1rem solid var(--light-brown);
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        font-size: 1.3rem;
+        font-family: var(--text-header);
+        padding: 0.8% 0% 1.5% 0%;
+    }
+
+    [data-sentiment='Strongly Pro'].rec-event-sentiment {
+        background-color: var(--strongly-pro);
+    }
+
+    [data-sentiment='Slightly Pro'].rec-event-sentiment {
+        background-color: var(--slightly-pro);
+    }
+
+    [data-sentiment='Neutral'].rec-event-sentiment {
+        background-color: var(--neutral);
+    }
+
+    [data-sentiment='Slightly Anti'].rec-event-sentiment {
+        background-color: var(--slightly-anti);
+    }
+
+    [data-sentiment='Strongly Anti'].rec-event-sentiment {
+        background-color: var(--strongly-anti);
+    }
+
+    [data-sentiment='Not enough data'].rec-event-sentiment {
+        background-color: var(--not-enough-data);
+    }
+
+    .rec-event-src-logo {
+        font-size: 1.6rem;
+        margin-right: 2%;
+
+    }
+
+    .rec-event-link {
+        margin-right: 3%;
+        margin-bottom: 3%
+    }
+
+
+    .rec-event-link a {
+        color: blue;
+        text-decoration: underline;
+        font-size: 1.2rem;
+        font-family: var(--text-header);
+
+    }
+
+
+
+    /* public statement */
+
+    .rec-events-div2-1.pub {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .rec-events-div2-1-1.pub {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .rec-event-pol-party.pub {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 0.5rem;
+        margin-top: 1%;
+        height: 95%;
+    }
+
+    .rec-event-pol-image-div.pub {
+        margin-top: 1%;
+        margin-right: 1rem;
+    }
+
+    .rec-event-pol-image.pub {
+        height: 5rem;
+        border-radius: 10%;
+    }
+
+    .rec-events-div2-1.pub {
+        padding: 0% 0% 0% 1%;
+    }
+
+    .rec-events-div2-1-2.pub {
+        text-align: left;
+        width: 100%;
+        padding: 0% 0% 1.0% 0%;
+    }
+
+    .rec-events-div2-1-2.pub,
+    .rec-events-div2-2.pub {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .rec-events-div2-2.pub {
+        text-align: right;
+        padding: 0.7% 1% 1.0% 0%;
+    }
+
+    .rec-events-div4-2.pub {
+        display: flex;
+        align-items: flex-start;
+        justify-content: right;
+        flex-direction: row;
+        width: 50%;
+        margin-top: 0.5rem;
+    }
+
+    .rec-event-date.pub {
+        font-size: 1.3rem;
+        margin-bottom: 6.5%;
+    }
+
+
+
+    /* legislative action */
+
+    .rec-events-div2-3.leg {
+        width: 20%;
+        margin: 0% 1% 0% 1%;
+    }
+
+    .rec-event-seal.leg {
+        height: 5rem;
+    }
+
+    .rec-events-div2-1.leg {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .rec-events-div2-1-2.leg {
+        text-align: right;
+        width: 100%;
+        padding: 0% 0% 1.0% 0%;
+    }
+
+    .rec-events-div2-1-1.leg {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .rec-event-pol-image-div.leg {
+        margin-top: 1%;
+        margin-left: 1rem;
+        margin-right: 0.5rem;
+    }
+
+    .rec-event-pol-image.leg {
+        height: 5rem;
+        border-radius: 10%;
+    }
+
+    .rec-event-pol-party.leg {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 0.5rem;
+        margin-top: 1%;
+        height: 95%;
+    }
+
+
+    .rec-events-div3-1.leg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0% 0% 0% 1%;
+        min-width: 20%;
+        border-right: 1px solid var(--light-brown)
+    }
+
+    .rec-event-act.leg {
+        font-size: 1.6rem;
+        margin-bottom: 10%;
+        line-height: 1.9rem;
+    }
+
+    .rec-events-div4-1.leg {
+        display: flex;
+        justify-content: flex-end;
+        right: 0;
+        padding-right: 3%;
+    }
+
+    .rec-events-div4-2.leg {
+        display: flex;
+        align-items: flex-start;
+        justify-content: left;
+        flex-direction: row;
+        margin: 0.3rem 0rem 0 0.5rem;
+    }
+
+
+
+    .rec-event-date.leg {
+        font-size: 1.2rem;
+    }
+
+}

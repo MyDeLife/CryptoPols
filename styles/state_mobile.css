@@ -1,0 +1,389 @@
+@media (max-width: 768px) {
+
+
+
+    *:not(#header-title h1, #header-title span) {
+        font-family: var(--text-header) !important;
+
+    }
+
+    body {
+        background-color: var(--gray);
+    }
+
+    #state-main-contain {
+        margin: 0 auto;
+    }
+
+    #state-info {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        max-width: 120rem;
+        align-items: center;
+    }
+
+    #state-info1 {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+    }
+
+    #state-header {
+        width: 80%;
+        display: flex;
+        margin-bottom: 2%;
+    }
+
+    #state-name {
+        font-size: 3.3rem;
+        margin: 0;
+        margin-left: 1%;
+        text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    #statename-div2 {
+        height: 70%;
+    }
+
+    #statename-div2 {
+        background-color: var(--dark-brown);
+        border-radius: 1.5rem;
+        margin: 0.6rem 2rem 0 2rem;
+        width: 0.3rem;
+    }
+
+    #state-info {
+        padding-top: 10rem;
+
+    }
+
+    #state-sentiment-contain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        margin: 0 0 0 1%;
+    }
+
+    #state-sentiment-label {
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
+
+    #state-sentiment {
+        height: 2.6rem;
+        width: 18rem;
+        margin: auto 0;
+        padding-bottom: 0.2rem;
+        font-size: 1.7rem !important;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--white);
+        font-size: 250%;
+        font-style: bold;
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        border: 0.1rem solid var(--light-brown);
+        border-radius: 1rem;
+        position: relative;
+        cursor: default;
+
+    }
+
+    #state-sentiment:before {
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        left: 29rem;
+        transform: translateX(-50%);
+        padding: 0.4rem;
+        background-color: var(--light-brown);
+        color: var(--dark-brown);
+        font-size: 1.3rem;
+        border: 0.1rem solid var(--dark-brown);
+        border-radius: 0.5rem;
+        box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+        width: 18rem;
+        line-height: 1.6rem;
+        font-weight: normal;
+    }
+
+    #state-sentiment:hover:before {
+        display: block;
+    }
+
+    #state-main-contain {
+        /* height: calc(100% - 5rem);
+    overflow: hidden; */
+
+    }
+
+    #politician-table-contain {
+        height: inherit;
+        max-height: 70vh;
+        width: 80%;
+        margin: 0 auto;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        /* For smooth scrolling on iOS devices */
+        background-color: var(--not-enough-data);
+        border: 0.2rem solid transparent;
+        border-bottom: 0.3rem solid transparent;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    #politician-table {
+        width: 100%;
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        text-align: left;
+        line-height: 2rem;
+        border-radius: 0.5rem;
+        overflow: auto;
+        max-height: calc(100% - 6rem);
+        /* adjust the max-height value as needed */
+    }
+
+    /* STATE DROPDOWN*/
+    .select-wrapper {
+        margin: 1rem 0.3rem 0 0;
+    }
+
+    #dropdown-placeholder {
+        color: var(--dark-brown) !important;
+    }
+
+    .select2-dropdown {
+        width: 18rem !important;
+    }
+
+
+    .select2-container--default .select2-selection--single {
+        border: 0.1rem solid var(--GRAY) !important;
+        -webkit-box-shadow: 10px 10px 25px 0px #000000;
+        box-shadow: 3px 5px 5px 0px #000000;
+        width: 18rem !important;
+        font-size: 1.4rem;
+        color: var(--dark-brown) !important;
+    }
+
+
+    .select2-container--default .select2-selection--single .select2-selection__placeholder {
+        color: var(--dark-brown) !important;
+    }
+
+    .select2-results__options {
+        font-size: 1.4rem;
+        max-height: 2rem;
+        overflow-y: auto;
+        color: var(--dark-brown);
+        font-family: var(--text-header) !important;
+    }
+
+    .select2-results__option--highlighted {
+        background-color: var(--light-brown) !important;
+        color: var(--dark-brown) !important;
+    }
+
+
+    /*POLITICIANS TABLE*/
+
+    .tablesorter {
+        width: 100%;
+    }
+
+    thead {
+        height: 3rem;
+    }
+
+    tbody {
+        font-size: 1.4rem;
+
+    }
+
+    .tablesorter th {
+        cursor: pointer;
+        font-size: 1.5rem;
+        position: sticky;
+        top: 0;
+        background-color: var(--light-brown);
+        z-index: 10;
+    }
+
+    .tablesorter td,
+    .tablesorter th,
+    .cfr-inner {
+        padding: 0.5rem;
+    }
+
+    .tablesorter-header .header-arrow {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.6em;
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .tablesorter-header .header-arrow-up {
+        color: var(--dark-brown);
+        margin-top: -0.6rem;
+        margin-right: 0.5rem;
+    }
+
+    .tablesorter-headerAsc .header-arrow-up {
+        color: var(--white);
+    }
+
+    .tablesorter-header .header-arrow-down {
+        color: var(--dark-brown);
+        margin-top: 0.6rem;
+        margin-right: 0.5rem;
+    }
+
+    .tablesorter-headerDesc .header-arrow-down {
+        color: var(--white);
+    }
+
+    .tablesorter tr:nth-child(odd) {
+        background-color: var(--white);
+    }
+
+    .tablesorter tr:nth-child(even) {
+        background-color: var(--gray);
+    }
+
+    #party,
+    .party {
+        width: 7%;
+        text-align: center;
+        color: var(--dark-brown)
+    }
+
+    .party-icon {
+        width: 30%;
+        height: 1.5rem;
+        border-radius: 0.3rem;
+        margin-left: 35%;
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    .party-Rep {
+        background-color: var(--reps);
+    }
+
+    .party-Dem {
+        background-color: var(--dems);
+    }
+
+    .party-Ind {
+        background-color: yellow;
+    }
+
+    .party-Grn {
+        background-color: green;
+    }
+
+    #pol-name {
+        width: 20%;
+        color: var(--dark-brown)
+    }
+
+    .name-link {
+        /* reintroduce when release Politicians page:
+        cursor: pointer; */
+        display: flex;
+        align-items: center;
+        width: 100%;
+        color: var(--dark-brown)
+    }
+
+    .table-profile-img {
+        height: 3.8rem;
+        width: 3.2rem;
+        border-radius: 0.5rem;
+        margin-right: 4%;
+        font-size: 1rem;
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        text-align: center;
+        font-family: var(--text-header);
+        font-weight: bold;
+        line-height: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--light-brown);
+    }
+
+    .table-img-name {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #district,
+    .district {
+        width: 7%;
+        text-align: center;
+        color: var(--dark-brown)
+    }
+
+
+    #office,
+    .office {
+        width: 9%;
+        text-align: center;
+        color: var(--dark-brown)
+    }
+
+    #cfr,
+    #district {
+        text-align: center;
+        color: var(--dark-brown)
+    }
+
+    .cfr {
+        text-align: center;
+        width: 20%;
+        max-height: 80%;
+        padding: 0.5% 0% 0.5% 0%;
+    }
+
+    .cfr-inner {
+        display: inline-block;
+        width: 70%;
+        border-radius: 1rem;
+        color: white;
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        border: 0.1rem solid var(--light-brown)
+    }
+
+    [data-cfr='Strongly Pro'] .cfr-inner {
+        background-color: var(--strongly-pro);
+    }
+
+    [data-cfr='Slightly Pro'] .cfr-inner {
+        background-color: var(--slightly-pro);
+    }
+
+    [data-cfr='Neutral'] .cfr-inner {
+        background-color: var(--neutral);
+    }
+
+    [data-cfr='Slightly Anti'] .cfr-inner {
+        background-color: var(--slightly-anti);
+    }
+
+    [data-cfr='Strongly Anti'] .cfr-inner {
+        background-color: var(--strongly-anti);
+    }
+
+    [data-cfr='Not enough data'] .cfr-inner {
+        background-color: var(--not-enough-data);
+    }
+
+}

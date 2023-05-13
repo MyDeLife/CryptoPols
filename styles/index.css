@@ -249,6 +249,52 @@ text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 
+/* STATE DROPDOWN*/
+.select-wrapper {
+    margin: 4rem 0rem 2rem 0;
+    font-family: var(--text-header) !important;
+}
+
+#dropdown-placeholder {
+    color: var(--dark-brown) !important;
+    font-family: var(--text-header) !important;
+}
+
+.select2-dropdown {
+    width: 25rem;
+    font-family: var(--text-header) !important;
+
+}
+
+
+.select2-container--default .select2-selection--single {
+    border: 0.1rem solid var(--GRAY) !important;
+    -webkit-box-shadow: 10px 10px 25px 0px #000000;
+    box-shadow: 3px 5px 5px 0px #000000;
+    width: 25rem;
+    font-size: 1.4rem;
+    color: var(--dark-brown) !important;
+    text-align: center !important;
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: var(--dark-brown) !important;
+}
+
+.select2-results__options {
+    font-size: 1.4rem;
+    max-height: 2rem;
+    overflow-y: auto;
+    color: var(--dark-brown);
+    font-family: var(--text-header) !important;
+    text-align: center;
+}
+
+.select2-results__option--highlighted {
+    background-color: var(--light-brown) !important;
+    color: var(--dark-brown) !important;
+}
 
 #index-middle2 {
     margin: 5% auto 0 auto;

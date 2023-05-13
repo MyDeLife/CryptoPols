@@ -1,0 +1,153 @@
+@media (max-width: 768px) {
+
+    * {
+        font-family: var(--text-header);
+    }
+
+    :root {
+        --black: black;
+        --white: white;
+        --not-enough-data: #c0c0c0;
+        /* rgba(117, 117, 117) */
+        --gray: rgb(244, 244, 244);
+        --blue: rgb(48, 110, 180);
+        --dark-brown: #51372e;
+        /* --dark-brown: #51372e; */
+        --light-brown: #d4c7bd;
+        /* --light-brown: #d4c7bd;*/
+        --strongly-pro: #F2a900;
+        /* rgba(242, 169, 0) */
+        --slightly-pro: #be7b15;
+        /* rgba(208, 135, 27)*/
+        --neutral: #9D5444;
+        /* rgba(157, 84, 68) */
+        --slightly-anti: #8a3d8d;
+        /* rgba(106, 33, 108 */
+        --strongly-anti: #480088;
+        /* rgba(72, 0, 136) */
+        --dems: #00AEF3;
+        --reps: #E81B23;
+        --inds: #f2e20d;
+        --grns: #00bf06;
+        --text-body: Georgia,
+            'Times New Roman',
+            Times,
+            serif;
+        --text-header: 'Segoe UI',
+            Tahoma,
+            Geneva,
+            Verdana,
+            sans-serif;
+        --text-logo-name: 'Limelight';
+    }
+
+    html {
+        font-size: 62.5%;
+
+    }
+
+    body {
+        position: relative;
+        /* ensures that the footer does not overlap with the main content of each page */
+        min-height: 100vh;
+        /* ensures that the footer does not overlap with the main content of each page */
+        width: 100vw;
+        overflow-x: hidden;
+        margin: 0;
+    }
+
+    .body-contain {
+        width: 100%;
+        max-width: 140rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    nav p,
+    .nav-bar a,
+    .label-dems span,
+    .label-reps span,
+    .text-legend {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--dark-brown)
+    }
+
+    h1 {
+        font-size: 2.7rem;
+        margin: 0 auto 2% auto;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+    }
+
+    h3 {
+        font-size: 1.9rem
+    }
+
+    p {
+        font-size: 1.6rem;
+        margin: 0 auto 1.5% auto;
+        line-height: 2.2rem;
+        color: var(--dark-brown)
+    }
+
+    li {
+        color: var(--dark-brown)
+    }
+
+    .fancy {
+        --b: 0.4rem;
+        /* control the border thickness */
+        --w: 500rem;
+        /* control the width of the line*/
+        --g: 1.8rem;
+        /* control the gap */
+        --c: var(--light-brown);
+        display: flex;
+        margin: auto;
+        padding: 0.3rem;
+        justify-content: center;
+        width: 12rem;
+        text-align: center;
+        border: 1px solid;
+        color: var(--dark-brown);
+        background:
+            conic-gradient(from 45deg at left, var(--c) 25%, #0000 0) 0,
+            conic-gradient(from -135deg at right, var(--c) 25%, #0000 0) 100%;
+        background-size: 51% 100%;
+        background-origin: border-box;
+        background-repeat: no-repeat;
+        border-image:
+            linear-gradient(#0000 calc(50% - var(--b)/2),
+                var(--c) 0 calc(50% + var(--b)/2),
+                #0000 0) 1/0 var(--w)/calc(var(--w) + var(--g));
+    }
+
+
+
+
+    html::-webkit-scrollbar-track,
+    div::-webkit-scrollbar-track {
+        background: var(--white);
+
+    }
+
+    html::-webkit-scrollbar-thumb,
+    div::-webkit-scrollbar-thumb {
+        background: var(--light-brown);
+        border-radius: 0.5rem;
+    }
+
+    div::-webkit-scrollbar {
+        width: 0.8rem;
+    }
+
+    html::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+}

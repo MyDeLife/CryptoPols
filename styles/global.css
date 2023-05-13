@@ -1,5 +1,5 @@
 * {
-    font-family: var(--text-body)
+    font-family: var(--text-header)
 }
 
 :root {
@@ -9,8 +9,10 @@
     /* rgba(117, 117, 117) */
     --gray: rgb(244, 244, 244);
     --blue: rgb(48, 110, 180);
-    --dark-brown: #51372e; /* --dark-brown: #51372e; */
-    --light-brown: #d4c7bd; /* --light-brown: #d4c7bd;*/
+    --dark-brown: #51372e;
+    /* --dark-brown: #51372e; */
+    --light-brown: #d4c7bd;
+    /* --light-brown: #d4c7bd;*/
     --strongly-pro: #F2a900;
     /* rgba(242, 169, 0) */
     --slightly-pro: #be7b15;
@@ -53,9 +55,9 @@ body {
 }
 
 .body-contain {
-        width: 100%;
-            max-width: 140rem;
-            margin: 0 auto;
+    width: 100%;
+    max-width: 140rem;
+    margin: 0 auto;
 }
 
 
@@ -147,4 +149,3 @@ div::-webkit-scrollbar {
 html::-webkit-scrollbar {
     width: 1rem;
 }
-
