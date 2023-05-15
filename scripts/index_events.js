@@ -52,7 +52,7 @@ $(document).ready(function () {
     // display events in legislative action streamer
     function renderLegislativeAction(eventData) {
         const formattedDate = formatDate(eventData.date);
-        const sealImage = eventData.office === 'sen' ? './assets/seal_senate.png' : './assets/seal_house.svg.png';
+        const sealImage = eventData.office === 'sen' ? 'https://cryptopols.com/assets/seal_senate.png' : 'https://cryptopols.com/assets/seal_house.svg.png';
         const baseURL = 'https://www.govtrack.us/static/legislator-photos/';
         const imageURL = `${baseURL}${eventData.gov_track}-200px.jpeg`;
 
@@ -109,7 +109,7 @@ $(document).ready(function () {
     // fetch data from database
     function fetchEvents() {
         $.ajax({
-            url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_events.php", //http://cryptopols.com/db/fetch_events.php // http://localhost/dashboard/devcodes/cryptopols/db/fetch_events.php
+            url: "https://cryptopols.com/db/fetch_events.php", //https://cryptopols.com/db/fetch_events.php // http://localhost/dashboard/devcodes/cryptopols/db/fetch_events.php
             method: "GET",
             dataType: "json",
             success: function (data) {

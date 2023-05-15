@@ -1,6 +1,6 @@
 // update congress average sentiment
 $.ajax({
-    url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php", //http://cryptopols.com/db/fetch_country.php // http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php
+    url: "https://cryptopols.com/db/fetch_country.php", //https://cryptopols.com/db/fetch_country.php // http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php
     dataType: "json",
     success: function (data) {
         const divElement = document.getElementById('congress-avg');
@@ -39,7 +39,7 @@ $.ajax({
 
 // update party ratings
 $.ajax({
-    url: "http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php", //http://cryptopols.com/db/fetch_country.php // http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php
+    url: "https://cryptopols.com/db/fetch_country.php", //https://cryptopols.com/db/fetch_country.php // http://localhost/dashboard/devcodes/cryptopols/db/fetch_country.php
     dataType: "json",
     success: function (data) {
         const demsArrow = document.querySelector('.arrow.dems');

@@ -3,7 +3,7 @@ function fetchStateName(stateAbbr) {
     console.log("Requesting state name...");
 
     $.ajax({
-        url: "http://localhost/dashboard/devcodes/CryptoPols/db/fetch_states.php", // http://cryptopols.com/db/fetch_states.php // http://localhost/dashboard/devcodes/CryptoPols/db/fetch_states.php
+        url: "https://cryptopols.com/db/fetch_states.php", // https://cryptopols.com/db/fetch_states.php // http://localhost/dashboard/devcodes/CryptoPols/db/fetch_states.php
         dataType: "json",
         success: function (states) {
             console.log("States Data:", states);

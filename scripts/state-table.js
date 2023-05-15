@@ -3,7 +3,7 @@ function fetchPoliticiansData(state) {
     console.log("Requesting politicians data...");
 
     $.ajax({
-        url: "http://localhost/dashboard/devcodes/CryptoPols/db/fetch_politicians.php", //http://cryptopols.com/db/fetch_politicians.php //http://localhost/dashboard/devcodes/CryptoPols/db/fetch_politicians.php
+        url: "https://cryptopols.com/db/fetch_politicians.php", //https://cryptopols.com/db/fetch_politicians.php //http://localhost/dashboard/devcodes/CryptoPols/db/fetch_politicians.php
         dataType: "json",
         data: { state: state },
         success: function (politicians) {
@@ -21,11 +21,11 @@ function fetchPoliticiansData(state) {
                 row.append(`<td class="party" data-party="${politician.party}"><div class="party-icon party-${politician.party.replace(/\s+/g, '')}" title="${politician.party}"></div></td>`);
                 row.append(`<td class="table-img-name"><span class="name-link" onclick="openPoliticianPage('${politician.name}')"><img class="table-profile-img" src="${imageURL}" alt="no photo"/> ${politician.name}</span></td>`);
 
-                row.append(`<td class="office"><span>${politician.office}</span></td>`);
-
+                row.append(`<td class="office hide-on-mobile"><span>${politician.office}</span></td>`);
+                
                 // Check if the district value is 0, if so, display an empty cell
                 const districtDisplayValue = politician.district === "0" ? "" : politician.district;
-                row.append(`<td class="district"><span>${districtDisplayValue}</span></td>`);
+                row.append(`<td class="district hide-on-mobile"><span>${districtDisplayValue}</span></td>`);
 
                 row.append(`<td class="cfr" data-cfr="${politician.cfr}"><div class="cfr-inner">${politician.cfr}</div></td>`);
                 $('#politician-table tbody').append(row);
@@ -124,10 +124,6 @@ function initTablesorter() {
    };
    */
 }
-
-
-
-
 
 $(document).ready(function () {
     const states = [
