@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/header.css?v=1.0.1">
-    <link rel="stylesheet" href="../styles/global.css?v=1.0.1">
-    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.0.1">
-    <link rel="stylesheet" href="../styles/feedback_form.css?v=1.0.1">
+    <link rel="stylesheet" href="../styles/header.css?v=1.1.0">    
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.1.0">
+    <link rel="stylesheet" href="../styles/global.css?v=1.1.0">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.1.0">
+    <link rel="stylesheet" href="../styles/feedback_form.css?v=1.1.0">
+    <link rel="stylesheet" href="../styles/feedback_form_mobile.css?v=1.1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -59,36 +61,6 @@
         </div>
     </nav>
     
-    <script>
-       
-       
-
-
-        function toggleMenu() {
-            document.getElementById("ham-navbar").classList.toggle("show");
-            document.getElementById("hamburger-icon").classList.toggle("change");
-        }
-
-        function toggleDrop(event) {
-                event.stopPropagation();  // stop event propagation
-
-                var dropdown = document.getElementById("ham-menu-dropdown-about");
-                var caret = event.currentTarget.querySelector(".fas");
-
-                if (dropdown.style.display === "none" || dropdown.style.display === "") {
-                    dropdown.style.display = "flex";
-                    caret.classList.remove("fa-caret-down");
-                    caret.classList.add("fa-caret-up");
-                } else {
-                    dropdown.style.display = "none";
-                    caret.classList.remove("fa-caret-up");
-                    caret.classList.add("fa-caret-down");
-                }
-            }
-
-    </script>
-
-
         <!-- NAVBAR -->
         <nav id="main-nav">
             <div class="nav-dropdown">
@@ -134,85 +106,14 @@
                     </form>
                 </div>
             </section>
-
-
-            <!-- GIVE FEEDBACK SCRIPT -->
-            <script>
-                $(document).ready(function () {
-                    $('#contactForm').on('submit', function (event) {
-                        event.preventDefault();
-
-                        var formData = new FormData(event.target);
-                        var request = new XMLHttpRequest();
-
-                        request.onreadystatechange = function () {
-                            if (request.readyState === 4) {
-                                var responseMessage = $('#responseMessage');
-                                if (request.status === 200) {
-                                    responseMessage.text('Email to CryptoPols sent successfully!');
-                                    disableFormFields();
-                                    document.getElementById('send-message-btn').style.display = 'none';
-                                } else {
-                                    responseMessage.text('An error occurred while sending the email. Please try again later.');
-                                    document.getElementById('send-message-btn').style.display = 'none';
-                                }
-                                responseMessage.show();
-                            }
-                        };
-
-                        request.open('POST', 'send_email.php');
-                        request.send(formData);
-                    });
-
-                    function disableFormFields() {
-                        var formElements = document.getElementById("contactForm").elements;
-                        for (var i = 0; i < formElements.length; i++) {
-                            if (formElements[i].id !== 'send-message-btn') {
-                                formElements[i].disabled = true;
-                            }
-                        }
-                    }
-
-                    $('.contact-button').on('click', function () {
-                        $('.contact').addClass('visible contact-form-scaled');
-                        $(this).hide();
-                    });
-
-                    $('#close-button').on('click', function () {
-                        $('.contact').removeClass('visible contact-form-scaled');
-                        $('.contact-button').show();
-                        enableFormFields();
-                    });
-
-                    function enableFormFields() {
-                        var formElements = document.getElementById("contactForm").elements;
-                        for (var i = 0; i < formElements.length; i++) {
-                            formElements[i].disabled = false;
-                        }
-
-                        // Reset the form
-                        var form = document.getElementById('contactForm');
-                        form.reset();
-
-                        // Hide the response message and reset its text
-                        var responseMessage = document.getElementById('responseMessage');
-                        responseMessage.style.display = 'none';
-                        responseMessage.textContent = '';
-
-                        // Show the send button
-                        document.getElementById('send-message-btn').style.display = 'block';
-                    }
-                });
-            </script>
         </nav>
     </div>
 
 </header>
 
 <body>
-
-
-
+        <!-- INTERNAL SCRIPTS -->
+        <script src="./scripts/give_feedback.js?v=1.1.0"></script>
 </body>
 
 </html>
