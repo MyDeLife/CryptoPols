@@ -1,9 +1,17 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $email = isset($_POST["email"]) ? $_POST["email"] : "";
-    $subject = $_POST["subject"];
-    $message = $_POST["message"];
+    // Check POST variables
+    $name = isset($_POST["name"]) ? $_POST["name"] : "Name not set";
+    $email = isset($_POST["email"]) ? $_POST["email"] : "Email not set";
+    $subject = isset($_POST["subject"]) ? $_POST["subject"] : "Subject not set";
+    $message = isset($_POST["message"]) ? $_POST["message"] : "Message not set";
+
+    // Print POST variables for debugging
+    echo "POST variables: <br>";
+    echo "Name: $name<br>";
+    echo "Email: $email<br>";
+    echo "Subject: $subject<br>";
+    echo "Message: $message<br>";
 
     // Replace newline characters with HTML line breaks
     $formatted_message = nl2br($message);
@@ -24,5 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "An error occurred while sending the email. Please try again later.";
     }
+} else {
+    echo "Request method is not POST.";
 }
 ?>
