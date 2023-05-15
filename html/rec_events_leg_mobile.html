@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Events - Legislative Actions</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/index_mobile.css?v=1.0.1">
+    <link rel="stylesheet" href="../styles/index_events_mobile.css?v=1.0.1">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.0.1">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- EXTERNAL SCRIPTS-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WDQ4V9VZBT');
+    </script>
+</head>
+
+<body>
+    <div class="rec-events-cont-main-mobile">
+
+        <!-- RECENT EVENTS -->
+
+        <section id="rec-events-sec-mobile">
+
+            <div id="rec-events-leg" class="rec-events-cont1-mobile">
+
+                <div class="rec-events-cont2 leg" id="rec-events-cont2-mobile">
+
+                    <h3 class="rec-events-label-mobile">Recent Events | Legislative Actions</h3>
+                    <button class="fas fa-window-close" id="rec-events-close-button"
+                        onclick="redirectToLandingPage()"></button>
+                    <input type="text" id="search-input-leg" class="search-input-mobile"
+                        placeholder="  Enter politician name..." />
+                    <div id="rec-events-data-leg" class="leg"></div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+
+    <script>
+        function redirectToLandingPage() {
+            // Redirect to the landing page
+            window.location.href = 'https://cryptopols.com/index.html#rec-events-sec';
+        }
+    </script>
+
+    <!-- INTERNAL SCRIPTS -->
+    <script src="../scripts/index.js?v=1.0.1"></script>
+    <script src="../scripts/index_events.js?v=1.0.1"></script>
+
+
+</body>
+
+</html>
+

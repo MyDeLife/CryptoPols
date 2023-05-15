@@ -15,6 +15,10 @@
     width: 100%;
 }
 
+#event-toggle1, #event-toggle2 {
+    display: none;
+}
+
 .rec-events-cont1 {
     width: 46%;
     max-width: 60rem;
@@ -378,3 +382,4 @@
 .rec-event-date.leg {
     font-size: 1.3rem;
 }
+
