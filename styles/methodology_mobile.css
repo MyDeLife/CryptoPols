@@ -8,7 +8,7 @@
     }
 
     section h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 2rem;
     }
 
@@ -27,7 +27,6 @@
     #anti-assess {
         margin-top: 5rem;
         margin-bottom: 5rem;
-
     }
 
     #anti-assess {
@@ -40,6 +39,7 @@
         color: var(--white);
         border-radius: 1rem;
         padding: 0rem 0.5rem 0.2rem 0.5rem;
+        white-space: nowrap;
     }
 
     #pro-assess span {

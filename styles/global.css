@@ -50,8 +50,9 @@ body {
     min-height: 100vh;
     /* ensures that the footer does not overlap with the main content of each page */
     width: 100vw;
-    padding: 0 0 0 0;
+    padding: 0 0 0.01% 0;
     overflow-x: hidden;
+    margin: 0;
 }
 
 .body-contain {
@@ -104,7 +105,7 @@ li {
     /* control the border thickness */
     --w: 500rem;
     /* control the width of the line*/
-    --g: 3rem;
+    --g: 1.5rem;
     /* control the gap */
     --c: var(--light-brown);
     display: flex;

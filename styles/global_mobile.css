@@ -51,7 +51,8 @@
         /* ensures that the footer does not overlap with the main content of each page */
         min-height: 100vh;
         /* ensures that the footer does not overlap with the main content of each page */
-        width: 100vw;
+        width: 100vw;       
+        padding: 0 0 0.01% 0;
         overflow-x: hidden;
         margin: 0;
     }
