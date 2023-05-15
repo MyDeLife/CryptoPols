@@ -50,7 +50,7 @@ body {
     min-height: 100vh;
     /* ensures that the footer does not overlap with the main content of each page */
     width: 100vw;
-    padding: 0 0 5% 0;
+    padding: 0 0 0 0;
     overflow-x: hidden;
 }
 

@@ -68,13 +68,12 @@ header {
     color: var(--dark-brown);
     margin-top: -3.5%;
     margin-left: 2%;
-    font-family: var(--text-header);
 }
 
 
 nav:not(.ham-navbar) {
-    margin: 0 5% 0 0;
-    gap: 20%;
+    margin: 0 0 0 0;
+    width: 30%;
     display: flex;
     align-items: center;
     color: var(--dark-brown);
@@ -131,7 +130,6 @@ nav:not(.ham-navbar) {
     padding: 0.7rem 1rem;
     text-decoration: none;
     display: block;
-    font-family: var(--text-header);
     opacity: 0;
     transform: translateY(-1.5rem);
     transition: opacity 0.3s, transform 0.3s;

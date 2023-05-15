@@ -1,5 +1,4 @@
 *:not(#header-title h1, #header-title span) {
-    font-family: var(--text-header) !important;
 
 }
 
@@ -72,14 +71,13 @@ body {
     width: 18rem;
     margin: auto 0;
     padding-bottom: 0.2rem;
-    font-size: 1.7rem !important;
+    font-size: 1.7rem;
     font-weight: bold;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: var(--white);
-    font-size: 250%;
     font-style: bold;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
     border: 0.1rem solid var(--light-brown);
@@ -176,7 +174,6 @@ body {
     max-height: 2rem;
     overflow-y: auto;
     color: var(--dark-brown);
-    font-family: var(--text-header) !important;
 }
 
 .select2-results__option--highlighted {
@@ -306,7 +303,6 @@ tbody {
     font-size: 1rem;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
     text-align: center;
-    font-family: var(--text-header);
     font-weight: bold;
     line-height: 1.2rem;
     display: flex;
