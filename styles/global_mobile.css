@@ -52,7 +52,7 @@
         min-height: 100vh;
         /* ensures that the footer does not overlap with the main content of each page */
         width: 100vw;       
-        padding: 0 0 0.01% 0;
+        padding: 0 0 0.1px 0;
         overflow-x: hidden;
         margin: 0;
     }
@@ -109,7 +109,7 @@
         /* control the gap */
         --c: var(--light-brown);
         display: flex;
-        margin: auto;
+        margin: 0 auto;
         padding: 0.3rem;
         justify-content: center;
         width: 12rem;

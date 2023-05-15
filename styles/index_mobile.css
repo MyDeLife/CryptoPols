@@ -14,7 +14,7 @@
         font-size: 1.2rem;
         font-weight: bold;
         padding: 0.4rem;
-        margin: 3rem auto
+        margin: 7rem auto 2rem auto
     }
 
     #rec-events-fancy-header {
@@ -22,6 +22,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-bottom: 5rem;
     }
 
     #last-6-months {
@@ -45,7 +46,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 65rem;
+        height: 80rem;
     }
 
     .map-container {
@@ -246,10 +247,10 @@
     }
 
     #chartdiv {
-        width: 90%;
-        height: 40%;
+        width: 70%;
+        height: 100%;
         pointer-events: all;
-        margin-top: 0rem
+        margin: 2rem auto
     }
 
     #chartdiv:hover {

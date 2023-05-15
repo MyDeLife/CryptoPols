@@ -1,13 +1,9 @@
 @media (max-width: 768px) {
 
 
-
-    *:not(#header-title h1, #header-title span) {
-
-    }
-
     body {
         background-color: var(--gray);
+        overflow-x: hidden;
     }
 
     .hide-on-mobile {
@@ -51,7 +47,7 @@
     #statename-div2 {
         background-color: var(--dark-brown);
         border-radius: 1.5rem;
-        margin: 0.6rem 2rem 0 2rem;
+        margin: 0.6rem 0.8rem 0 0.8rem;
         width: 0.3rem;
     }
 
@@ -75,10 +71,10 @@
 
     #state-sentiment {
         height: 2.2rem;
-        width: 14rem;
+        width: 12rem;
         margin: auto 0;
         padding-bottom: 0.2rem;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         font-weight: bold;
         text-align: center;
         display: flex;
@@ -114,12 +110,6 @@
 
     #state-sentiment:hover:before {
         display: block;
-    }
-
-    #state-main-contain {
-        /* height: calc(100% - 5rem);
-    overflow: hidden; */
-
     }
 
     #politician-table-contain {
@@ -216,23 +206,23 @@
     .tablesorter td,
     .tablesorter th,
     .cfr-inner {
-        padding: 0.5rem;
+        padding: 0.3rem;
     }
 
     .tablesorter-header .header-arrow {
         display: flex;
         flex-direction: column;
-        font-size: 0.6em;
+        font-size: 0.6rem;
         position: absolute;
-        right: 0.5rem;
+        right: 0.3rem;
         top: 50%;
         transform: translateY(-50%);
     }
 
     .tablesorter-header .header-arrow-up {
         color: var(--dark-brown);
-        margin-top: -0.4rem;
-        margin-right: 0.5rem;
+        margin-top: -0.3rem;
+        margin-right: 0.3rem;
     }
 
     .tablesorter-headerAsc .header-arrow-up {
@@ -242,7 +232,7 @@
     .tablesorter-header .header-arrow-down {
         color: var(--dark-brown);
         margin-top: 0.4rem;
-        margin-right: 0.5rem;
+        margin-right: 0.3rem;
     }
 
     .tablesorter-headerDesc .header-arrow-down {
@@ -332,7 +322,6 @@
         color: var(--dark-brown)
     }
 
-
     #office,
     .office {
         width: 9%;
@@ -355,7 +344,7 @@
 
     .cfr-inner {
         display: inline-block;
-        width: 70%;
+        width: 90%;
         border-radius: 1rem;
         color: white;
         box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);

@@ -1,13 +1,12 @@
-*:not(#header-title h1, #header-title span) {
 
-}
 
 body {
     background-color: var(--gray);
+    font-family: var(--text-header);
 }
 
 #state-main-contain {
-    margin: 0 auto;
+    margin: 0 auto 8rem auto;
 }
 
 #state-info {
@@ -49,7 +48,7 @@ body {
 }
 
 #state-info {
-    padding-top: 10rem;
+    padding-top: 4rem;
 
 }
 
@@ -107,12 +106,6 @@ body {
 
 #state-sentiment:hover:before {
     display: block;
-}
-
-#state-main-contain {
-    /* height: calc(100% - 5rem);
-    overflow: hidden; */
-
 }
 
 #politician-table-contain {
