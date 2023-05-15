@@ -8,17 +8,19 @@
     <title>CryptoPols</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles/index.css?v=1.0.1">
-    <link rel="stylesheet" href="./styles/index_mobile.css?v=1.0.1">
-    <link rel="stylesheet" href="./styles/index_events.css?v=1.0.1">
-    <link rel="stylesheet" href="./styles/index_events_mobile.css?v=1.0.1">
-    <link rel="stylesheet" href="./styles/global.css?v=1.0.1">
-    <link rel="stylesheet" href="./styles/global_mobile.css?v=1.0.1">
-    <link rel="stylesheet" href="./styles/header.css?v=1.0.1">
-    <link rel="stylesheet" href="./styles/header_mobile.css?v=1.0.1">
-    <link rel="stylesheet" href="./styles/footer.css?v=1.0.1">
-    <link rel="stylesheet" href="./styles/footer_mobile.css?v=1.0.1">
-    <link rel="stylesheet" href="./styles/feedback_form.css?v=1.0.1">
+    <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/index.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/index_mobile.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/index_events.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/index_events_mobile.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/global.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/global_mobile.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/header.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/header_mobile.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/footer.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/footer_mobile.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/feedback_form.css?v=1.1.0">
+    <link rel="stylesheet" href="./styles/feedback_form_mobile.css?v=1.1.0">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- EXTERNAL SCRIPTS-->
@@ -50,23 +52,126 @@
 <body>
     <div class="body-contain">
 
-        <!-- HEADER -->
-        <script>
-            $(function () {
-                $("#nav-placeholder").load("./html/header.html");
-            });
-        </script>
-        <div id="nav-placeholder"></div>
+        <!-- HEADER-->
+        <header>
+            <div id="header-content">
+                <div class="logo-title">
+                    <a id="CPlogo-header" href="https://cryptopols.com/"><img id="CP-img-header"
+                            src="https://github.com/MyDeLife/CryptoPols/blob/main/assets/CP%20Logo%20wo%202048.png?raw=true"></a>
+                    <div id="header-title">
+                        <h1>Crypto<span>Pols</span></h1>
+                        <p>...monitoring crypto sentiment of US politicians in Congress</p>
+                    </div>
+                </div>
 
-        <!-- GIVE FEEDBACK -->
-        <script>
-            var contactLink = document.getElementById('contact-link');
+                <!-- NAVBAR -->
+                <nav id="main-nav">
+                    <div class="nav-dropdown">
+                        <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
+                    </div>
+                    <div class="nav-dropdown">
+                        <p class="nav-bar no-cursor"><a>About</a></p>
+                        <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
+                            <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+                        </div>
+                    </div>
 
-            contactLink.addEventListener('click', function (event) {
-                event.preventDefault();
-                document.getElementsByClassName('contact-button').click();
-            });
-        </script>
+                    <!-- GIVE FEEDBACK -->
+                    <button class="contact-button" id="contact-button">give feedback</button>
+                    <section class="contact" id="contact">
+                        <div class="close-button-area" id="close-button-area">
+                            <button id="close-button" type="submit"><i class="fas fa-window-close"></i></button>
+                        </div>
+                        <div class="column right contact-us">
+                            <div class="text" id="contact-us-text">Give Feedback</div>
+                            <form id="contactForm">
+                                <div class="fields">
+                                    <div class="field name">
+                                        <input type="text" name="name" placeholder="*Name" required>
+                                    </div>
+                                    <div class="field email">
+                                        <input type="email" name="email" placeholder="Email (optional)">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <input type="text" name="subject" placeholder="*Subject" required>
+                                </div>
+                                <div class="field textarea">
+                                    <textarea cols="30" rows="10" name="message" placeholder="*Message..."
+                                        required></textarea>
+                                </div>
+                                <div class="button-area" id="send-message-btn-area">
+                                    <button id="send-message-btn" type="submit">Send <i
+                                            class="fas fa-paper-plane"></i></button>
+                                    <div id="responseMessage" style="display:none;"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </nav>
+
+                <!--HAMBURGER MENU-->
+                <div id="hamburger-icon" class="hamburger-icon" onclick="toggleMenu()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <nav id="ham-navbar" class="ham-navbar">
+                    <div id="ham-menu-contain">
+                        <ul>
+                            <li><a href="https://cryptopols.com/" onclick="toggleMenu()">Home</a></li>
+                            <hr class="ham-menu-line">
+                            <li class="ham-menu-dropdown-contain">
+                                <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About
+                                    <span class="fas fa-caret-down"></span>
+                                </a>
+                                <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                                    <a class="ham-menu-dropdown-link"
+                                        href="https://cryptopols.com/html/methodology.html"
+                                        onclick="toggleMenu()">Methodology</a>
+                                    <a class="ham-menu-dropdown-link"
+                                        href="https://www.indiegogo.com/project/preview/02f99799#/"
+                                        onclick="toggleMenu()">Support
+                                        CryptoPols</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <button class="contact-button" id="contact-button-mobile">give feedback</button>
+        <section class="contact" id="contact-mobile">
+            <div class="close-button-area" id="close-button-area-mobile">
+                <button id="close-button-mobile" type="submit"><i class="fas fa-window-close"></i></button>
+            </div>
+            <div class="column right contact-us">
+                <div class="text" id="contact-us-text-mobile">Give Feedback</div>
+                <form id="contactForm-mobile">
+                    <div class="fields">
+                        <div class="field name">
+                            <input type="text" name="name" placeholder="*Name" required>
+                        </div>
+                        <div class="field email">
+                            <input type="email" name="email" placeholder="Email (optional)">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="subject" placeholder="*Subject" required>
+                    </div>
+                    <div class="field textarea">
+                        <textarea cols="30" rows="10" name="message" placeholder="*Message..." required></textarea>
+                    </div>
+                    <div class="button-area" id="send-message-btn-area-mobile">
+                        <button id="send-message-btn-mobile" type="submit">Send <i
+                                class="fas fa-paper-plane"></i></button>
+                        <div id="responseMessage-mobile" style="display:none;"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
 
         <div id="index-page">
 
@@ -117,14 +222,16 @@
             </h3>
             <section id="rec-events-sec">
                 <div id="rec-events-pub" class="rec-events-cont1">
-                    <h2>Public Statements</h2>
+                    <h2><a href="./html/rec_events_pub_mobile.html">Public Statements <span id="event-toggle1"
+                                class="event-toggle fas fa-angle-double-right"></span></a></h2>
                     <input type="text" id="search-input-pub" placeholder="Enter politician name..." />
                     <div class="rec-events-cont2 pub">
                         <div id="rec-events-data-pub" class="pub"></div>
                     </div>
                 </div>
                 <div id="rec-events-leg" class="rec-events-cont1">
-                    <h2>Legislative Actions</h2>
+                    <h2><a href="./html/rec_events_leg_mobile.html">Legislative Actions <span id="event-toggle2"
+                                class="event-toggle fas fa-angle-double-right"></span></a></h2>
                     <input type="text" id="search-input-leg" placeholder="Enter politician name..." />
                     <div class="rec-events-cont2 leg">
                         <div id="rec-events-data-leg" class="leg"></div>
@@ -609,10 +716,13 @@
         <div id="footer-placeholder"></div>
 
         <!-- INTERNAL SCRIPTS -->
-        <script src="./scripts/state-map.js?v=1.0.1"></script>
-        <script src="./scripts/index_state_dd.js?v=1.0.1"></script>
-        <script src="./scripts/index.js?v=1.0.1"></script>
-        <script src="./scripts/index_events.js?v=1.0.1"></script>
+        <script src="./scripts/state-map.js?v=1.1.0"></script>
+        <script src="./scripts/index_state_dd.js?v=1.1.0"></script>
+        <script src="./scripts/index.js?v=1.1.0"></script>
+        <script src="./scripts/index_events.js?v=1.1.0"></script>
+        <script src="./scripts/give_feedback.js?v=1.1.0"></script>
+        <script src="./scripts/give_feedback_mobile.js?v=1.1.0"></script>
+        <script src="./scripts/nav-bar.js?v=1.1.0"></script>
 
     </div>
 </body>
