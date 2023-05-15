@@ -115,7 +115,7 @@
         color: var(--dark-brown);
         border: none;
         position: fixed;
-        right: 1%;
+        right: 0.2%;
         background-color: transparent;
         top: 0.8%;
         z-index: 2;
@@ -225,7 +225,7 @@
 
     .rec-event-act {
         font-size: 1.2rem;
-        white-space: nowrap;
+
     }
 
 
@@ -403,7 +403,9 @@
         white-space: nowrap;
     }
 
-
+    .rec-event-act.pub {
+        white-space: nowrap;
+    }
 
     /* legislative action */
 
@@ -470,7 +472,7 @@
         font-size: 1.6rem;
         margin-bottom: 10%;
         line-height: 1.9rem;
-        
+
     }
 
     .rec-events-div4-1.leg {
@@ -493,7 +495,7 @@
         font-size: 1.2rem;
         white-space: nowrap;
         margin-top: 0.5rem;
-        
+
     }
 
 

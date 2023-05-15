@@ -6,7 +6,9 @@
 
     }
 
-
+    * {
+        /border: 2px solid;
+    }
 
 
     body {}
@@ -38,8 +40,8 @@
 
     .contact-button {
         padding-bottom: 0.8rem;
-        font-size: 1rem;
-        line-height: 1.6rem;
+        font-size: 0.8rem;
+        line-height: 1.4rem;
         height: 5.2rem;
         max-height: 7rem;
         width: 5.2rem;
@@ -54,7 +56,7 @@
         top: 8%;
         right: 2%;
         position: fixed;
-        z-index: 1;
+        z-index: 5;
     }
 
     .contact-button.show {
@@ -183,15 +185,16 @@
         width: inherit;
         height: 2rem;
         position: fixed;
-        top: 5%;
+        top: 6%;
+        
     }
 
     #close-button-mobile {
         font-size: 4.5rem;
         color: var(--dark-brown);
         border: none;
-        position: absolute;
-        right: 5%;
+        position: fixed;
+        right: 0%;
         background-color: transparent;
     }
 
