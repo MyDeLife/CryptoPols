@@ -75,7 +75,8 @@
 
     .rec-events-cont1 h2 a {
         text-decoration: none;
-        color: var(--dark-brown)
+        color: var(--dark-brown);
+        pointer-events: visible;
     }
 
     .rec-events-cont1 h2 a:visited {
@@ -114,7 +115,7 @@
         color: var(--dark-brown);
         border: none;
         position: fixed;
-        right: 3%;
+        right: 1%;
         background-color: transparent;
         top: 0.8%;
         z-index: 2;
@@ -124,8 +125,8 @@
     .search-input-mobile {
 
         margin: 0 auto 0 auto;
-        left: 25%;
-        width: 50%;
+        left: 4%;
+        width: 70%;
         height: 2.5rem;
         border-radius: 1rem;
         position: fixed;
@@ -208,10 +209,12 @@
     .rec-event-pol-name {
         font-size: 1.6rem;
         margin-bottom: 2%;
+        white-space: nowrap;
     }
 
     .rec-event-pol-office {
         font-size: 1.2rem;
+        white-space: nowrap;
     }
 
     .rec-event-pol-office a {
@@ -222,6 +225,7 @@
 
     .rec-event-act {
         font-size: 1.2rem;
+        white-space: nowrap;
     }
 
 
@@ -396,6 +400,7 @@
     .rec-event-date.pub {
         font-size: 1.3rem;
         margin-bottom: 6.5%;
+        white-space: nowrap;
     }
 
 

@@ -36,6 +36,16 @@
     text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
+ .rec-events-cont1 h2 a {
+     text-decoration: none;
+     color: var(--dark-brown);
+     pointer-events: none;
+ }
+
+ .rec-events-cont1 h2 a:visited {
+     color: inherit;
+ }
+
 #search-input-pub,
 #search-input-leg {
     font-family: var(--text-header);
