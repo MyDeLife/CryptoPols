@@ -53,7 +53,7 @@ am5.ready(function () {
         // screen width is larger than 768px
         polygonSeries.mapPolygons.template.events.on("pointerup", function (ev) {
             var stateId = ev.target.dataItem.dataContext.id;
-            window.location.href = './html/state.html?state=' + stateId;
+            window.location.href = 'state.html?state=' + stateId;
         });
     }
 

@@ -1,0 +1,644 @@
+@media (max-width: 768px) {
+
+
+
+    * {
+        /border: 1px solid black
+    }
+
+    body {
+        width: 50rem;
+    }
+
+    h3.fancy {
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 0.4rem;
+        margin: 7rem auto 2rem auto
+    }
+
+    #rec-events-fancy-header {
+        line-height: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 5rem;
+    }
+
+    #last-6-months {
+        font-family: var(--text-header);
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    #index-page {
+        margin: 2rem 0 0 0;
+        padding-top: 5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    #index-middle1 {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80rem;
+    }
+
+    .map-container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 0 auto;
+        width: 95%;
+    }
+
+    #us-avg {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0
+    }
+
+    #us-avg h2,
+    #demrep-content h2,
+    #us-avg .notation {
+        color: var(--dark-brown)
+    }
+
+    #us-avg h2 {
+        text-align: center;
+        text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        font-size: 1.8rem;
+    }
+
+    #congress-avg {
+        font-family: var(--text-header);
+        height: 2.5rem;
+        width: 20rem;
+        margin: 0% auto;
+        padding: 0.5rem 0.5rem 0.7rem 0.5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--white);
+        font-size: 2rem;
+        font-style: bold;
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        border: 0.1rem solid var(--light-brown);
+        border-radius: 2rem;
+        cursor: default;
+    }
+
+    #congress-avg:before {
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        top: 19.5rem;
+        left: 30%;
+        transform: translateX(-50%);
+        padding: 0.4rem;
+        background-color: var(--light-brown);
+        color: var(--dark-brown);
+        font-size: 1.3rem;
+        border: 0.1rem solid var(--dark-brown);
+        border-radius: 0.5rem;
+        box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+        width: 25rem;
+        line-height: 1.6rem;
+    }
+
+    #congress-avg:hover:before {
+        display: block;
+    }
+
+    #us-avg .notation {
+        width: 55%;
+        font-size: 120%;
+        line-height: 110%;
+        font-style: italic;
+    }
+
+    #demrep-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 4rem 0 2rem 0;
+    }
+
+    #demrep-content h2 {
+        text-align: center;
+        text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        font-size: 1.8rem;
+    }
+
+    .map-legend {
+        width: 30rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: 0% auto;
+    }
+
+    .gradient-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin: 0 1rem;
+        width: 100%;
+
+    }
+
+    .gradient {
+        width: 100%;
+        height: 1.4rem;
+        background: linear-gradient(90deg, var(--strongly-anti) 5%, var(--strongly-pro) 90%);
+        z-index: 1;
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        border: 0.1rem solid var(--light-brown);
+        border-radius: 2rem;
+    }
+
+    .map-legend {
+        margin-top: 4.5rem;
+    }
+
+    .map-legend .label {
+        font-size: 1.3rem;
+    }
+
+    .label-dems span,
+    .label-reps span {
+        font-size: 0.9rem;
+        padding: 15% 20% 15% 20%;
+        border-radius: 0.5rem;
+        color: white !important;
+    }
+
+    .label-dems span {
+        margin-left: -34%;
+    }
+
+    .label-reps span {
+        margin-left: -28%;
+    }
+
+    .arrow {
+        position: absolute;
+        top: -3.5rem;
+        width: 2rem;
+        height: 3rem;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .arrow .label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .arrow.dems {
+        left: calc((var(--dems-pos) - 1) / 10 * 100%);
+        transform: translateX(-50%);
+    }
+
+    .arrow.reps {
+        left: calc((var(--reps-pos) - 1) / 10 * 100%);
+        transform: translateX(-50%);
+    }
+
+    .arrow.dems .label,
+    .dems-text,
+    .label-dems span {
+        background-color: var(--dems);
+    }
+
+    .arrow.reps .label,
+    .reps-text,
+    .label-reps span {
+        background-color: var(--reps);
+    }
+
+    .arrow .fa-arrow-down {
+        font-size: 1.5rem;
+        margin-top: 0.4rem;
+    }
+
+    .label {
+        font-weight: bold;
+    }
+
+    .label.anti {
+        color: var(--strongly-anti);
+    }
+
+    .label.pro {
+        color: var(--strongly-pro);
+    }
+
+    #chartdiv {
+        width: 70%;
+        height: 100%;
+        pointer-events: all;
+        margin: 2rem auto
+    }
+
+    #chartdiv:hover {
+        cursor: none;
+    }
+
+    /* STATE DROPDOWN*/
+    .select-wrapper {
+        margin: 3rem 0rem 2rem 0;
+        font-family: var(--text-header) !important;
+    }
+
+    #dropdown-placeholder {
+        color: var(--dark-brown) !important;
+        font-family: var(--text-header) !important;
+    }
+
+    .select2-dropdown {
+        width: 22rem;
+        font-family: var(--text-header) !important;
+
+    }
+
+
+    .select2-container--default .select2-selection--single {
+        border: 0.1rem solid var(--GRAY) !important;
+        -webkit-box-shadow: 10px 10px 25px 0px #000000;
+        box-shadow: 3px 5px 5px 0px #000000;
+        width: 22rem;
+        font-size: 1.4rem;
+        color: var(--dark-brown) !important;
+        text-align: center !important;
+    }
+
+
+    .select2-container--default .select2-selection--single .select2-selection__placeholder {
+        color: var(--dark-brown) !important;
+    }
+
+    .select2-results__options {
+        font-size: 1.4rem;
+        max-height: 2rem;
+        overflow-y: auto;
+        color: var(--dark-brown);
+        font-family: var(--text-header) !important;
+        text-align: center;
+    }
+
+    .select2-results__option--highlighted {
+        background-color: var(--light-brown) !important;
+        color: var(--dark-brown) !important;
+    }
+
+
+    #index-middle2 {
+        margin: 5% auto 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: default;
+
+    }
+
+    #index-middle2 h1 {
+        margin-top: 15%;
+        text-align: center;
+    }
+
+
+    #cfr-trend {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #cfr-trend-header h2 {
+        font-size: 2.7rem;
+        text-align: left;
+        margin-left: 1%;
+        color: var(--dark-brown);
+        text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    #cfr-trend-content {
+        display: flex;
+        flex-direction: row;
+        width: 100%
+    }
+
+    #cfr-trend-chart1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        padding: 2% 0 0 2%;
+        border-width: 0.2rem;
+        border-top-style: solid;
+        border-image: linear-gradient(90deg, var(--dark-brown)30%, white 70%) 1;
+    }
+
+
+    #cfr-trend-chart2 {
+        width: 100%;
+        height: 60%;
+        margin: 2% auto 1% auto;
+        border: 1px solid var(--light-brown);
+        padding: 3%;
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        border: 0.1rem solid var(--light-brown);
+        border-radius: 2rem;
+    }
+
+    #cfr-trend-text {
+        font-style: italic;
+        padding: 1.5% 1% 0% 2%;
+        margin: 5% 0% 0 3%;
+        width: 30%;
+        height: 70%;
+        background-color: var(--light-brown);
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        border: 0.1rem solid var(--dark-brown);
+        border-radius: 1rem;
+    }
+
+    #cfr-trend-text p {
+        font-size: 1.4rem;
+    }
+
+    .cfr-chart-legend {
+        display: flex;
+        justify-content: center;
+        width: 60%;
+    }
+
+    .cfr-legend {
+        display: flex;
+        margin: 0 3% 0 3%
+    }
+
+    #cfr-avg-legend {
+        color: gray
+    }
+
+    #cfr-dems-legend {
+        color: var(--dems)
+    }
+
+    #cfr-reps-legend {
+        color: var(--reps)
+    }
+
+    .line-legend {
+        width: 1.5rem;
+        font-size: 4rem;
+        text-align: right;
+    }
+
+    .text-legend {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        width: 8rem;
+        height: 2.2rem;
+        margin: auto;
+        text-align: center;
+    }
+
+    #cfr-avg-legend .text-legend {
+        background-color: gray;
+    }
+
+    #cfr-dems-legend .text-legend {
+        background-color: var(--dems);
+    }
+
+    #cfr-reps-legend .text-legend {
+        background-color: var(--reps);
+    }
+
+
+    #cfr-trend-text span {
+        padding: 0.6%;
+        border-radius: 0.5rem;
+        color: white;
+    }
+
+
+
+
+    #index3 {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+        height: 100%
+    }
+
+    #index3-1,
+    #index3-2 {
+        margin-top: 10%;
+        width: 95%;
+        height: 100%;
+    }
+
+    #movers-pro-header,
+    #movers-anti-header {
+        color: var(--dark-brown)
+    }
+
+    #movers-tables-sec {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    }
+
+    #pro-movers {
+        padding: 2% 0 0 2%;
+        border-width: 0.2rem;
+        border-top-style: solid;
+        border-image: linear-gradient(90deg, var(--dark-brown)15%, white 30%) 1;
+    }
+
+    #anti-movers {
+        padding: 2% 0 0 2%;
+        border-width: 0.2rem;
+        border-top-style: solid;
+        border-image: linear-gradient(90deg, var(--dark-brown)15%, white 30%) 1;
+    }
+
+    .movers {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .movers-tables {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+
+    .movers-header {
+        display: table-row;
+        font-weight: bold;
+    }
+
+    .movers-header .movers-name,
+    .movers-header .movers-state,
+    .movers-header .movers-rating,
+    .movers-header .movers-quote,
+    .movers-header .movers-link {
+        background-color: var(--light-brown);
+    }
+
+    .movers-header .movers-img {
+        background-color: var(--dark-brown) !important;
+    }
+
+    .movers-header p,
+    .movers-text p,
+    .movers-text a {
+        font-family: var(--text-header);
+        font-size: 1.4rem;
+    }
+
+    .movers-text {
+        display: table-row;
+        height: 100%;
+    }
+
+
+    .movers-text:nth-child(even) {
+        background-color: #f0f0f0;
+    }
+
+    .movers-party,
+    .movers-name,
+    .movers-state,
+    .movers-rating,
+    .movers-quote,
+    .movers-link {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 1rem 0 1rem;
+    }
+
+
+    .movers-name,
+    .movers-state,
+    .movers-rating-div,
+    .movers-quote,
+    .movers-link {
+        border: 1px solid var(--dark-brown);
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+
+
+
+    .movers-party-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        height: 100%;
+    }
+
+
+    .movers-party:not(.movers-header .movers-party) {
+        width: 0.8rem;
+        background-color: var(--dems);
+        border-radius: 1rem;
+        margin-right: 1.1rem;
+        padding: 0.2rem;
+        height: 4rem;
+    }
+
+    .movers-img {
+        border: 1px solid var(--dark-brown);
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    .movers-img-cont {
+        display: table-cell;
+        vertical-align: middle;
+        border: 1px solid var(--dark-brown);
+    }
+
+    .movers-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 5rem;
+        border: 1px solid var(--dark-brown);
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    .movers-name {
+        width: 20%;
+    }
+
+    .movers-state {
+        width: 6%;
+        text-align: center;
+    }
+
+
+    .movers-rating-div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        border: 1px solid var(--dark-brown);
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        height: 100%;
+    }
+
+
+    .movers-rating:not(.movers-header .movers-rating) {
+        width: 80%;
+        background-color: var(--dems);
+        border-radius: 1rem;
+        height: 4rem;
+    }
+
+    .movers-quote {
+        width: 45%;
+        max-width: 50rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .movers-link {
+        width: 5%;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .movers-link-text {
+        color: #0000ee;
+    }
+
+}

@@ -22,7 +22,7 @@ $(document).ready(function () {
                   </div>
                   <div class="rec-events-div2-1-2 pub">
                       <div class="rec-event-pol-name rec-events-text pub">${eventData.politician}</div>
-                      <div class="rec-event-pol-office rec-events-text pub">${formatOffice(eventData.office)} | <a href="./html/state.html?state=US-${eventData.state_abbr}">${eventData.state_abbr}</a></div>
+                      <div class="rec-event-pol-office rec-events-text pub">${formatOffice(eventData.office)} | <a href="state.html?state=US-${eventData.state_abbr}">${eventData.state_abbr}</a></div>
                   </div>
               </div>
               <div class="rec-events-div2-2 pub">
@@ -67,7 +67,7 @@ $(document).ready(function () {
                             <div class="rec-events-div2-1 leg">
                                 <div class="rec-events-div2-1-2 leg">
                                     <div class="rec-event-pol-name rec-events-text leg">${eventData.politician}</div>
-                                    <div class="rec-event-pol-office rec-events-text leg">${formatOffice(eventData.office)} | <a href="./html/state.html?state=US-${eventData.state_abbr}">${eventData.state_abbr}</a></div>
+                                    <div class="rec-event-pol-office rec-events-text leg">${formatOffice(eventData.office)} | <a href="state.html?state=US-${eventData.state_abbr}">${eventData.state_abbr}</a></div>
                                 </div>
                                 <div class="rec-events-div2-1-1 leg">
                                     <div class="rec-event-pol-image-div leg">

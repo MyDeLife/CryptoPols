@@ -58,7 +58,10 @@ $(document).ready(function () {
         $stateSelect.append(new Option(state.name, state.id));
     });
 
+    var selectWidth = window.matchMedia("(max-width: 768px)").matches ? '22rem' : '25rem';
+
     $stateSelect.select2({
+        width: selectWidth,
         placeholder: "Select a state...",
         allowClear: true
     });
@@ -66,17 +69,23 @@ $(document).ready(function () {
     $stateSelect.on('select2:select', function (e) {
         var stateId = $(this).val();
         if (stateId) {
-            window.location.href = './html/state.html?state=US-' + stateId;
+            var path = window.location.pathname;
+            var href = (path.includes('Pols/html')) ? 'state.html?state=US-' + stateId : './html/state.html?state=US-' + stateId;
+            window.location.href = href;
         }
     });
 
-    
-    var selectWidth = window.matchMedia("(max-width: 768px)").matches ? '22rem' : '25rem';
 
-    $('select').select2({
-        width: selectWidth
-    });
-
+    function getURLParamater(paramName) {
+        var pageURL = window.location.search.substring(1);
+        var URLVariables = pageURL.split('&');
+        for (var i = 0; i < URLVariables.length; i++) {
+            var parameterName = URLVariables[i].split('=');
+            if (parameterName[0] == paramName) {
+                return parameterName[1];
+            }
+        }
+    };
 
     const urlStateId = getURLParamater("state");
     if (urlStateId) {
@@ -84,13 +93,13 @@ $(document).ready(function () {
         fetchPoliticiansData(stateAbbr);
         fetchStateName(stateAbbr);
     } else {
-        // If no state parameter in the URL, get the selected state from the dropdown
-        const selectedStateId = $('#state-select').val();
+        const selectedStateId = $stateSelect.val();
         if (selectedStateId) {
             fetchPoliticiansData(selectedStateId);
             fetchStateName(selectedStateId);
         }
     }
 });
+
 
 
