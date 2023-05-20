@@ -17,7 +17,7 @@ $(document).ready(function () {
                           <p class="rec-event-pol-party-color pub" data-party="${eventData.party}"></p>
                       </div>
                       <div class="rec-event-pol-image-div pub">
-                          <img class="rec-event-pol-image pub" src="${imageURL}">
+                          <img class="rec-event-pol-image pub" src="${imageURL}" alt="no photo">
                       </div>
                   </div>
                   <div class="rec-events-div2-1-2 pub">
@@ -71,7 +71,7 @@ $(document).ready(function () {
                                 </div>
                                 <div class="rec-events-div2-1-1 leg">
                                     <div class="rec-event-pol-image-div leg">
-                                        <img class="rec-event-pol-image leg" src="${imageURL}">
+                                        <img class="rec-event-pol-image leg" src="${imageURL}" alt="no photo" style="background: var(--light-brown)">
                                     </div>
                                     <div class="rec-event-pol-party rec-events-text leg">
                                         <p class="rec-event-pol-party-color leg" data-party="${eventData.party}"></p>
