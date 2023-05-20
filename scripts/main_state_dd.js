@@ -69,8 +69,7 @@ $(document).ready(function () {
     $stateSelect.on('select2:select', function (e) {
         var stateId = $(this).val();
         if (stateId) {
-            var path = window.location.pathname;
-            var href = (path.includes('ols/html')) ? 'state.html?state=US-' + stateId : './html/state.html?state=US-' + stateId;
+            var href = 'state.html?state=US-' + stateId;
             window.location.href = href;
         }
     });
