@@ -14,6 +14,7 @@
 
 body {
     margin: 0;
+    height: 100vh;
 
 }
 
@@ -21,14 +22,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5rem auto 6rem auto;
+    margin: 2% auto 3% auto;
     width: 80%
 }
 
 #CP-img-header-land {
     display: flex;
     margin: auto;
-    height: 14rem;
+    height: 11rem;
     padding-right: 3rem;
 }
 
@@ -36,7 +37,7 @@ body {
 #header-title span {
     text-align: center;
     font-family: var(--text-logo-name);
-    font-size: 11rem;
+    font-size: 8rem;
 }
 
 #index2 {
@@ -46,8 +47,8 @@ body {
 }
 
 h2 {
-    font-size: 4.5rem;
-    line-height: 6rem;
+    font-size: 3rem;
+    line-height: 4rem;
     padding-left: 8%;
 }
 
@@ -60,25 +61,26 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 12rem;
-    margin: 5rem auto 5rem auto;
-    max-width: 40rem;
-    padding: 3rem;
+    margin: 3% auto 3% auto;
+    max-width: 30rem;
+    padding: 2%;
         background: linear-gradient(183deg,
-                    var(--dems) 2%,
-                    var(--light-brown) 10%,
-                    var(--light-brown) 12%,
-                    var(--light-brown) 90%,
-                    var(--reps) 98%);
+                    var(--dems) 8%,
+                    var(--light-brown) 15%,
+                    var(--light-brown) 50%,
+                    var(--light-brown) 85%,
+                    var(--reps) 92%);
 }
 
 .seal {
-    height: 9rem;
+    height: 7rem;
 }
 
 #index4 p {
     max-width: 80rem;
-    font-size: 2.2rem;
-    line-height: 2.8rem;
+    width: 50%;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
     text-align: center;
 }
 
@@ -92,13 +94,13 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 5rem
+    padding-top: 2%
 }
 
 #button {
     color: var(--white);
-    height: 6rem;
-    width: 29rem;
+    height: 5rem;
+    width: 25rem;
     font-size: 2.5rem;
     font-weight: 500;
     border-radius: 1rem;

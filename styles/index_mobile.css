@@ -22,7 +22,7 @@
     #index1 {
         display: flex;
         flex-direction: column;
-        margin: 1rem auto 4rem auto;
+        margin: 1% auto 2% auto;
         width: 80%
     }
 
@@ -66,11 +66,11 @@
         max-width: 20rem;
         padding: 2rem;
         background: linear-gradient(183deg,
-                var(--dems) 2%,
-                var(--light-brown) 10%,
-                var(--light-brown) 12%,
-                var(--light-brown) 90%,
-                var(--reps) 98%);
+                var(--dems) 5%,
+                var(--light-brown) 13%,
+                var(--light-brown) 50%,
+                var(--light-brown) 87%,
+                var(--reps) 95%);
     }
 
     .seal {
@@ -78,7 +78,8 @@
     }
 
     #index4 p {
-        max-width: 30rem;
+        max-width: 35rem;
+        width: 80%;
         font-size: 1.6rem;
         line-height: 1.9rem;
         text-align: center;

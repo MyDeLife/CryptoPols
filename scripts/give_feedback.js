@@ -1,6 +1,6 @@
-var contactLink_mobile = document.getElementById('contact-button');
+var contactLink = document.getElementById('contact-button');
 
-contactLink_mobile.addEventListener('click', function (event) {
+contactLink.addEventListener('click', function (event) {
     event.preventDefault();
     document.getElementById('contact').classList.add('visible', 'contact-form-scaled');
 });
@@ -17,7 +17,7 @@ $(document).ready(function () {
                 var responseMessage = $('#responseMessage');
                 if (request.status === 200) {
                     responseMessage.text('Email to CryptoPols sent successfully!');
-                    disableFormFields('#contactForm_mobile', '#send-message-btn');
+                    disableFormFields('#contactForm', '#send-message-btn');
                 } else {
                     responseMessage.text('An error occurred while sending the email. Please try again later.');
                 }
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     $('#close-button').on('click', function () {
         $('#contact').removeClass('visible', 'contact-form-scaled');
-        enableFormFields('#contactFormMobile', '#responseMessage', '#send-message-btn');
+        enableFormFields('#contactForm', '#responseMessage', '#send-message-btn');
     });
 });
 

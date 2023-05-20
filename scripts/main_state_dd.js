@@ -70,7 +70,7 @@ $(document).ready(function () {
         var stateId = $(this).val();
         if (stateId) {
             var path = window.location.pathname;
-            var href = (path.includes('Pols/html')) ? 'state.html?state=US-' + stateId : './html/state.html?state=US-' + stateId;
+            var href = (path.includes('ols/html')) ? 'state.html?state=US-' + stateId : './html/state.html?state=US-' + stateId;
             window.location.href = href;
         }
     });
