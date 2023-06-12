@@ -5,12 +5,6 @@
     }
 
     :root {
-        background: linear-gradient(90deg,
-                var(--dark-brown) 1%,
-                var(--light-brown) 4%,
-                var(--light-brown) 12%,
-                var(--light-brown) 96%,
-                var(--dark-brown) 99%);
         overflow: hidden;
     }
 
@@ -64,13 +58,12 @@
         gap: 3rem;
         margin: 4rem auto 4rem auto;
         max-width: 20rem;
-        padding: 2rem;
-        background: linear-gradient(183deg,
-                var(--dems) 5%,
-                var(--light-brown) 13%,
-                var(--light-brown) 50%,
-                var(--light-brown) 87%,
-                var(--reps) 95%);
+        padding: 8%;
+        background: linear-gradient(184deg,
+                var(--dems) 1%,
+                var(--white) 18%,
+                var(--white) 82%,
+                var(--reps) 98%);
     }
 
     .seal {
@@ -113,7 +106,7 @@
 
     #button:hover {
         font-size: 2.5rem;
-        background: var(--white);
+        background: var(--light-brown);
         border: 0.2rem solid var(--dark-brown);
         color: var(--dark-brown);
     }
