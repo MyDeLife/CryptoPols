@@ -3,12 +3,6 @@
 }
 
 :root {
-    background: linear-gradient(90deg,
-            var(--dark-brown) 1%,
-            var(--light-brown) 4%,
-            var(--light-brown) 12%,
-            var(--light-brown) 96%,
-            var(--dark-brown) 99%);
     overflow: hidden;
 }
 
@@ -63,17 +57,16 @@ h2 {
     gap: 12rem;
     margin: 3% auto 3% auto;
     max-width: 30rem;
-    padding: 2%;
-        background: linear-gradient(183deg,
-                    var(--dems) 8%,
-                    var(--light-brown) 15%,
-                    var(--light-brown) 50%,
-                    var(--light-brown) 85%,
-                    var(--reps) 92%);
+    padding: 4%;
+    background: linear-gradient(184deg,
+            var(--dems) 1%,
+            var(--white) 18%,
+            var(--white) 82%,
+            var(--reps) 98%);
 }
 
 .seal {
-    height: 7rem;
+    height: 8rem;
 }
 
 #index4 p {
