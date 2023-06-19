@@ -1,0 +1,470 @@
+* {
+    /border: 1px solid black
+}
+
+#leg-top {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+#legislation-table-cont {
+    width: 90vw;
+    max-width: 120rem;
+    margin: 0 auto 10rem auto;
+    height: 65vh;
+    overflow: scroll;
+    border: 2px solid var(--light-brown);
+    box-shadow: 0 0.2rem 1rem 0rem rgba(0, 0, 0, 0.2);
+}
+
+#legislation-table {
+    width: 100%;
+    max-width: 90vw;
+    /* keep same value as #legislation-table-cont width */
+    table-layout: fixed;
+    /* sets a fixed layout to prevent resizing beyond given width */
+    overflow: scroll;
+    border-collapse: collapse;
+
+}
+
+#leg-table-filters-cont {
+    display: flex;
+    border: none;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 101;
+    height: 4%;
+    
+}
+
+.leg-table-search-fields {
+    margin: 0;
+    border: none;
+    background-color: var(--gray);
+    font-size: 1.3rem;
+    box-shadow: 0 0.2rem 1rem 0rem rgba(0, 0, 0, 0.2);
+}
+
+#leg-details {
+    text-align: center;
+    border-right: none !important;
+    width: 2.5%
+}
+
+#leg-bill-number {
+    border-left: none !important;
+    text-align: left;
+    width: 7%
+}
+
+#leg-bill-search {
+    width: 9.5%;
+    text-align: center;
+}
+
+#leg-title,
+#leg-title-search {
+    width: 32%;
+    padding-left: 0.5rem;
+    text-align: left;
+}
+
+#leg-branch,
+#leg-branch-search {
+    width: 12%;
+    text-align: center;
+}
+
+#leg-sponsor-party-color {
+    width: 0.7%;
+    border-right: none !important;
+}
+
+#leg-sponsor {
+    border-left: none !important
+}
+
+#leg-sponsor {
+    width: 15%;
+    text-align: left;
+}
+
+#leg-sponsor-search {
+    width: 15.7%;
+
+}
+
+#leg-cosponsors,
+#leg-cosponsors-search {
+    width: 8%;
+    text-align: center;
+}
+
+#leg-introduced,
+#leg-introduced-search {
+    width: 8%;
+    text-align: center;
+}
+
+#leg-sentiment,
+#leg-sentiment-search {
+    text-align: center;
+    width: calc(100% - 8% -8% - 15.7% - 12% - 32% - 9.5%)
+}
+
+#legislation-table thead {
+    position: sticky;
+    top: 4%;
+    
+    background-color: white;
+    z-index: 100;
+}
+
+#legislation-table td,
+#legislation-table th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+#legislation-table th {
+    font-size: 1.4rem;
+    
+    background-color: rgba(212, 199, 189, 0.8);
+    height: 3.5vh;
+
+}
+
+#legislation-table tr:hover:not(.expansion) {
+    background-color: rgba(212, 199, 189, 0.8);
+    cursor: pointer;
+}
+
+#legislation-table tr.clicked td {
+    background-color: rgba(212, 199, 189, 0.8);
+    font-size: bold;
+}
+
+#legislation-table td {
+    font-size: 1.4rem;
+    height: 4.2vh !important;
+    border-bottom: 1px solid var(--light-brown);
+}
+
+.leg-details-arrow {
+    padding-left: 1rem;
+}
+
+.fa-caret-right {
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rotate-caret {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.leg-branch {
+    text-align: center;
+}
+
+
+.leg-sponsor-party-color {
+    border-radius: 1rem;
+}
+
+.leg-sponsor-party-color-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60%;
+    width: 85%;
+    border-radius: 1rem;
+    color: transparent;
+}
+
+[data-sponsor-party='Democrat'] .leg-sponsor-party-color-inner {
+    background-color: var(--dems);
+}
+
+[data-sponsor-party='Republican'] .leg-sponsor-party-color-inner {
+    background-color: var(--reps);
+}
+
+[data-sponsor-party='Independent'] .leg-sponsor-party-color-inner {
+    background: var(--inds);
+}
+
+[data-sponsor-party='Green'] .leg-sponsor-party-color-inner {
+    background-color: var(--grns);
+}
+
+.leg-sponsor {
+    padding-left: 0.5%;
+}
+
+#leg-cosponsors {
+    font-size: 1.4rem !important;
+}
+
+.leg-cosponsors {
+    text-align: center;
+}
+
+.leg-introduced {
+    font-size: 1.2rem !important;
+    text-align: center;
+}
+
+.leg-sentiment {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5%;
+}
+
+.leg-sentiment-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75%;
+    width: 85%;
+    border-radius: 1rem;
+    color: white;
+    box-shadow: 0 0.2rem 1rem 0rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--light-brown)
+}
+
+[data-leg-sentiment='Strongly Pro'] .leg-sentiment-inner {
+    background-color: var(--strongly-pro);
+}
+
+[data-leg-sentiment='Slightly Pro'] .leg-sentiment-inner {
+    background-color: var(--slightly-pro);
+}
+
+[data-leg-sentiment='Neutral'] .leg-sentiment-inner {
+    background-color: var(--neutral);
+}
+
+[data-leg-sentiment='Slightly Anti'] .leg-sentiment-inner {
+    background-color: var(--slightly-anti);
+}
+
+[data-leg-sentiment='Strongly Anti'] .leg-sentiment-inner {
+    background-color: var(--strongly-anti);
+}
+
+[data-leg-sentiment='Not enough data'] .leg-sentiment-inner {
+    background-color: var(--not-enough-data);
+}
+
+
+.leg-details-cont {
+    display: flex;
+    gap: 0;
+
+    min-height: 35vh;
+    background-color: rgba(212, 199, 189, 0.7);
+    /* rgba(212, 199, 189, 0.8) */
+    border-top: 1px solid var(--light-brown);
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: -1px;
+}
+
+.leg-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.details1 {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.details2 {
+    width: 10%;
+}
+
+.vertical-div {
+    height: 100%;
+    opacity: 0.25;
+    background-color: var(--dark-brown);
+    border-color: var(--dark-brown);
+}
+
+.details3 {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.leg-summary-cont,
+.leg-latest-action-cont,
+.leg-status-cont,
+.leg-branch-seal-cont,
+.leg-cosponsors-cont,
+.leg-impact-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+}
+
+.leg-summary-label,
+.leg-latest-action-label,
+.leg-status-label,
+.leg-cosponsors-label,
+.leg-impact-label {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    text-align: center;
+    margin-bottom: 0.5vh;
+    font-weight: bold;
+    text-shadow: 0rem 0.01rem 0rem rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+}
+
+
+.leg-summary-text,
+.leg-latest-action-text {
+    font-size: 1.38rem;
+    white-space: normal;
+    overflow: visible;
+    background-color: var(--gray);
+    text-overflow: clip;
+    padding: 1vh;
+
+    box-shadow: 0 0.2rem 1rem 0rem rgba(0, 0, 0, 0.2);
+
+}
+
+.leg-full-text {
+    font-size: 1.3rem;
+}
+
+.leg-full-text:visited {
+    color: blue
+}
+
+.leg-status-cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leg-status-text {
+    display: flex;
+    width: 100%;
+}
+
+.leg-status-text-value {
+    padding: 0.5rem;
+    border: 1px solid #000;
+    flex-grow: 1;
+    text-align: center;
+    background-color: var(--gray);
+    font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 20%;
+}
+
+.leg-status-text-value.active {
+    background-color: var(--dark-brown);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.leg-cosponsors-text {
+    display: flex;
+    margin: 0 auto;
+    width: 85%;
+    min-width: 25rem;
+    max-width: 32rem;
+
+}
+
+.leg-cosponsors-value {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.1rem;
+    border: 1px solid var(--light-brown);
+    border-radius: 1rem 1rem 0 0;
+    padding-top: 0.3vh;
+    gap: 0.3vh;
+    width: 100%;
+    color: var(--white);
+    font-weight: bold;
+    text-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+#leg-cosponsors-dems {
+    background-color: var(--dems);
+}
+
+#leg-cosponsors-reps {
+    background-color: var(--reps);
+}
+
+#leg-cosponsors-inds {
+    background-color: var(--inds);
+    color: var(--white)
+}
+
+.leg-cosponsors-value-number {
+    background-color: var(--gray);
+    color: var(--black);
+    padding: 1vh;
+    font-size: 1.4rem;
+    margin-bottom: 1.5vh;
+}
+
+.leg-branch-seal-cont {
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.leg-branch-seal-img {
+    height: 8rem;
+    width: 8rem;
+    margin: 0 auto;
+}
+
+.leg-impact-text {
+    display: flex;
+    width: 100%;
+}
+
+.leg-impact-text-value {
+    padding: 0.5rem;
+    border: 1px solid #000;
+    flex-grow: 1;
+    text-align: center;
+    background-color: var(--gray);
+    font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 20%;
+}
+
+.leg-impact-text-value.active {
+    background-color: var(--dark-brown);
+    color: var(--white);
+    font-weight: bold;
+}
