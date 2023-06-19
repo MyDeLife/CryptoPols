@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPols | Main</title>
+    <link rel="icon" href="../favicon64.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/team.css?v=1.2.4">
+    <link rel="stylesheet" href="../styles/team_mobile.css?v=1.2.4">
+    <link rel="stylesheet" href="../styles/global.css?v=1.2.4">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.4">
+    <link rel="stylesheet" href="../styles/header.css?v=1.2.4">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.4">
+    <link rel="stylesheet" href="../styles/footer.css?v=1.2.4">
+    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.4">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- EXTERNAL SCRIPTS-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/map.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+    <!-- HEADER-->
+    <header>
+        <div id="header-content">
+            <div class="logo-title">
+                <a id="CPlogo-header" href="https://cryptopols.com/html/main.html"><img id="CP-img-header"
+                        src="https://github.com/MyDeLife/CryptoPols/blob/main/assets/CP%20Logo%20wo%202048.png?raw=true"></a>
+                <div id="header-title">
+                    <h1>Crypto<span>Pols</span></h1>
+                    <p>...monitoring crypto sentiment of US politicians in Congress</p>
+                </div>
+            </div>
+
+            <!-- NAVBAR -->
+            <nav id="main-nav">
+                <div class="nav-dropdown">
+                    <p class="nav-bar"><a href="https://cryptopols.com/html/main.html">Home</a></p>
+                </div>
+                <div class="nav-dropdown">
+                    <p class="nav-bar no-cursor"><a>About</a></p>
+                    <div class="nav-dropdown-content">
+                        <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
+                        <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!--HAMBURGER MENU-->
+            <div id="hamburger-icon" class="hamburger-icon" onclick="toggleMenu()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <nav id="ham-navbar" class="ham-navbar">
+                <div id="ham-menu-contain">
+                    <ul>
+                        <li><a href="https://cryptopols.com/html/main.html" onclick="toggleMenu()">Home</a></li>
+                        <hr class="ham-menu-line">
+                        <li class="ham-menu-dropdown-contain">
+                            <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About
+                                <span class="fas fa-caret-down"></span>
+                            </a>
+                            </a>
+                            <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                                <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/methodology.html"
+                                    onclick="toggleMenu()">Methodology</a>
+                                <a class="ham-menu-dropdown-link"
+                                    href="https://www.indiegogo.com/project/preview/02f99799#/"
+                                    onclick="toggleMenu()">Support
+                                    CryptoPols</a>
+                            </div>
+                        </li>
+                        <hr class="ham-menu-line">
+                        <li><a href="#" class="contact-button" id="feedback-link">Give Feedback</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- TEAM INFO -->
+
+    <div class="team">
+        <div class="team-header">
+            <h1>Meet the Team</h1>
+        </div>
+
+        <div class="team-members member1">
+            <div class="team-member-bio-contain">
+                <img src="../assets/team-oz-pfp.png">
+                <div class="team-member-bio">
+                   <div class="team-member-text1-contain"> <p class="team-member-text1">Oliver Zerhusen</p>
+                    <p class="team-member-text2">CO-FOUNDER</p></div>
+                    <p class="team-member-text3">As an accomplished product manager, web3 builder, and developer, Oliver
+                        brings a unique blend of technical expertise and strategic vision to the team. With a track
+                        record of successfully managing
+                        products from inception to launch, and a deep understanding of bringing innovative solutions to market, Oliver
+                        has been instrumental in the
+                        creation of CryptoPols. When not immersed in the digital world, Oliver channels his creativity
+                        into cooking,
+                        a personal passion that allows him to spread joy to those around him.
+                    </p>
+
+                    <div class="team-icons" id="team-icons1">
+                        <div class="team-socials">
+                            <a href="mailto:ozerhusen@gmail.com" target="_blank"><ion-icon name="mail"
+                                    id="email"></ion-icon></a>
+                            <a href="https://oliverz.xyz/" target="_blank"><ion-icon name="globe"
+                                    id="github"></ion-icon></a>
+                            <a href="https://github.com/ZorroZ77" target="_blank"><ion-icon name="logo-github"
+                                    id="github"></ion-icon></a>
+                            <a href="https://twitter.com/OliverZerhusen" target="_blank"><ion-icon name="logo-twitter"
+                                    id="twitter"></ion-icon></a>
+                            <a href="https://www.linkedin.com/in/zerhusen/" target="_blank"><ion-icon
+                                    name="logo-linkedin" id="linkedin"></ion-icon></a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="team-members member2">
+            <div class="team-member-bio-contain">
+
+                <div class="team-member-bio">
+                    <div class="team-member-text1-contain"><p class="team-member-text1">Esther Woo</p>
+                    <p class="team-member-text2">CO-FOUNDER</p></div>
+
+                    <p class="team-member-text3">Drawing upon a deeply rooted background in customer relations and
+                        marketing, Esther
+                        combines her technical expertise as a developer with a genuine passion for making a positive
+                        impact in people's lives. Through
+                        her work, she strives to create advanced solutions that generate meaningful
+                        differences. In her leisure
+                        time, Esther embraces the outdoors while navigating bike trails and enjoys discovering new
+                        restaurants.
+                    </p>
+
+
+                    <div class="team-icons" id="team-icons2">
+                        <div class="team-socials">
+                            <a href="mailto:ewoo0886@gmail.com" target="_blank"><ion-icon name="mail"
+                                    id="email"></ion-icon></a>
+                            <a href="https://estiez.xyz/" target="_blank"><ion-icon name="globe"
+                                    id="github"></ion-icon></a>
+                            <a href="https://github.com/estiewoo" target="_blank"><ion-icon name="logo-github"
+                                    id="github"></ion-icon></a>
+                            <a href="https://twitter.com/estiewoo" target="_blank"><ion-icon name="logo-twitter"
+                                    id="twitter"></ion-icon></a>
+                            <a href="https://www.linkedin.com/in/e-woo/" target="_blank"><ion-icon name="logo-linkedin"
+                                    id="linkedin"></ion-icon></a>
+                        </div>
+                    </div>
+
+                </div>
+                <img src="../assets/team-ez-pfp.png">
+            </div>
+        </div>
+    </div>
+
+
+<!-- FOOTER -->
+<script>
+    $(function () {
+        $("#footer-placeholder").load("../html/footer.html");
+    });
+</script>
+<div id="footer-placeholder"></div>
+
+<!-- INTERNAL SCRIPTS -->
+<script src="../scripts/nav-bar.js?v=1.2.4"></script>
+
+</body>
+
+</html>
