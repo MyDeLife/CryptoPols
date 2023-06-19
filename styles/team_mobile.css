@@ -1,0 +1,166 @@
+* {
+    /border: 2px solid
+}
+
+@media (max-width: 768px) {
+
+
+    .team {
+        padding-top: 12vh;
+        gap: 5vh;
+        margin-bottom: 15vh;
+
+    }
+
+    .team .team-header h1 {
+        font-size: 5vh;
+    }
+
+    .team .team-members {
+        height: 60vh;
+
+
+    }
+
+    .team-member-bio-contain {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .member1 .team-member-bio-contain {}
+
+
+    .member2 .team-member-bio-contain {}
+
+
+.team-member-bio {
+    max-width: 95%;
+    min-width: 50%;
+    width: 95%;
+    height: unset;
+    max-height: 30vh;
+
+}
+
+    .member1 .team-member-bio-contain {
+        right: 0;
+
+    }
+
+
+    .member2 .team-member-bio-contain {}
+
+    .member1 .team-member-bio-contain .team-member-bio {
+        margin-left: 0%;
+    }
+
+    .member2 .team-member-bio-contain .team-member-bio {
+
+        margin-right: 0%
+    }
+
+
+
+    .team .team-members img {
+        height: 45%;
+
+    }
+
+    .member1 img {
+        transform: translate(-17vw, 0%);
+        
+    }
+
+ .member1 .team-member-text1-contain {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+ }
+
+  .member1 .team-member-text1-contain {
+
+  }
+    
+    .team-member-text1 {
+        font-size: 5vw;
+        
+
+    }
+
+    .team-member-text2 {
+        font-size: 3.5vw;
+    }
+
+
+    .team-member-text3 {
+        font-size: 1.8vh;
+        line-height: 2.2vh;
+        max-height: 25vh;
+
+    }
+
+    @-moz-document url-prefix() {}
+
+
+
+
+    .member2 .team-member-bio .team-member-text3 {
+        padding-bottom: 2%;
+    }
+
+
+    /* icons area */
+
+    .team-icons {
+        background: transparent;
+        display: flex;
+        margin: 5% 1%;
+    }
+
+
+    .team-icons .team-socials ion-icon {
+        font-size: 5vw;
+        color: var(--dark-brown);
+        background-color: transparent;
+        margin-bottom: -2vh;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .team-socials {
+        width: 100%;
+        display: flex;
+        gap: 5%;
+        justify-content: flex-end;
+    }
+
+    ion-icon:hover,
+    ion-icon:active,
+    ion-icon:focus {
+        transition: all 0.8s;
+    }
+
+    #twitter:hover,
+    #twitter:active,
+    #twitter:focus {
+        color: var(--light-brown)
+    }
+
+    #github:hover,
+    #github:active,
+    #github:focus {
+        color: var(--light-brown)
+    }
+
+    #email:hover,
+    #email:active,
+    #email:focus {
+        color: var(--light-brown)
+    }
+
+    #linkedin:hover,
+    #linkedin:active,
+    #linkedin:focus {
+        color: var(--light-brown)
+    }
+}

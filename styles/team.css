@@ -1,0 +1,179 @@
+* {
+    /border: 2px solid;
+}
+
+
+.team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--text-header);
+    padding-top: 20vh;
+    gap: 10rem;
+    margin-bottom: 15rem;
+
+
+}
+
+.team .team-header h1 {
+    color: var(--dark-brown);
+    font-size: 7vh;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.team .team-members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-brown);
+    width: 100%;
+    height: 60vh;
+    border-top: 1px solid var(--dark-brown);
+    border-bottom: 1px solid var(--dark-brown)
+
+}
+
+.team-member-bio-contain {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    height: 100%;
+
+}
+
+.team-member-bio {
+    background-color: var(--gray);
+    max-width: 50%;
+    min-width: 50%;
+    width: 50%;
+    height: 65%;
+    padding: 2%;
+    border-radius: 0.5rem;
+    box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.member1 .team-member-bio-contain{
+    position: relative;
+    right: 2rem;
+}
+
+
+
+.member2 .team-member-bio-contain {
+
+}
+
+.member1 .team-member-bio-contain .team-member-bio {
+  margin-left: 5%;
+}
+
+.member2 .team-member-bio-contain .team-member-bio {
+
+  margin-right: 3%
+}
+
+
+
+.team .team-members img {
+    height: 100%;
+
+}
+
+.team-member-text1 {
+    font-size: 5vh;
+    font-weight: bold;
+    margin-left: -0.5%;
+
+}
+
+.team-member-text2 {
+    font-size: 2.2vh;
+    font-weight: bold;
+    color: rgb(156, 155, 155)
+        
+}
+
+
+.team-member-text3 {
+    font-size: 2.2vh;
+    line-height: 3vh;
+    width: 100%;
+    min-width: 100%;
+    max-height: 20rem;
+    padding-left: 0.5%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(234, 233, 233) transparent;
+
+
+}
+
+@-moz-document url-prefix() {}
+ 
+
+
+
+.member2 .team-member-bio .team-member-text3 {
+    padding-bottom: 2%;
+}
+
+
+/* icons area */
+
+.team-icons {
+    background: transparent;
+    display: flex;
+   margin: 5% 1%;
+}
+
+
+.team-icons .team-socials ion-icon {
+    font-size: 3vh;
+    color: var(--dark-brown);
+    background-color: transparent;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    cursor: pointer;
+    text-align: center;
+}
+
+.team-socials {
+    width: 100%;
+    display: flex;
+    gap: 5%;
+    justify-content: flex-end;
+}
+
+ion-icon:hover,
+ion-icon:active,
+ion-icon:focus {
+    transition: all 0.8s;
+}
+
+#twitter:hover,
+#twitter:active,
+#twitter:focus {
+    color: var(--light-brown)
+}
+
+#github:hover,
+#github:active,
+#github:focus {
+    color: var(--light-brown)
+}
+
+#email:hover,
+#email:active,
+#email:focus {
+    color: var(--light-brown)
+}
+
+#linkedin:hover,
+#linkedin:active,
+#linkedin:focus {
+    color: var(--light-brown)
+}
