@@ -8,16 +8,14 @@
 
 body {
     margin: 0;
-    height: 100vh;
-
 }
 
 #index1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 2% auto 3% auto;
-    width: 80%
+    margin: 2vh auto 3vh auto;
+    width: 80%;
 }
 
 #CP-img-header-land {
@@ -55,9 +53,9 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 12rem;
-    margin: 3% auto 3% auto;
+    margin: 4vh auto 4vh auto;
     max-width: 30rem;
-    padding: 4%;
+    padding: 5vh;
     background: linear-gradient(184deg,
             var(--dems) 1%,
             var(--white) 18%,
@@ -87,7 +85,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 2%
+    padding-top: 3vh
 }
 
 #button {

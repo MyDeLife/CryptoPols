@@ -79,10 +79,12 @@ nav p,
 h1 {
     font-size: 2.7rem;
     margin: 0 auto 2% auto;
+    text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 h2 {
     font-size: 2.3rem;
+    text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 h3 {
@@ -126,27 +128,4 @@ li {
         linear-gradient(#0000 calc(50% - var(--b)/2),
             var(--c) 0 calc(50% + var(--b)/2),
             #0000 0) 1/0 var(--w)/calc(var(--w) + var(--g));
-}
-
-
-
-
-html::-webkit-scrollbar-track,
-div::-webkit-scrollbar-track {
-    background: var(--white);
-
-}
-
-html::-webkit-scrollbar-thumb,
-div::-webkit-scrollbar-thumb {
-    background: var(--light-brown);
-    border-radius: 0.5rem;
-}
-
-div::-webkit-scrollbar {
-    width: 0.8rem;
-}
-
-html::-webkit-scrollbar {
-    width: 1rem;
 }
