@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPols | Legislations</title>
+    <link rel="icon" href="../favicon64.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/legislation.css">
+    <link rel="stylesheet" href="../styles/legislation_mobile.css">
+    <link rel="stylesheet" href="../styles/header.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/footer.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/global.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/feedback_form.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/feedback_form_mobile.css?v=1.2.8">
+
+    <!-- EXTERNAL SCRIPTS-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WDQ4V9VZBT');
+    </script>
+
+</head>
+
+<body>
+    <div class="body-contain">
+
+        <!-- HEADER-->
+        <header>
+            <div id="header-content">
+                <div class="logo-title">
+                    <a id="CPlogo-header" href="https://cryptopols.com/html/main.html"><img id="CP-img-header"
+                            src="https://github.com/MyDeLife/CryptoPols/blob/main/assets/CP%20Logo%20wo%202048.png?raw=true"></a>
+                    <div id="header-title">
+                        <h1>Crypto<span>Pols</span></h1>
+                        <p>...monitoring crypto sentiment of US politicians in Congress</p>
+                    </div>
+                </div>
+
+                <!-- NAVBAR -->
+                <nav id="main-nav">
+                    <div class="nav-dropdown">
+                        <p class="nav-bar"><a href="https://cryptopols.com/html/main.html">Home</a></p>
+                    </div>
+                    <div class="nav-dropdown">
+                        <p class="nav-bar no-cursor"><a>About</a></p>
+                        <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
+                            <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+                        </div>
+                    </div>
+
+                    <!-- GIVE FEEDBACK -->
+                    <button class="contact-button" id="contact-button">give feedback</button>
+                    <section class="contact" id="contact">
+                        <div class="close-button-area" id="close-button-area">
+                            <button id="close-button" type="submit"><i class="fas fa-window-close"></i></button>
+                        </div>
+                        <div class="column right contact-us">
+                            <div class="text" id="contact-us-text">Give Feedback</div>
+                            <form id="contactForm">
+                                <div class="fields">
+                                    <div class="field name">
+                                        <input type="text" name="name" placeholder="*Name" required>
+                                    </div>
+                                    <div class="field email">
+                                        <input type="email" name="email" placeholder="Email (optional)">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <input type="text" name="subject" placeholder="*Subject" required>
+                                </div>
+                                <div class="field textarea">
+                                    <textarea cols="30" rows="10" name="message" placeholder="*Message..."
+                                        required></textarea>
+                                </div>
+                                <div class="button-area" id="send-message-btn-area">
+                                    <button id="send-message-btn" type="submit">Send <i
+                                            class="fas fa-paper-plane"></i></button>
+                                    <div id="responseMessage" style="display:none;"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </nav>
+
+                <!--HAMBURGER MENU-->
+                <div id="hamburger-icon" class="hamburger-icon" onclick="toggleMenu()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <nav id="ham-navbar" class="ham-navbar">
+                    <div id="ham-menu-contain">
+                        <ul>
+                            <li><a href="https://cryptopols.com/html/main.html" onclick="toggleMenu()">Home</a></li>
+                            <hr class="ham-menu-line">
+                            <li class="ham-menu-dropdown-contain">
+                                <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About
+                                    <span class="fas fa-caret-down fontawesome"></span>
+                                </a>
+                                </a>
+                                <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                                    <a class="ham-menu-dropdown-link"
+                                        href="https://cryptopols.com/html/methodology.html"
+                                        onclick="toggleMenu()">Methodology</a>
+                                    <a class="ham-menu-dropdown-link"
+                                        href="https://www.indiegogo.com/project/preview/02f99799#/"
+                                        onclick="toggleMenu()">Support
+                                        CryptoPols</a>
+                                </div>
+                            </li>
+                            <hr class="ham-menu-line">
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <button class="contact-button" id="contact-button-mobile">give feedback</button>
+        <section class="contact" id="contact-mobile">
+            <div class="close-button-area" id="close-button-area-mobile">
+                <button id="close-button-mobile" type="submit"><i class="fas fa-window-close"></i></button>
+            </div>
+            <div class="column right contact-us">
+                <div class="text" id="contact-us-text-mobile">Give Feedback</div>
+                <form id="contactForm-mobile">
+                    <div class="fields">
+                        <div class="field name">
+                            <input type="text" name="name" placeholder="*Name" required>
+                        </div>
+                        <div class="field email">
+                            <input type="email" name="email" placeholder="Email (optional)">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="subject" placeholder="*Subject" required>
+                    </div>
+                    <div class="field textarea">
+                        <textarea cols="30" rows="10" name="message" placeholder="*Message..." required></textarea>
+                    </div>
+                    <div class="button-area" id="send-message-btn-area-mobile">
+                        <button id="send-message-btn-mobile" type="submit">Send <i
+                                class="fas fa-paper-plane"></i></button>
+                        <div id="responseMessage-mobile" style="display:none;"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="leg-top">
+            <h1>Bills & Resolutions</h1>
+        </section>
+        <section>
+
+
+            <div id="legislation-table-cont">
+                <div id="leg-table-filters-cont">
+                    <input class="leg-table-search-fields" id="leg-bill-search" type="text" placeholder="<Enter #>">
+                    <input class="leg-table-search-fields" id="leg-title-search" type="text" placeholder="<Enter word>">
+                    <input class="leg-table-search-fields" id="leg-branch-search" type="text"
+                        placeholder="<Enter branch>">
+                    <input class="leg-table-search-fields" id="leg-sponsor-search" type="text" placeholder="  <Enter sponsor>">
+                    <input class="leg-table-search-fields" id="leg-cosponsors-search" type="text"
+                        placeholder="<Enter #>">
+                    <input class="leg-table-search-fields" id="leg-introduced-search" type="text" placeholder="<Enter date>">
+                    <input class="leg-table-search-fields" id="leg-sentiment-search" type="text"
+                        placeholder="<Enter sentiment>">
+                </div>
+                <table id="legislation-table" class="tablesorter">
+                    <thead>
+                        <tr id="legislation-table-data">
+                            <th id="leg-details"></th> <!--legislation number ... S.187 H.R.1334 etc-->
+                            <th id="leg-bill-number">Bill #</th> <!--legislation number ... S.187 H.R.1334 etc-->
+                            <th id="leg-title">Title</th> <!--title of legislation-->
+                            <th id="leg-branch">Branch</th> <!--senate or house of rep.-->
+                            <th id="leg-sponsor-party-color"></th> <!--color of sponsor party-->
+                            <th id="leg-sponsor">Sponsor</th> <!--name and party association of sponsor-->
+                            <th id="leg-cosponsors">Cosponsors</th> <!--number of Cosponsors along with party split-->
+                            <th class="hide-on-mobile" id="leg-introduced">Introduced</th>
+                            <!--date when legislation was introduced-->
+                            <th id="leg-sentiment" data-type="leg_sentiment">Crypto Sentiment</th>
+                            <!--sentiment rating-->
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <!-- FOOTER-->
+        <script>
+            $(function () {
+                $("#footer-placeholder").load("footer.html");
+            });
+        </script>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="../scripts/legislation-table.js?v=1.2.8"></script>
+    <script src="../scripts/give_feedback.js?v=1.2.8"></script>
+    <script src="../scripts/give_feedback_mobile.js?v=1.2.8"></script>
+    <script src="../scripts/nav-bar.js?v=1.2.8"></script>
+</body>
+
+</html>
