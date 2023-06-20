@@ -46,6 +46,9 @@
     }
 
     .team-member-bio {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
         background-color: var(--gray);
         max-width: 70rem;
         width: 90%;

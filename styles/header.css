@@ -51,7 +51,7 @@ header {
 #header-content h1 {
     color: var(--dark-brown);
     font-size: 3.4rem !important;
-    box-shadow: none !important;
+    text-shadow: none !important;
 }
 
 #header-content h1 span {
@@ -61,7 +61,7 @@ header {
         Geneva,
         Verdana,
         sans-serif;
-        box-shadow: none !important;
+        text-shadow: none !important;
 }
 
 #header-content p:not(nav p) {
