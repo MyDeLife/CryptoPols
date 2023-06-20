@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPols | Contact</title>
+    <link rel="icon" href="../favicon64.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/header.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/footer.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/contact.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/contact_mobile.css?v=1.2.9">
+
+    <!-- EXTERNAL SCRIPTS-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WDQ4V9VZBT');
+    </script>
+
+</head>
+
+<body>
+    <div class="body-contain contact-body">
+
+        <!-- HEADER-->
+        <header>
+            <div id="header-content">
+                <div class="logo-title">
+                    <a id="CPlogo-header" href="https://cryptopols.com/html/main.html"><img id="CP-img-header"
+                            src="https://github.com/MyDeLife/CryptoPols/blob/main/assets/CP%20Logo%20wo%202048.png?raw=true"></a>
+                    <div id="header-title">
+                        <h1>Crypto<span>Pols</span></h1>
+                        <p>...monitoring crypto sentiment of US politicians in Congress</p>
+                    </div>
+                </div>
+
+                <!-- NAVBAR -->
+                <nav id="main-nav">
+                    <div class="nav-dropdown">
+                        <p class="nav-bar"><a href="https://cryptopols/html/main.com/">Home</a></p>
+                    </div>
+                    <div class="nav-dropdown">
+                        <p class="nav-bar no-cursor"><a>About</a></p>
+                        <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/team.html">Team</a>
+                            <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
+                            <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <p class="nav-bar no-cursor"><a>Legislation</a></p>
+                        <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/legislation.html">Bills & Resolutions</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <p class="nav-bar"><a href="https://cryptopols/html/contact.com/">Contact</a></p>
+                    </div>
+                </nav>
+
+                <!--HAMBURGER MENU-->
+                <div id="hamburger-icon" class="hamburger-icon" onclick="toggleMenu()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <nav id="ham-navbar" class="ham-navbar">
+                    <div id="ham-menu-contain">
+                        <ul>
+                            <li><a href="https://cryptopols.com/html/main.html" onclick="toggleMenu()">Home</a></li>
+                            <hr class="ham-menu-line">
+                            <li class="ham-menu-dropdown-contain">
+                                <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About
+                                    <span class="fas fa-caret-down"></span>
+                                </a>
+                                </a>
+                                <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                                    <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/team.html"
+                                        onclick="toggleMenu()">Team</a>
+                                    <a class="ham-menu-dropdown-link"
+                                        href="https://cryptopols.com/html/methodology.html"
+                                        onclick="toggleMenu()">Methodology</a>
+                                    <a class="ham-menu-dropdown-link"
+                                        href="https://www.indiegogo.com/project/preview/02f99799#/"
+                                        onclick="toggleMenu()">Support CryptoPols</a>
+                                </div>
+                            </li>
+                            <hr class="ham-menu-line">
+                            <li class="ham-menu-dropdown-contain">
+                                <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">Legislation
+                                    <span class="fas fa-caret-down"></span>
+                                </a>
+                                </a>
+                                <div class="ham-menu-dropdown legislation" id="ham-menu-dropdown-legislation">
+                                    <a class="ham-menu-dropdown-link"
+                                        href="https://cryptopols.com/html/legislation.html" onclick="toggleMenu()">Bills
+                                        & Resolutions</a>
+                                </div>
+                            </li>
+                            <hr class="ham-menu-line">
+                            <li><a href="https://cryptopols.com/html/contact.html" onclick="toggleMenu()">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <h1 class="text" id="contact-us-text">Contact</h1>
+        <section class="contact" id="contact">
+            <div class="column right contact-us">
+                <form id="contactForm">
+                    <div id="input-fields">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" name="name" placeholder="*Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" name="email" placeholder="Email (optional)">
+                            </div>
+                        </div>
+                        <div class="field subject">
+                            <input type="text" name="subject" placeholder="*Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" name="message" placeholder="*Message..." required></textarea>
+                        </div>
+                    </div>
+                    <div class="contact-button-area" id="send-message-btn-area">
+                        <button id="send-message-btn" type="submit">Send <i class="fas fa-paper-plane"></i></button>
+                        <div id="responseMessage" style="display:none;"></div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+
+
+        <!-- FOOTER-->
+        <script>
+            $(function () {
+                $("#footer-placeholder").load("footer.html");
+            });
+        </script>
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <script src="../scripts/contact.js?v=1.2.9"></script>
+    <script src="../scripts/nav-bar.js?v=1.2.9"></script>
+</body>
+
+</html>
