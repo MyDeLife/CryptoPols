@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/team.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/team_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/global.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/header.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/footer.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/team.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/team_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/header.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/footer.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.9">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- EXTERNAL SCRIPTS-->
@@ -53,14 +53,24 @@
             <!-- NAVBAR -->
             <nav id="main-nav">
                 <div class="nav-dropdown">
-                    <p class="nav-bar"><a href="https://cryptopols.com/html/main.html">Home</a></p>
+                    <p class="nav-bar"><a href="https://cryptopols/html/main.com/">Home</a></p>
                 </div>
                 <div class="nav-dropdown">
                     <p class="nav-bar no-cursor"><a>About</a></p>
                     <div class="nav-dropdown-content">
+                        <a href="https://cryptopols.com/html/team.html">Team</a>
                         <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
                         <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
                     </div>
+                </div>
+                <div class="nav-dropdown">
+                    <p class="nav-bar no-cursor"><a>Legislation</a></p>
+                    <div class="nav-dropdown-content">
+                        <a href="https://cryptopols.com/html/legislation.html">Bills & Resolutions</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <p class="nav-bar"><a href="https://cryptopols/html/contact.com/">Contact</a></p>
                 </div>
             </nav>
 
@@ -81,16 +91,28 @@
                             </a>
                             </a>
                             <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                                <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/team.html"
+                                    onclick="toggleMenu()">Team</a>
                                 <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/methodology.html"
                                     onclick="toggleMenu()">Methodology</a>
                                 <a class="ham-menu-dropdown-link"
                                     href="https://www.indiegogo.com/project/preview/02f99799#/"
-                                    onclick="toggleMenu()">Support
-                                    CryptoPols</a>
+                                    onclick="toggleMenu()">Support CryptoPols</a>
                             </div>
                         </li>
                         <hr class="ham-menu-line">
-                        <li><a href="#" class="contact-button" id="feedback-link">Give Feedback</a></li>
+                        <li class="ham-menu-dropdown-contain">
+                            <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">Legislation
+                                <span class="fas fa-caret-down"></span>
+                            </a>
+                            </a>
+                            <div class="ham-menu-dropdown legislation" id="ham-menu-dropdown-legislation">
+                                <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/legislation.html"
+                                    onclick="toggleMenu()">Bills & Resolutions</a>
+                            </div>
+                        </li>
+                        <hr class="ham-menu-line">
+                        <li><a href="https://cryptopols.com/html/contact.html" onclick="toggleMenu()">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -108,12 +130,15 @@
             <div class="team-member-bio-contain">
                 <img src="../assets/team-oz-pfp.png">
                 <div class="team-member-bio">
-                   <div class="team-member-text1-contain"> <p class="team-member-text1">Oliver Zerhusen</p>
-                    <p class="team-member-text2">CO-FOUNDER</p></div>
+                    <div class="team-member-text1-contain">
+                        <p class="team-member-text1">Oliver Zerhusen</p>
+                        <p class="team-member-text2">CO-FOUNDER</p>
+                    </div>
                     <p class="team-member-text3">As an accomplished product manager, web3 builder, and developer, Oliver
                         brings a unique blend of technical expertise and strategic vision to the team. With a track
                         record of successfully managing
-                        products from inception to launch, and a deep understanding of bringing innovative solutions to market, Oliver
+                        products from inception to launch, and a deep understanding of bringing innovative solutions to
+                        market, Oliver
                         has been instrumental in the
                         creation of CryptoPols. When not immersed in the digital world, Oliver channels his creativity
                         into cooking,
@@ -144,8 +169,10 @@
             <div class="team-member-bio-contain">
 
                 <div class="team-member-bio">
-                    <div class="team-member-text1-contain"><p class="team-member-text1">Esther Woo</p>
-                    <p class="team-member-text2">CO-FOUNDER</p></div>
+                    <div class="team-member-text1-contain">
+                        <p class="team-member-text1">Esther Woo</p>
+                        <p class="team-member-text2">CO-FOUNDER</p>
+                    </div>
 
                     <p class="team-member-text3">Drawing upon a deeply rooted background in customer relations and
                         marketing, Esther
@@ -179,16 +206,16 @@
         </div>
     </section>
 
-<!-- FOOTER -->
-<script>
-    $(function () {
-        $("#footer-placeholder").load("../html/footer.html");
-    });
-</script>
-<div id="footer-placeholder"></div>
+    <!-- FOOTER -->
+    <script>
+        $(function () {
+            $("#footer-placeholder").load("../html/footer.html");
+        });
+    </script>
+    <div id="footer-placeholder"></div>
 
-<!-- INTERNAL SCRIPTS -->
-<script src="../scripts/nav-bar.js?v=1.2.8"></script>
+    <!-- INTERNAL SCRIPTS -->
+    <script src="../scripts/nav-bar.js?v=1.2.9"></script>
 
 </body>
 
