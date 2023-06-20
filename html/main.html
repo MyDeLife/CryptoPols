@@ -10,18 +10,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/main.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/main_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/main_events.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/main_events_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/global.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/header.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/footer.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/feedback_form.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/feedback_form_mobile.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/main.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/main_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/main_events.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/main_events_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/header.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/footer.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.9">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- EXTERNAL SCRIPTS-->
@@ -68,13 +66,20 @@
                 <!-- NAVBAR -->
                 <nav id="main-nav">
                     <div class="nav-dropdown">
-                        <p class="nav-bar"><a href="https://cryptopols.com/html/main.html">Home</a></p>
+                        <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
                     </div>
                     <div class="nav-dropdown">
                         <p class="nav-bar no-cursor"><a>About</a></p>
                         <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/team.html">Team</a>
                             <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
                             <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <p class="nav-bar no-cursor"><a>Legislation</a></p>
+                        <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/legislation.html">Bills & Resolutions</a>
                         </div>
                     </div>
 
@@ -127,14 +132,28 @@
                                 <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About
                                     <span class="fas fa-caret-down"></span>
                                 </a>
+                                </a>
                                 <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                                    <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/team.html"
+                                        onclick="toggleMenu()">Team</a>
                                     <a class="ham-menu-dropdown-link"
                                         href="https://cryptopols.com/html/methodology.html"
                                         onclick="toggleMenu()">Methodology</a>
                                     <a class="ham-menu-dropdown-link"
                                         href="https://www.indiegogo.com/project/preview/02f99799#/"
-                                        onclick="toggleMenu()">Support
-                                        CryptoPols</a>
+                                        onclick="toggleMenu()">Support CryptoPols</a>
+                                </div>
+                            </li>
+                            <hr class="ham-menu-line">
+                            <li class="ham-menu-dropdown-contain">
+                                <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">Legislation
+                                    <span class="fas fa-caret-down"></span>
+                                </a>
+                                </a>
+                                <div class="ham-menu-dropdown legislation" id="ham-menu-dropdown-legislation">
+                                    <a class="ham-menu-dropdown-link"
+                                        href="https://cryptopols.com/html/legislation.html" onclick="toggleMenu()">Bills
+                                        & Resolutions</a>
                                 </div>
                             </li>
                         </ul>
@@ -717,13 +736,11 @@
         <div id="footer-placeholder"></div>
 
         <!-- INTERNAL SCRIPTS -->
-        <script src="../scripts/state-map.js?v=1.2.8"></script>
-        <script src="../scripts/main_state_dd.js?v=1.2.8"></script>
-        <script src="../scripts/main.js?v=1.2.8"></script>
-        <script src="../scripts/main_events.js?v=1.2.8"></script>
-        <script src="../scripts/give_feedback.js?v=1.2.8"></script>
-        <script src="../scripts/give_feedback_mobile.js?v=1.2.8"></script>
-        <script src="../scripts/nav-bar.js?v=1.2.8"></script>
+        <script src="../scripts/state-map.js?v=1.2.9"></script>
+        <script src="../scripts/main_state_dd.js?v=1.2.9"></script>
+        <script src="../scripts/main.js?v=1.2.9"></script>
+        <script src="../scripts/main_events.js?v=1.2.9"></script>
+        <script src="../scripts/nav-bar.js?v=1.2.9"></script>
 
     </div>
 </body>

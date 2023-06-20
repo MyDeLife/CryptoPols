@@ -11,14 +11,13 @@
     <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/methodology.css">
     <link rel="stylesheet" href="../styles/methodology_mobile.css">
-    <link rel="stylesheet" href="../styles/header.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/footer.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/global.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/feedback_form.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/feedback_form_mobile.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/header.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/footer.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.9">
+
 
     <!-- EXTERNAL SCRIPTS-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -55,13 +54,20 @@
                 <!-- NAVBAR -->
                 <nav id="main-nav">
                     <div class="nav-dropdown">
-                        <p class="nav-bar"><a href="https://cryptopols.com/html/main.html">Home</a></p>
+                        <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
                     </div>
                     <div class="nav-dropdown">
                         <p class="nav-bar no-cursor"><a>About</a></p>
                         <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/team.html">Team</a>
                             <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
                             <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <p class="nav-bar no-cursor"><a>Legislation</a></p>
+                        <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/legislation.html">Bills & Resolutions</a>
                         </div>
                     </div>
 
@@ -112,20 +118,32 @@
                             <hr class="ham-menu-line">
                             <li class="ham-menu-dropdown-contain">
                                 <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About
-                                    <span class="fas fa-caret-down fontawesome"></span>
+                                    <span class="fas fa-caret-down"></span>
                                 </a>
                                 </a>
                                 <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                                    <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/team.html"
+                                        onclick="toggleMenu()">Team</a>
                                     <a class="ham-menu-dropdown-link"
                                         href="https://cryptopols.com/html/methodology.html"
                                         onclick="toggleMenu()">Methodology</a>
                                     <a class="ham-menu-dropdown-link"
                                         href="https://www.indiegogo.com/project/preview/02f99799#/"
-                                        onclick="toggleMenu()">Support
-                                        CryptoPols</a>
+                                        onclick="toggleMenu()">Support CryptoPols</a>
                                 </div>
                             </li>
                             <hr class="ham-menu-line">
+                            <li class="ham-menu-dropdown-contain">
+                                <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">Legislation
+                                    <span class="fas fa-caret-down"></span>
+                                </a>
+                                </a>
+                                <div class="ham-menu-dropdown legislation" id="ham-menu-dropdown-legislation">
+                                    <a class="ham-menu-dropdown-link"
+                                        href="https://cryptopols.com/html/legislation.html" onclick="toggleMenu()">Bills
+                                        & Resolutions</a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -192,7 +210,7 @@
                     <li>Engages in meaningful regulation of the crypto industry, which includes making crypto a more
                         secure place for citizens to perform crypto transactions with reduced risks of economic
                         attacks by malicious actors.</li>
-                    <li>Discourages punitive regulatory enforcement actions taken on the basis of frameworks 
+                    <li>Discourages punitive regulatory enforcement actions taken on the basis of frameworks
                         that may not clearly apply to (parts of) the crypto industry.</li>
                     <li>Recognizes the need for privacy in crypto for its citizens, where government restrains itself
                         from taking advantage of blockchain technology features to implement programs aimed to surveil
@@ -214,14 +232,14 @@
                     statements, opinions and actions taken by a politician where he/she:</p>
                 <ul>
                     <li>Believes that crypto does not produce any value for society.</li>
-                    <li>Expresses that crypto is predominantly used by malicious actors, such as money launderers, 
+                    <li>Expresses that crypto is predominantly used by malicious actors, such as money launderers,
                         terrorist groups and pariah states.</li>
                     <li>Supports implementing central bank digital currencies (CBDCs).</li>
                     <li>Promotes restricting access to crypto via regulations that limit the ability of citizens to
                         perform financial crypto transactions, work in web3 or otherwise engage in doing business in
                         crypto.</li>
-                    <li>Encourages broad and punitive regulatory enforcement actions towards the crypto industry 
-                        without regards for nuanced applicability of existing laws and regulations, and without 
+                    <li>Encourages broad and punitive regulatory enforcement actions towards the crypto industry
+                        without regards for nuanced applicability of existing laws and regulations, and without
                         regards for its impact on innovation and all stakeholders in the crypto ecosystem.</li>
                     <li>Supports shutting down the crypto industry.</li>
                     <li>Demonstrates an adversarial and negative mindset towards the benefits of crypto and towards
@@ -239,9 +257,7 @@
         <div id="footer-placeholder"></div>
     </div>
 
-    <script src="../scripts/give_feedback.js?v=1.2.8"></script>
-    <script src="../scripts/give_feedback_mobile.js?v=1.2.8"></script>
-    <script src="../scripts/nav-bar.js?v=1.2.8"></script>
+    <script src="../scripts/nav-bar.js?v=1.2.9"></script>
 </body>
 
 </html>

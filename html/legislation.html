@@ -11,14 +11,12 @@
     <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/legislation.css">
     <link rel="stylesheet" href="../styles/legislation_mobile.css">
-    <link rel="stylesheet" href="../styles/header.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/footer.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/global.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/feedback_form.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/feedback_form_mobile.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/header.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/footer.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.9">
 
     <!-- EXTERNAL SCRIPTS-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -55,13 +53,20 @@
                 <!-- NAVBAR -->
                 <nav id="main-nav">
                     <div class="nav-dropdown">
-                        <p class="nav-bar"><a href="https://cryptopols.com/html/main.html">Home</a></p>
+                        <p class="nav-bar"><a href="https://cryptopols.com/">Home</a></p>
                     </div>
                     <div class="nav-dropdown">
                         <p class="nav-bar no-cursor"><a>About</a></p>
                         <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/team.html">Team</a>
                             <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
                             <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <p class="nav-bar no-cursor"><a>Legislation</a></p>
+                        <div class="nav-dropdown-content">
+                            <a href="https://cryptopols.com/html/legislation.html">Bills & Resolutions</a>
                         </div>
                     </div>
 
@@ -112,20 +117,32 @@
                             <hr class="ham-menu-line">
                             <li class="ham-menu-dropdown-contain">
                                 <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About
-                                    <span class="fas fa-caret-down fontawesome"></span>
+                                    <span class="fas fa-caret-down"></span>
                                 </a>
                                 </a>
                                 <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                                    <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/team.html"
+                                        onclick="toggleMenu()">Team</a>
                                     <a class="ham-menu-dropdown-link"
                                         href="https://cryptopols.com/html/methodology.html"
                                         onclick="toggleMenu()">Methodology</a>
                                     <a class="ham-menu-dropdown-link"
                                         href="https://www.indiegogo.com/project/preview/02f99799#/"
-                                        onclick="toggleMenu()">Support
-                                        CryptoPols</a>
+                                        onclick="toggleMenu()">Support CryptoPols</a>
                                 </div>
                             </li>
                             <hr class="ham-menu-line">
+                            <li class="ham-menu-dropdown-contain">
+                                <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">Legislation
+                                    <span class="fas fa-caret-down"></span>
+                                </a>
+                                </a>
+                                <div class="ham-menu-dropdown legislation" id="ham-menu-dropdown-legislation">
+                                    <a class="ham-menu-dropdown-link"
+                                        href="https://cryptopols.com/html/legislation.html" onclick="toggleMenu()">Bills
+                                        & Resolutions</a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -175,10 +192,12 @@
                     <input class="leg-table-search-fields" id="leg-title-search" type="text" placeholder="<Enter word>">
                     <input class="leg-table-search-fields" id="leg-branch-search" type="text"
                         placeholder="<Enter branch>">
-                    <input class="leg-table-search-fields" id="leg-sponsor-search" type="text" placeholder="  <Enter sponsor>">
+                    <input class="leg-table-search-fields" id="leg-sponsor-search" type="text"
+                        placeholder="  <Enter sponsor>">
                     <input class="leg-table-search-fields" id="leg-cosponsors-search" type="text"
                         placeholder="<Enter #>">
-                    <input class="leg-table-search-fields" id="leg-introduced-search" type="text" placeholder="<Enter date>">
+                    <input class="leg-table-search-fields" id="leg-introduced-search" type="text"
+                        placeholder="<Enter date>">
                     <input class="leg-table-search-fields" id="leg-sentiment-search" type="text"
                         placeholder="<Enter sentiment>">
                 </div>
@@ -213,10 +232,8 @@
         </script>
         <div id="footer-placeholder"></div>
     </div>
-    <script src="../scripts/legislation-table.js?v=1.2.8"></script>
-    <script src="../scripts/give_feedback.js?v=1.2.8"></script>
-    <script src="../scripts/give_feedback_mobile.js?v=1.2.8"></script>
-    <script src="../scripts/nav-bar.js?v=1.2.8"></script>
+    <script src="../scripts/legislation-table.js?v=1.2.9"></script>
+    <script src="../scripts/nav-bar.js?v=1.2.9"></script>
 </body>
 
 </html>

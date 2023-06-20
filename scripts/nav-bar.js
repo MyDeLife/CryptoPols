@@ -6,8 +6,12 @@ function toggleMenu() {
 function toggleDrop(event) {
     event.stopPropagation();
 
-    var dropdown = document.getElementById("ham-menu-dropdown-about");
-    var caret = event.currentTarget.querySelector(".fas");
+    // get the clicked link element
+    var linkElement = event.currentTarget;
+
+    // get the associated dropdown element
+    var dropdown = linkElement.nextElementSibling;
+    var caret = linkElement.querySelector(".fas");
 
     if (dropdown.style.display === "none" || dropdown.style.display === "") {
         dropdown.style.display = "flex";
@@ -19,3 +23,4 @@ function toggleDrop(event) {
         caret.classList.add("fa-caret-down");
     }
 }
+

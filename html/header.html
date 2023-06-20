@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/header.css?v=1.2.8">    
-    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/global.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/feedback_form.css?v=1.2.8">
-    <link rel="stylesheet" href="../styles/feedback_form_mobile.css?v=1.2.8">
+    <link rel="stylesheet" href="../styles/header.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global.css?v=1.2.9">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.2.9">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -31,36 +29,37 @@
             </div>
         </div>
 
-      <!--HAMBURGER MENU-->
-    <div id="hamburger-icon" class="hamburger-icon" onclick="toggleMenu()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-    </div>
-    
-    <nav id="ham-navbar" class="ham-navbar">
-        <div id="ham-menu-contain">
-            <ul>
-                <li><a href="https://cryptopols.com/html/main.html" onclick="toggleMenu()">Home</a></li>
-                <hr class="ham-menu-line">
-                <li class="ham-menu-dropdown-contain">
-                    <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About <span
-                            class="fas fa-caret-down"></span>
-                    </a>
-                    <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
-                        <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/methodology.html"
-                            onclick="toggleMenu()">Methodology</a>
-                        <a class="ham-menu-dropdown-link" href="https://www.indiegogo.com/project/preview/02f99799#/"
-                            onclick="toggleMenu()">Support
-                            CryptoPols</a>
-                    </div>
-                </li>
-                <hr class="ham-menu-line">
-                <li><a href="#" class="contact-button" id="feedback-link">Give Feedback</a></li>
-            </ul>
+        <!--HAMBURGER MENU-->
+        <div id="hamburger-icon" class="hamburger-icon" onclick="toggleMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </div>
-    </nav>
-    
+
+        <nav id="ham-navbar" class="ham-navbar">
+            <div id="ham-menu-contain">
+                <ul>
+                    <li><a href="https://cryptopols.com/html/main.html" onclick="toggleMenu()">Home</a></li>
+                    <hr class="ham-menu-line">
+                    <li class="ham-menu-dropdown-contain">
+                        <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About <span
+                                class="fas fa-caret-down"></span>
+                        </a>
+                        <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                            <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/methodology.html"
+                                onclick="toggleMenu()">Methodology</a>
+                            <a class="ham-menu-dropdown-link"
+                                href="https://www.indiegogo.com/project/preview/02f99799#/"
+                                onclick="toggleMenu()">Support
+                                CryptoPols</a>
+                        </div>
+                    </li>
+                    <hr class="ham-menu-line">
+                    <li><a href="#" class="contact-button" id="feedback-link">Give Feedback</a></li>
+                </ul>
+            </div>
+        </nav>
+
         <!-- NAVBAR -->
         <nav id="main-nav">
             <div class="nav-dropdown">
@@ -69,8 +68,15 @@
             <div class="nav-dropdown">
                 <p class="nav-bar no-cursor"><a>About</a></p>
                 <div class="nav-dropdown-content">
+                    <a href="https://cryptopols.com/html/team.html">Team</a>
                     <a href="https://cryptopols.com/html/methodology.html">Methodology</a>
                     <a href="https://www.indiegogo.com/project/preview/02f99799#/">Support CryptoPols</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <p class="nav-bar no-cursor"><a>Legislation</a></p>
+                <div class="nav-dropdown-content">
+                    <a href="https://cryptopols.com/html/legislation.html">Bills & Resolutions</a>
                 </div>
             </div>
 
@@ -107,14 +113,53 @@
                 </div>
             </section>
         </nav>
+
+        <!--HAMBURGER MENU-->
+        <div id="hamburger-icon" class="hamburger-icon" onclick="toggleMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <nav id="ham-navbar" class="ham-navbar">
+            <div id="ham-menu-contain">
+                <ul>
+                    <li><a href="https://cryptopols.com/html/main.html" onclick="toggleMenu()">Home</a></li>
+                    <hr class="ham-menu-line">
+                    <li class="ham-menu-dropdown-contain">
+                        <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">About
+                            <span class="fas fa-caret-down"></span>
+                        </a>
+                        </a>
+                        <div class="ham-menu-dropdown about" id="ham-menu-dropdown-about">
+                            <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/team.html"
+                                onclick="toggleMenu()">Team</a>
+                            <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/methodology.html"
+                                onclick="toggleMenu()">Methodology</a>
+                            <a class="ham-menu-dropdown-link"
+                                href="https://www.indiegogo.com/project/preview/02f99799#/"
+                                onclick="toggleMenu()">Support CryptoPols</a>
+                        </div>
+                    </li>
+                    <hr class="ham-menu-line">
+                    <li class="ham-menu-dropdown-contain">
+                        <a href="#" class="ham-menu-dropbtn" onclick="toggleDrop(event)">Legislation
+                            <span class="fas fa-caret-down"></span>
+                        </a>
+                        </a>
+                        <div class="ham-menu-dropdown legislation" id="ham-menu-dropdown-legislation">
+                            <a class="ham-menu-dropdown-link" href="https://cryptopols.com/html/legislation.html"
+                                onclick="toggleMenu()">Bills & Resolutions</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
 
 </header>
 
 <body>
-        <!-- INTERNAL SCRIPTS -->
-        <script src="../scripts/give_feedback.js?v=1.2.8"></script>
-        <script src="../scripts/give_feedback_mobile.js?v=1.2.8"></script>
+
 </body>
 
 </html>
