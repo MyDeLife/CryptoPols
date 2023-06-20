@@ -44,8 +44,8 @@
     background-color: var(--gray);
     max-width: 70rem;
     width: 80%;
-    height: 65%;
-    padding: 2rem 2rem 0 2rem;
+    height: 38vh;
+    padding: 2vh 3.5vh 0 3.5vh;
     border-radius: 0.5rem;
     box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.2);
 
@@ -97,18 +97,18 @@
 
 
 .team-member-text3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
     width: 100%;
     min-width: 35rem;
-    height: 50%;
+    height: 55%;
     max-height: 16rem;
     padding-left: 0.5%;
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: rgb(234, 233, 233) transparent;
     -webkit-scrollbar-color: rgb(234, 233, 233) transparent;
-
+    
 
 }
 
@@ -127,17 +127,18 @@
 .team-icons {
     background: inherit;
     display: flex;
-    margin-left: -2rem;
-    margin-right: -2rem;
+    margin: -2%
+    
 }
 
 
 .team-icons .team-socials ion-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--dark-brown);
     background-color: transparent;
     cursor: pointer;
     text-align: center;
+    padding-top: 1vh
 
 
 
