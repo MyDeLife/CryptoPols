@@ -5,8 +5,10 @@ body {
     font-family: var(--text-header);
 }
 
+
 #state-main-contain {
     margin: 0 auto 8rem auto;
+    padding-top: 8rem;
 }
 
 #state-info {
