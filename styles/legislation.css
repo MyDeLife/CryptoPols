@@ -3,7 +3,7 @@
 }
 
 #leg-top {
-    margin-top: 3rem;
+    margin-top: 10rem;
     margin-bottom: 3rem;
     text-align: center;
 }
@@ -334,7 +334,6 @@
     margin-bottom: 0.5vh;
     font-weight: bold;
     text-shadow: 0rem 0.01rem 0rem rgba(0, 0, 0, 0.2);
-    margin-bottom: 0.5rem;
 }
 
 
@@ -346,9 +345,8 @@
     background-color: var(--gray);
     text-overflow: clip;
     padding: 1vh;
-
+    margin-bottom: 1vh;
     box-shadow: 0 0.2rem 1rem 0rem rgba(0, 0, 0, 0.2);
-
 }
 
 .leg-full-text {
