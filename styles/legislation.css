@@ -132,7 +132,6 @@
 
 #legislation-table th {
     font-size: 1.4rem;
-    
     background-color: rgba(212, 199, 189, 0.8);
     height: 3.5vh;
 
@@ -428,7 +427,7 @@
     color: var(--black);
     padding: 1vh;
     font-size: 1.4rem;
-    margin-bottom: 1.5vh;
+    margin-bottom: 1.8vh;
 }
 
 .leg-branch-seal-cont {

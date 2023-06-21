@@ -30,6 +30,7 @@ body {
     text-align: center;
     font-family: var(--text-logo-name);
     font-size: 8rem;
+    text-shadow: none !important;
 }
 
 #index2 {

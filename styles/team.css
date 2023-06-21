@@ -115,7 +115,7 @@
     line-height: 2rem;
     width: 100%;
     min-width: 35rem;
-    height: 80%;
+    height: 77%;
     padding-left: 0.5%;
     overflow-y: scroll;
     scrollbar-width: thin;
@@ -152,7 +152,7 @@
     background-color: transparent;
     cursor: pointer;
     text-align: center;
-    margin-bottom: 1rem
+    margin-bottom: 2.5rem
 }
 
 .team-socials {

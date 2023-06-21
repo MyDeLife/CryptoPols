@@ -29,7 +29,7 @@
     #CP-img-header-land {
         display: flex;
         height: 10rem;
-        padding: 2rem 0 0 0;
+        padding: 1.5rem 0 0 0;
     }
 
     #header-title h1,
@@ -37,7 +37,8 @@
         text-align: center;
         font-family: var(--text-logo-name);
         font-size: 5rem;
-        padding-top: 2rem;
+        padding-top: 1.5rem;
+        text-shadow: none !important;
     }
 
     #index2 {
@@ -56,9 +57,9 @@
         display: flex;
         justify-content: center;
         gap: 3rem;
-        margin: 4rem auto 4rem auto;
+        margin: 3rem auto 3rem auto;
         max-width: 20rem;
-        padding: 8%;
+        padding: 7%;
         background: linear-gradient(184deg,
                 var(--dems) 1%,
                 var(--white) 18%,
