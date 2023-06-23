@@ -5,6 +5,14 @@ section {
     width: 80%
 }
 
+#page-header {
+    text-align: center;
+}
+
+h3 {
+    margin-top: 4rem;
+}
+
 li {
     line-height: 2rem;
 }

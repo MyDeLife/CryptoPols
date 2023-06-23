@@ -12,7 +12,7 @@
     width: 90vw;
     max-width: 120rem;
     margin: 0 auto 10rem auto;
-    height: 65vh;
+    height: 68vh;
     overflow: scroll;
     border: 2px solid var(--light-brown);
     box-shadow: 0 0.2rem 1rem 0rem rgba(0, 0, 0, 0.2);
@@ -268,7 +268,7 @@
     display: flex;
     gap: 0;
 
-    min-height: 35vh;
+    min-height: 38vh;
     background-color: rgba(212, 199, 189, 0.7);
     /* rgba(212, 199, 189, 0.8) */
     border-top: 1px solid var(--light-brown);
