@@ -129,26 +129,4 @@
     }
 
 
-
-
-    html::-webkit-scrollbar-track,
-    div::-webkit-scrollbar-track {
-        background: var(--white);
-
-    }
-
-    html::-webkit-scrollbar-thumb,
-    div::-webkit-scrollbar-thumb {
-        background: var(--light-brown);
-        border-radius: 0.5rem;
-    }
-
-    div::-webkit-scrollbar {
-        width: 0.8rem;
-    }
-
-    html::-webkit-scrollbar {
-        width: 1rem;
-    }
-
 }
