@@ -96,6 +96,35 @@
         border-radius: 0.5rem;
     }
 
+    .search-input-mobile {
+        margin: 0 auto 0 auto;
+        left: 4%;
+        width: 70%;
+        height: 2.5rem;
+        border-radius: 1rem;
+        position: fixed;
+        top: 5.5%;
+        padding-left: 3rem;
+    }
+
+    .mag-glass {
+        display: none;
+        position: absolute;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-left: 0.6rem;
+        transform: translate(0, 62%);
+    }
+
+    .mag-glass-mobile {
+        position: absolute;
+        font-size: 1.7rem;
+        font-weight: bold;
+        padding-left: 0.6rem;
+        transform: translate(100%, -150%);
+        z-index: 2;
+    }
+
 
     .rec-events-label-mobile {
         font-size: 1.6rem;
@@ -120,19 +149,6 @@
         top: 0.8%;
         z-index: 2;
         cursor: pointer;
-    }
-
-    .search-input-mobile {
-
-        margin: 0 auto 0 auto;
-        left: 4%;
-        width: 70%;
-        height: 2.5rem;
-        border-radius: 1rem;
-        position: fixed;
-        top: 5.5%;
-
-
     }
 
     .rec-events-cont2 {
@@ -364,7 +380,7 @@
     .rec-event-pol-image.pub {
         height: 5rem;
         border-radius: 10%;
-        
+
     }
 
     .rec-events-div2-1.pub {
