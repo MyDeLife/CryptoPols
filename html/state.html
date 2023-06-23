@@ -11,12 +11,12 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/theme.blue.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/state.css?v=1.3.4">
-    <link rel="stylesheet" href="../styles/state_mobile.css?v=1.3.4">
-    <link rel="stylesheet" href="../styles/global.css?v=1.3.4">
-    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.3.4">
-    <link rel="stylesheet" href="../styles/header.css?v=1.3.4">
-    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.3.4">
+    <link rel="stylesheet" href="../styles/state.css?v=1.3.5">
+    <link rel="stylesheet" href="../styles/state_mobile.css?v=1.3.5">
+    <link rel="stylesheet" href="../styles/global.css?v=1.3.5">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.3.5">
+    <link rel="stylesheet" href="../styles/header.css?v=1.3.5">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.3.5">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- EXTERNAL SCRIPTS-->
@@ -24,8 +24,6 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"
-        crossorigin="anonymous"></script>
 
     <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
@@ -62,10 +60,17 @@
                         <div id="state-sentiment-contain">
                         </div>
                     </div>
-                    <div class="select-wrapper">
-                        <select id="state-select">
-                            <option id="dropdown-placeholder" value="">Select a state...</option>
-                        </select>
+                    <div id="dd-filter-contain">
+                        <div class="select-wrapper">
+                            <select id="state-select">
+                                <option id="dropdown-placeholder" value="">Select a state...</option>
+                            </select>
+                        </div>
+                        <div id="state-table-filter-cont">
+                            <ion-icon name="search-sharp" id="mag-glass"></ion-icon>
+                            <input id="state-table-filter-field" type="text"
+                                placeholder="Enter politician or district">
+                        </div>
                     </div>
                 </div>
 
@@ -96,11 +101,9 @@
         <div id="footer-placeholder"></div>
 
         <!-- INTERNAL SCRIPTS-->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
-        <script src="../scripts/state-table.js?v=1.3.4"></script>
-        <script src="../scripts/state-name.js?v=1.3.4"></script>
-        <script src="../scripts/nav-bar.js?v=1.3.4"></script>
+        <script src="../scripts/state-table.js?v=1.3.5"></script>
+        <script src="../scripts/state-name.js?v=1.3.5"></script>
+        <script src="../scripts/nav-bar.js?v=1.3.5"></script>
 
     </div>
 </body>

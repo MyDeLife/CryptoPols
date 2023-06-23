@@ -3,15 +3,28 @@ function fetchPoliticiansData(state) {
     console.log("Requesting politicians data...");
 
     $.ajax({
-        url: "https://cryptopols.com/db/fetch_politicians.php", //https://cryptopols.com/db/fetch_politicians.php //http://localhost/dashboard/devcodes/CryptoPols/db/fetch_politicians.php
+        url: "https://cryptopols.com/db/fetch_politicians.php",
         dataType: "json",
         data: { state: state },
         success: function (politicians) {
-            // Clear existing data
             $('#politician-table tbody').empty();
 
             console.log("Politicians Data:", politicians);
             const baseURL = 'https://www.govtrack.us/static/legislator-photos/';
+
+            // Sort politicians first by office (descending) then by district (ascending)
+            politicians.sort((a, b) => {
+                if (a.office === b.office) {
+                    if (isNaN(a.district) || isNaN(b.district)) {
+                        if (isNaN(a.district) && isNaN(b.district)) {
+                            return a.district.localeCompare(b.district);
+                        }
+                        return isNaN(a.district) ? 1 : -1;
+                    }
+                    return parseInt(a.district, 10) - parseInt(b.district, 10);
+                }
+                return b.office.localeCompare(a.office);
+            });
 
             politicians.forEach(politician => {
                 const row = $('<tr>');
@@ -22,8 +35,7 @@ function fetchPoliticiansData(state) {
                 row.append(`<td class="table-img-name"><span class="name-link" onclick="openPoliticianPage('${politician.name}')"><img class="table-profile-img" src="${imageURL}" alt="no photo"/> ${politician.name}</span></td>`);
 
                 row.append(`<td class="office hide-on-mobile"><span>${politician.office}</span></td>`);
-                
-                // Check if the district value is 0, if so, display an empty cell
+
                 const districtDisplayValue = politician.district === "0" ? "" : politician.district;
                 row.append(`<td class="district hide-on-mobile"><span>${districtDisplayValue}</span></td>`);
 
@@ -31,15 +43,7 @@ function fetchPoliticiansData(state) {
                 $('#politician-table tbody').append(row);
             });
 
-            $("#politician-table").trigger("update");
-
-            // Wait for the table to be processed, then sort:
-            setTimeout(function () {
-                $("#politician-table").trigger("sorton", [[[2, 1], [3, 0]]]);
-            }, 0);
-
-            console.log("tablesorter plugin:", $.tablesorter);
-            initTablesorter();
+            updateURL(state);
         },
 
         error: function (jqXHR, textStatus, errorThrown) {
@@ -49,81 +53,24 @@ function fetchPoliticiansData(state) {
     });
 }
 
+function updateURL(state) {
+    const url = new URL(window.location);
+    url.searchParams.set("state", "US-" + state);
+    window.history.replaceState({}, '', url);
+}
+
 $(function () {
     const state = getUrlParameter("state").substring(3);
     fetchPoliticiansData(state);
 });
 
-// set table sorting with default settings
-function initTablesorter() {
-    $.tablesorter.addParser({
-        id: "partySort",
-        is: function (s) {
-            return false;
-        },
-        format: function (s, table, cell) {
-            const partyOrder = ["Dem", "Rep", "Ind", "Grn"];
-            return partyOrder.indexOf($(cell).attr("data-party"));
-        },
-        type: "numeric"
-    });
-
-    $.tablesorter.addParser({
-        id: "nameSort",
-        is: function (s) {
-            return false;
-        },
-        format: function (s, table, cell) {
-            return $(cell).text().toLowerCase();
-        },
-        type: "text"
-    });
-
-    $.tablesorter.addParser({
-        id: "cfrSort",
-        is: function (s) {
-            return false;
-        },
-
-        format: function (s, table, cell) {
-            const cfrOrder = ["Strongly Anti", "Slightly Anti", "Neutral", "Slightly Pro", "Strongly Pro", "Not enough data"];
-            const cfrIndex = cfrOrder.indexOf(s);
-
-            if (cfrIndex === cfrOrder.length - 1) {
-                return "";
-            }            
-            return cfrOrder.indexOf($(cell).attr("data-cfr"));
-        },
-        
-        type: "numeric"
-    });
-
-    $("#politician-table").tablesorter({
-        headerTemplate: "{content}<span class='header-arrow header-arrow-up'>&#x25B2;</span><span class='header-arrow header-arrow-down'>&#x25BC;</span>",
-        headers: {
-            0: {
-                sorter: "partySort"
-            },
-            1: { // "name" column
-                sorter: "nameSort"
-            },
-            4: {
-                sorter: "cfrSort"
-            }
-        },
-        sortList: [
-            [2, 1], // First, sort by the Office column (index 2)
-            [3, 0], // Then, sort by the District column (index 3),
-        ]
-    });
-
-    // IMPORTANT: re-introduce when releasing Politicians page:
-    /*
-   window.openPoliticianPage = function (name) {
-       window.location.href = `politician.html?name=${encodeURIComponent(name)}`;
-   };
-   */
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
 }
+
+
+// state select dropdown
 
 $(document).ready(function () {
     const states = [
@@ -185,7 +132,7 @@ $(document).ready(function () {
         $stateSelect.append(new Option(state.name, state.id));
     });
 
-    $stateSelect.select2({      
+    $stateSelect.select2({
         allowClear: true
     });
 
@@ -195,30 +142,39 @@ $(document).ready(function () {
         if (stateId) {
             fetchPoliticiansData(stateId);
             $('#state-name').text(stateName);
-
-            // Fetch the state name (and sentiment)
-            fetchStateName(stateId);
         }
     });
-
-
 
     $('select').select2({
         width: '18rem',
     });
 
-    const urlStateId = getQueryParam("state");
+    const urlStateId = getUrlParameter("state");
     if (urlStateId) {
         const stateAbbr = urlStateId.substring(3);
-        fetchPoliticiansData(stateAbbr);
-        fetchStateName(stateAbbr);
-    } else {
-        // If no state parameter in the URL, get the selected state from the dropdown
-        const selectedStateId = $('#state-select').val();
-        if (selectedStateId) {
-            fetchPoliticiansData(selectedStateId);
-            fetchStateName(selectedStateId);
-        }
+        $stateSelect.val(stateAbbr).trigger('change');
     }
 
+    function filterStateTable() {
+        const searchTerm = $("#state-table-filter-field").val().toLowerCase();
+        $("#politician-table tbody tr").each(function () {
+            const politicianName = $(this).find(".name-link").text().toLowerCase();
+            const district = $(this).find(".district").text().toLowerCase();
+
+            if (
+                politicianName.includes(searchTerm) ||
+                district.includes(searchTerm)
+            ) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+
+    $("#state-table-filter-field").on("keyup", filterStateTable);
 });
+
+
+
+

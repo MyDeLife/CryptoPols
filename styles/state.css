@@ -1,10 +1,6 @@
-
-
-body {
-    background-color: var(--gray);
-    font-family: var(--text-header);
+* {
+    /border: 1px solid black
 }
-
 
 #state-main-contain {
     margin: 0 auto 8rem auto;
@@ -21,6 +17,7 @@ body {
 
 #state-info1 {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 80%;
 }
@@ -68,7 +65,7 @@ body {
 }
 
 #state-sentiment {
-    height: 2.6rem;
+    height: 2.8rem;
     width: 18rem;
     margin: auto 0;
     padding-bottom: 0.2rem;
@@ -110,35 +107,27 @@ body {
     display: block;
 }
 
-#politician-table-contain {
-    height: inherit;
-    max-height: 70vh;
-    width: 80%;
-    margin: 0 auto;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    /* For smooth scrolling on iOS devices */
-    background-color: var(--not-enough-data);
-    border: 0.2rem solid transparent;
-    border-bottom: 0.3rem solid transparent;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+
+
+
+/* STATE DROPDOWN & FILTER*/
+
+#dd-filter-contain {
+    display: flex;
+    justify-content: space-between;
 }
 
-#politician-table {
-    width: 100%;
-    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
-    text-align: left;
-    line-height: 2rem;
-    border-radius: 0.5rem;
-    overflow: auto;
-    max-height: calc(100% - 6rem);
-    /* adjust the max-height value as needed */
+.select-wrapper,
+#state-table-filter-cont {
+    margin-bottom: 2rem;
 }
 
-/* STATE DROPDOWN*/
-.select-wrapper {
-    margin: 1rem 0.3rem 0 0;
+
+#state-slect,
+#state-table-filter-cont {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #dropdown-placeholder {
@@ -149,16 +138,14 @@ body {
     width: 18rem !important;
 }
 
-
 .select2-container--default .select2-selection--single {
-    border: 0.1rem solid var(--GRAY) !important;
-    -webkit-box-shadow: 10px 10px 25px 0px #000000;
-    box-shadow: 3px 5px 5px 0px #000000;
+    border: 0.1rem solid var(--light-brown) !important;
+    -webkit-box-shadow: 3px 3px 3px 0px #000000;
+    box-shadow: 3px 3px 3px 0px #000000;
     width: 18rem !important;
     font-size: 1.4rem;
     color: var(--dark-brown) !important;
- }
-
+}
 
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
     color: var(--dark-brown) !important;
@@ -176,11 +163,57 @@ body {
     color: var(--dark-brown) !important;
 }
 
+#state-table-filter-field {
+    border: 0.1rem solid var(--light-brown) !important;
+    -webkit-box-shadow: 3px 3px 3px 0px #000000;
+    box-shadow: 3px 3px 3px 0px #000000;
+    width: 17rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    color: var(--dark-brown);
+    padding-left: 2.5rem;
+}
+
+#state-table-filter-field:placeholder-shown {
+    font-style: italic;
+}
+
+#mag-glass {
+    position: absolute;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-left: 0.6rem;
+}
+
 
 /*POLITICIANS TABLE*/
 
+#politician-table-contain {
+    height: inherit;
+    max-height: 70vh;
+    width: 80%;
+    margin: 0 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    /* For smooth scrolling on iOS devices */
+    border-bottom: 1px solid var(--dark-brown);
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+#politician-table {
+    width: 100%;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    text-align: left;
+    line-height: 2rem;
+    overflow: auto;
+    max-height: calc(100% - 6rem);
+}
+
 .tablesorter {
     width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--dark-brown)
 }
 
 thead {
@@ -189,52 +222,26 @@ thead {
 
 tbody {
     font-size: 1.4rem;
-
 }
 
 .tablesorter th {
-    cursor: pointer;
     font-size: 1.5rem;
     position: sticky;
     top: 0;
     background-color: var(--light-brown);
     z-index: 10;
+    background-clip: padding-box;
+    border: 1px solid var(--dark-brown)
+}
+
+.tablesorter td {
+    border: 1px solid var(--dark-brown);
 }
 
 .tablesorter td,
 .tablesorter th,
 .cfr-inner {
     padding: 0.5rem;
-}
-
-.tablesorter-header .header-arrow {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.6em;
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.tablesorter-header .header-arrow-up {
-    color: var(--dark-brown);
-    margin-top: -0.6rem;
-    margin-right: 0.5rem;
-}
-
-.tablesorter-headerAsc .header-arrow-up {
-    color: var(--white);
-}
-
-.tablesorter-header .header-arrow-down {
-    color: var(--dark-brown);
-    margin-top: 0.6rem;
-    margin-right: 0.5rem;
-}
-
-.tablesorter-headerDesc .header-arrow-down {
-    color: var(--white);
 }
 
 .tablesorter tr:nth-child(odd) {
@@ -269,11 +276,11 @@ tbody {
 }
 
 .party-Ind {
-    background-color: yellow;
+    background-color: var(--inds);
 }
 
 .party-Grn {
-    background-color: green;
+    background-color: var(--grns);
 }
 
 #pol-name {
@@ -287,7 +294,8 @@ tbody {
     display: flex;
     align-items: center;
     width: 100%;
-    color: var(--dark-brown)
+    color: var(--dark-brown);
+    border: none
 }
 
 .table-profile-img {
@@ -304,13 +312,10 @@ tbody {
     flex-direction: column;
     justify-content: center;
     background-color: var(--light-brown);
+    border: none;
 }
 
-.table-img-name {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
+
 
 #district,
 .district {
