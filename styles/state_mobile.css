@@ -1,8 +1,11 @@
 @media (max-width: 768px) {
 
+    * {
+        /border: 1px solid black
+    }
 
     body {
-        background-color: var(--gray);
+
         overflow-x: hidden;
     }
 
@@ -11,7 +14,8 @@
     }
 
     #state-main-contain {
-        margin: 0 auto;
+        margin: 0 auto 8rem auto;
+        padding-top: 1rem;
     }
 
     #state-info {
@@ -31,12 +35,12 @@
     #state-header {
         width: 100%;
         display: flex;
-        margin-bottom: 3%;
+        margin-bottom: 5%;
     }
 
     #state-name {
         white-space: nowrap;
-        font-size: 2.3rem;
+        font-size: 2.5rem;
         text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
     }
 
@@ -120,7 +124,6 @@
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         /* For smooth scrolling on iOS devices */
-        background-color: var(--not-enough-data);
         border: 0.2rem solid transparent;
         border-bottom: 0.3rem solid transparent;
         border-radius: 0.5rem;
@@ -249,16 +252,17 @@
 
     #party,
     .party {
+        
         width: 7%;
         text-align: center;
         color: var(--dark-brown);
     }
 
     .party-icon {
+        margin-left: 30%;
         width: 40%;
         height: 1.5rem;
         border-radius: 0.3rem;
-        margin-left: 35%;
         box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
     }
 
@@ -286,7 +290,6 @@
     .name-link {
         /* reintroduce when release Politicians page:
         cursor: pointer; */
-        display: flex;
         align-items: center;
         width: 100%;
         color: var(--dark-brown)
@@ -307,10 +310,10 @@
         flex-direction: column;
         justify-content: center;
         background-color: var(--light-brown);
+        border: none;
     }
 
     .table-img-name {
-        display: flex;
         justify-content: flex-start;
         align-items: center;
     }

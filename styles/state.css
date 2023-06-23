@@ -179,7 +179,7 @@
     font-style: italic;
 }
 
-#mag-glass {
+.mag-glass {
     position: absolute;
     font-size: 1.6rem;
     font-weight: bold;
@@ -231,7 +231,29 @@ tbody {
     background-color: var(--light-brown);
     z-index: 10;
     background-clip: padding-box;
-    border: 1px solid var(--dark-brown)
+    border: 1px solid var(--dark-brown);
+}
+
+.tablesorter th::before,
+.tablesorter th::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    /* height of the border */
+    background: var(--dark-brown);
+    /* background color of the border */
+}
+
+.tablesorter th::before {
+    top: -1px;
+    /* position the border above the header */
+}
+
+.tablesorter th::after {
+    bottom: -1px;
+    /* position the border below the header */
 }
 
 .tablesorter td {
