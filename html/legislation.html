@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CryptoPols | Legislations</title>
+    <title>CryptoPols | Bills & Resolutions</title>
     <link rel="icon" href="../favicon64.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -48,24 +48,14 @@
 
         <section id="leg-top">
             <h1>Bills & Resolutions</h1>
+            <div id="leg-table-filters-cont">
+                <ion-icon name="search-sharp" class="mag-glass"></ion-icon>
+                <input class="leg-table-search-fields" id="legislation-search-field" type="text"
+                    placeholder="Enter bill, title, branch or sponsor">
+            </div>
         </section>
         <section>
-
             <div id="legislation-table-cont">
-                <div id="leg-table-filters-cont">
-                    <input class="leg-table-search-fields" id="leg-bill-search" type="text" placeholder="<Enter #>">
-                    <input class="leg-table-search-fields" id="leg-title-search" type="text" placeholder="<Enter word>">
-                    <input class="leg-table-search-fields" id="leg-branch-search" type="text"
-                        placeholder="<Enter branch>">
-                    <input class="leg-table-search-fields" id="leg-sponsor-search" type="text"
-                        placeholder="  <Enter sponsor>">
-                    <input class="leg-table-search-fields" id="leg-cosponsors-search" type="text"
-                        placeholder="<Enter #>">
-                    <input class="leg-table-search-fields" id="leg-introduced-search" type="text"
-                        placeholder="<Enter date>">
-                    <input class="leg-table-search-fields" id="leg-sentiment-search" type="text"
-                        placeholder="<Enter sentiment>">
-                </div>
                 <table id="legislation-table" class="tablesorter">
                     <thead>
                         <tr id="legislation-table-data">

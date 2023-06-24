@@ -4,14 +4,47 @@
 
 #leg-top {
     margin-top: 10rem;
-    margin-bottom: 3rem;
     text-align: center;
+}
+
+#leg-table-filters-cont {
+    display: flex;
+    justify-content: center;
+    border: none;
+    background: white;
+    z-index: 11;
+    margin-top: -1.2%;
+    margin-bottom: 4rem;
+}
+
+#legislation-search-field {
+    border: 0.1rem solid var(--light-brown) !important;
+    -webkit-box-shadow: 3px 3px 3px 0px #000000;
+    box-shadow: 3px 3px 3px 0px #000000;
+    width: 21rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    color: var(--dark-brown);
+    padding-left: 3rem;
+}
+
+#legislation-search-field:focus {
+    outline: 2.5px solid var(--dark-brown);
+    background: var(--gray);
+}
+
+.mag-glass {
+    position: absolute;
+    transform: translate(-490%, 45%);
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-left: 0.6rem;
 }
 
 #legislation-table-cont {
     width: 90vw;
     max-width: 120rem;
-    margin: 0 auto 10rem auto;
+    margin: 0rem auto 10rem auto;
     height: 68vh;
     overflow: scroll;
     border: 2px solid var(--light-brown);
@@ -26,98 +59,11 @@
     /* sets a fixed layout to prevent resizing beyond given width */
     overflow: scroll;
     border-collapse: collapse;
-
-}
-
-#leg-table-filters-cont {
-    display: flex;
-    border: none;
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 11;
-    height: 4%;
-    
-}
-
-.leg-table-search-fields {
-    margin: 0;
-    border: none;
-    background-color: var(--gray);
-    font-size: 1.3rem;
-    box-shadow: 0 0.2rem 1rem 0rem rgba(0, 0, 0, 0.2);
-}
-
-#leg-details {
-    text-align: center;
-    border-right: none !important;
-    width: 2.5%
-}
-
-#leg-bill-number {
-    border-left: none !important;
-    text-align: left;
-    width: 7%
-}
-
-#leg-bill-search {
-    width: 9.5%;
-    text-align: center;
-}
-
-#leg-title,
-#leg-title-search {
-    width: 32%;
-    padding-left: 0.5rem;
-    text-align: left;
-}
-
-#leg-branch,
-#leg-branch-search {
-    width: 12%;
-    text-align: center;
-}
-
-#leg-sponsor-party-color {
-    width: 0.7%;
-    border-right: none !important;
-}
-
-#leg-sponsor {
-    border-left: none !important
-}
-
-#leg-sponsor {
-    width: 15%;
-    text-align: left;
-}
-
-#leg-sponsor-search {
-    width: 15.7%;
-
-}
-
-#leg-cosponsors,
-#leg-cosponsors-search {
-    width: 8%;
-    text-align: center;
-}
-
-#leg-introduced,
-#leg-introduced-search {
-    width: 8%;
-    text-align: center;
-}
-
-#leg-sentiment,
-#leg-sentiment-search {
-    text-align: center;
-    width: calc(100% - 8% -8% - 15.7% - 12% - 32% - 9.5%)
 }
 
 #legislation-table thead {
     position: sticky;
-    top: 4%;
+    top: 0;
     background-color: white;
     z-index: 10;
 }
@@ -151,6 +97,58 @@
     font-size: 1.4rem;
     height: 4.2vh !important;
     border-bottom: 1px solid var(--light-brown);
+}
+
+#leg-details {
+    text-align: center;
+    border-right: none !important;
+    width: 2.5%
+}
+
+#leg-bill-number {
+    border-left: none !important;
+    text-align: left;
+    width: 7%
+}
+
+
+#leg-title {
+    width: 32%;
+    text-align: left;
+}
+
+#leg-branch {
+    width: 12%;
+    text-align: center;
+}
+
+#leg-sponsor-party-color {
+    width: 0.7%;
+    border-right: none !important;
+}
+
+#leg-sponsor {
+    border-left: none !important
+}
+
+#leg-sponsor {
+    width: 15%;
+    text-align: left;
+}
+
+#leg-cosponsors {
+    width: 8%;
+    text-align: center;
+}
+
+#leg-introduced {
+    width: 8%;
+    text-align: center;
+}
+
+#leg-sentiment {
+    text-align: center;
+    width: calc(100% - 8% -8% - 15.7% - 12% - 32% - 9.5%)
 }
 
 .leg-details-arrow {

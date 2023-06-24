@@ -189,160 +189,31 @@ function fetchLegislationsData() {
 // Call the function to fetch the legislations data when the page loads
 fetchLegislationsData();
 
-
-// filter for bills
-function filterBills() {
-    const searchTerm = $("#leg-bill-search").val().toLowerCase();
-
-    // Here, we should iterate over all table rows with the class ".leg-row"
+// filter for bills, title, branch and sponsor
+function filterLegislationTable() {
+    const searchTerm = $("#legislation-search-field").val().toLowerCase();
     $(".leg-row").each(function () {
         const bill = $(this).find(".leg-number").text().toLowerCase();
-
-        if (bill.includes(searchTerm)) {
-            $(this).show();
-
-        } else {
-            $(this).hide();
-
-        }
-    });
-}
-
-fetchLegislationsData();
-
-$("#leg-bill-search").on("keyup", filterBills);
-
-
-// filter for title
-function filterTitle() {
-    const searchTerm = $("#leg-title-search").val().toLowerCase();
-
-    $(".leg-row").each(function () {
         const title = $(this).find(".leg-title").text().toLowerCase();
-
-        if (title.includes(searchTerm)) {
-            $(this).show();
-
-        } else {
-            $(this).hide();
-
-        }
-    });
-}
-
-fetchLegislationsData();
-
-$("#leg-title-search").on("keyup", filterTitle);
-
-
-// filter for branch
-function filterBranch() {
-    const searchTerm = $("#leg-branch-search").val().toLowerCase();
-
-    $(".leg-row").each(function () {
         const branch = $(this).find(".leg-branch").text().toLowerCase();
-
-        if (branch.includes(searchTerm)) {
-            $(this).show();
-
-        } else {
-            $(this).hide();
-
-        }
-    });
-}
-
-fetchLegislationsData();
-
-$("#leg-branch-search").on("keyup", filterBranch);
-
-
-// filter for sponsor
-function filterSponsor() {
-    const searchTerm = $("#leg-sponsor-search").val().toLowerCase();
-
-    $(".leg-row").each(function () {
         const sponsor = $(this).find(".leg-sponsor").text().toLowerCase();
 
-        if (sponsor.includes(searchTerm)) {
+        if (
+            bill.includes(searchTerm) ||
+            title.includes(searchTerm) ||
+            branch.includes(searchTerm) ||
+            sponsor.includes(searchTerm)
+        ) {
             $(this).show();
-
         } else {
             $(this).hide();
-
         }
     });
 }
 
 fetchLegislationsData();
 
-$("#leg-sponsor-search").on("keyup", filterSponsor);
-
-
-// filter for cosponsors
-function filterCosponsors() {
-    const searchTerm = $("#leg-cosponsors-search").val().toLowerCase();
-
-    $(".leg-row").each(function () {
-        const cosponsors = $(this).find(".leg-cosponsors").text().toLowerCase();
-
-        if (cosponsors.includes(searchTerm)) {
-            $(this).show();
-
-        } else {
-            $(this).hide();
-
-        }
-    });
-}
-
-fetchLegislationsData();
-
-$("#leg-cosponsors-search").on("keyup", filterCosponsors);
-
-
-// filter for introduced
-function filterIntroduced() {
-    const searchTerm = $("#leg-introduced-search").val().toLowerCase();
-
-    $(".leg-row").each(function () {
-        const introduced = $(this).find(".leg-introduced").text().toLowerCase();
-
-        if (introduced.includes(searchTerm)) {
-            $(this).show();
-
-        } else {
-            $(this).hide();
-
-        }
-    });
-}
-
-fetchLegislationsData();
-
-$("#leg-introduced-search").on("keyup", filterIntroduced);
-
-
-// filter for introduced
-function filterSentiment() {
-    const searchTerm = $("#leg-sentiment-search").val().toLowerCase();
-
-    $(".leg-row").each(function () {
-        const sentiment = $(this).find(".leg-sentiment").text().toLowerCase();
-
-        if (sentiment.includes(searchTerm)) {
-            $(this).show();
-
-        } else {
-            $(this).hide();
-
-        }
-    });
-}
-
-fetchLegislationsData();
-
-$("#leg-sentiment-search").on("keyup", filterSentiment);
+$("#legislation-search-field").on("keyup", filterLegislationTable);
 
 /*
 
