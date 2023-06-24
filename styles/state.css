@@ -123,7 +123,7 @@
 }
 
 
-#state-slect,
+#state-select,
 #state-table-filter-cont {
     display: flex;
     justify-content: center;
@@ -175,9 +175,11 @@
     padding-left: 2.5rem;
 }
 
-#state-table-filter-field:placeholder-shown {
-    font-style: italic;
+#state-table-filter-field:focus {
+    outline: 2.5px solid var(--dark-brown);
+    background: var(--gray);
 }
+
 
 .mag-glass {
     position: absolute;
