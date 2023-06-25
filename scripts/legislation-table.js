@@ -162,17 +162,33 @@ function fetchLegislationsData() {
 
                 // Remove 'clicked' from all rows
                 $('#legislation-table tr').removeClass('clicked').data('clicked', false);
-                $('#legislation-table tr').find('.fa-caret-right').removeClass('rotate-caret'); // reset all carets
+                $('#legislation-table tr').find('.fa-caret-right').removeClass('rotate-caret');
 
                 // If this row was not previously clicked, add 'clicked' to it and mark it as clicked
                 if (!wasClicked) {
                     $(this).addClass('clicked').data('clicked', true);
                     $(this).find('.fa-caret-right').addClass('rotate-caret'); // only rotate the caret of the clicked row
+
+                    setTimeout(() => {
+                        // Calculate the scrolling position
+                        const containerTop = $('#legislation-table-cont').offset().top;
+                        const rowTop = $(this).offset().top;
+                        const rowHeight = $(this).outerHeight();
+                        const scrollPosition = $('#legislation-table-cont').scrollTop() + rowTop - containerTop - rowHeight + 8;
+
+                        // Scroll to the calculated position within the specific container
+                        $('#legislation-table-cont').animate({
+                            scrollTop: scrollPosition
+                        }, 'normal');
+                    }, 250); // slightly longer than the slideToggle duration
                 }
 
                 // Hide all other expansion sections
                 $('.expansion').not(expansion).slideUp(200);
             });
+
+
+
 
             $("#legislation-table").trigger("update");
 
@@ -214,57 +230,3 @@ function filterLegislationTable() {
 fetchLegislationsData();
 
 $("#legislation-search-field").on("keyup", filterLegislationTable);
-
-/*
-
-// set table sorting with default settings
-function initTablesorter() {
-
-
-    $.tablesorter.addParser({
-        id: "sponsor_nameSort",
-        is: function (s) {
-            return false;
-        },
-        format: function (s, table, cell) {
-            return $(cell).text().toLowerCase();
-        },
-        type: "text"
-    });
-
-    $.tablesorter.addParser({
-        id: "leg_sentimentSort",
-        is: function (s) {
-            return false;
-        },
-        format: function (s, table, cell) {
-            const leg_sentimentOrder = ["Strongly Anti", "Slightly Anti", "Neutral", "Slightly Pro", "Strongly Pro"];
-            return leg_sentimentOrder.indexOf($(cell).find(".leg-sentiment-inner").text());
-        },
-        type: "numeric"
-    });
-
-
-    $("#legislation-table").tablesorter({
-        headerTemplate: "{content}<span class='header-arrow header-arrow-up'>&#x25B2;</span><span class='header-arrow header-arrow-down'>&#x25BC;</span>",
-        headers: {
-            4: { // "name" column
-                sorter: "sponsor_nameSort"
-            },
-            7: {
-                sorter: "leg_sentimentSort"
-            }
-        },
-        sortList: [
-            [2, 1], // First, sort by the Office column (index 2)
-            [3, 0], // Then, sort by the District column (index 3),
-        ]
-    });
-
-    // IMPORTANT: re-introduce when releasing Politicians page:
-    /*
-   window.openPoliticianPage = function (name) {
-       window.location.href = `politician.html?name=${encodeURIComponent(name)}`;
-   };
-   
-}*/
