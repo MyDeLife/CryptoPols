@@ -84,12 +84,12 @@
 }
 
 #legislation-table tr:hover:not(.expansion) {
-    background-color: rgba(212, 199, 189, 0.8);
+    background-color: rgba(212, 199, 189, 0.5);
     cursor: pointer;
 }
 
 #legislation-table tr.clicked td {
-    background-color: rgba(212, 199, 189, 0.8);
+    background-color: rgba(212, 199, 189, 0.5);
     font-size: bold;
 }
 
@@ -167,11 +167,6 @@
 
 .leg-branch {
     text-align: center;
-}
-
-
-.leg-sponsor-party-color {
-    border-radius: 1rem;
 }
 
 .leg-sponsor-party-color-inner {
@@ -267,7 +262,7 @@
     gap: 0;
 
     min-height: 38vh;
-    background-color: rgba(212, 199, 189, 0.7);
+    background-color: rgba(212, 199, 189, 0.5);
     /* rgba(212, 199, 189, 0.8) */
     border-top: 1px solid var(--light-brown);
     padding-top: 2.5vh;

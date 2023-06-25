@@ -107,6 +107,11 @@
         padding-left: 3rem;
     }
 
+    #search-input-mobile:focus {
+        outline: 2.5px solid var(--dark-brown);
+        background: var(--gray);
+    }
+
     .mag-glass {
         display: none;
         position: absolute;
@@ -117,11 +122,12 @@
     }
 
     .mag-glass-mobile {
+        display: none;
         position: absolute;
         font-size: 1.7rem;
         font-weight: bold;
         padding-left: 0.6rem;
-        transform: translate(100%, -150%);
+        transform: translate(80%, -120%);
         z-index: 2;
     }
 

@@ -121,7 +121,6 @@ nav:not(.ham-navbar) {
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
     z-index: 1;
     font-size: 1.2rem;
-    transform: translateY(-1.5rem);
     transition: opacity 0.5s ease, visibility 0.1s ease, transform 0.2s ease-in;
 
 }
