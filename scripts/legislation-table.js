@@ -18,7 +18,7 @@ function fetchLegislationsData() {
 
                 row.append(`<td class="leg-details-arrow"><div class="fas fa-caret-right"></div></td>`);
                 row.append(`<td class="leg-number">${legislation.leg_number}</td>`);
-                row.append(`<td class="leg-title">${legislation.title}</td>`);
+                row.append(`<td class="leg-title" title="${legislation.title}">${legislation.title}</td>`);
                 row.append(`<td class="leg-branch hide-on-mobile">${legislation.office}</td>`);
                 row.append(`<td class="leg-sponsor-party-color" data-sponsor-party="${legislation.sponsor_party}"><div class="leg-sponsor-party-color-inner">${legislation.sponsor_party}</div></td>`);
                 row.append(`<td class="leg-sponsor">${legislation.sponsor_name}</td>`);
@@ -230,3 +230,16 @@ function filterLegislationTable() {
 fetchLegislationsData();
 
 $("#legislation-search-field").on("keyup", filterLegislationTable);
+
+
+// jQuery example
+$(window).resize(function () {
+    if ($(window).width() <= 768) {
+        $('#legislation-search-field').attr('placeholder', 'Enter bill, title or sponsor');
+    } else {
+        $('#legislation-search-field').attr('placeholder', 'Enter bill, title, branch or sponsor');
+    }
+});
+
+// run on page load
+$(window).trigger('resize');

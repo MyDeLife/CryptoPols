@@ -1,7 +1,9 @@
 function toggleMenu() {
     document.getElementById("ham-navbar").classList.toggle("show");
     document.getElementById("hamburger-icon").classList.toggle("change");
+    document.body.classList.toggle("no-scroll");
 }
+
 
 function toggleDrop(event) {
     event.stopPropagation();
