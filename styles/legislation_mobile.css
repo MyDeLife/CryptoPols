@@ -29,15 +29,16 @@
         margin-right: 0.5rem;
         margin-bottom: 2rem;
         color: var(--dark-brown);
-        padding-left: 3rem;
+        padding-left: 2.5rem;
+        font-size: 1.6rem;
     }
 
     .mag-glass {
         position: absolute;
-        transform: translate(-500%, 60%);
+        transform: translate(-500%, 80%);
         font-size: 1.6rem;
         font-weight: bold;
-        padding-left: 0.6rem;
+        padding-left: 0.7rem;
     }
 
     #legislation-table-cont {
@@ -393,7 +394,7 @@
         flex-grow: 1;
         text-align: center;
         background-color: var(--gray);
-        font-size: 2.2vw;
+        font-size: 2vw;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
