@@ -394,7 +394,7 @@
         flex-grow: 1;
         text-align: center;
         background-color: var(--gray);
-        font-size: 2vw;
+        font-size: 1.8vw;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
