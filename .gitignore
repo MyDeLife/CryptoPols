@@ -4,3 +4,4 @@ db/fetch_states.php
 db/fetch_country.php
 db/fetch_events.php
 db/fetch_legislations.php
+db/fetch_congress_letters.php
