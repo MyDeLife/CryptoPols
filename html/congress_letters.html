@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPols | Congress Letters</title>
+    <link rel="icon" href="../favicon64.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/congress_letters.css">
+    <link rel="stylesheet" href="../styles/congress_letters_mobile.css">
+    <link rel="stylesheet" href="../styles/header.css?v=1.4.4">
+    <link rel="stylesheet" href="../styles/header_mobile.css?v=1.4.4">
+    <link rel="stylesheet" href="../styles/footer.css?v=1.4.4">
+    <link rel="stylesheet" href="../styles/footer_mobile.css?v=1.4.4">
+    <link rel="stylesheet" href="../styles/global.css?v=1.4.4">
+    <link rel="stylesheet" href="../styles/global_mobile.css?v=1.4.4">
+
+    <!-- EXTERNAL SCRIPTS-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDQ4V9VZBT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WDQ4V9VZBT');
+    </script>
+
+</head>
+
+<body>
+    <div class="body-contain">
+
+        <!-- HEADER -->
+        <script>
+            $(function () {
+                $("#header-placeholder").load("header.html");
+            });
+        </script>
+        <div id="header-placeholder"></div>
+
+        <section id="cl-top">
+            <h1>Congress Letters</h1>
+            <p class="introduction-text">Congress members regularly make inquiries to third parties to perform
+                oversight over federal agencies and to ensure that laws are working as intended. Congress
+                letters target specific topics that often include viewpoints and interpretations that congress 
+                members express to third parties. Congress letters therefore present a valuable source to gauge
+                the sentiment of Congress members towards the crypto industry.
+            </p>
+            <div id="cl-table-filters-cont">
+                <ion-icon name="search-sharp" class="mag-glass"></ion-icon>
+                <input class="cl-table-search-fields" id="cl-search-field" type="text">
+            </div>
+        </section>
+        <section>
+            <div id="cl-table-cont">
+                <table id="cl-table" class="tablesorter">
+                    <thead>
+                        <tr id="cl-table-data">
+                            <th id="cl-details"></th> <!--arrow-->
+                            <th id="cl-date">Date</th>
+                            <th id="cl-topic">Topic</th> <!--topic of congress letter-->
+                            <th id="cl-branch">Branch</th> <!--senate or house-->
+                            <th id="cl-signer-party-color"></th> <!--color of signer party-->
+                            <th id="cl-signer">Signer</th> <!--name and party association of signer-->
+                            <th id="cl-sentiment" data-type="cl_sentiment">Crypto Sentiment</th>
+                            <!--sentiment rating-->
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <p class="table-note">Any congress letters missing in the above table?
+                <a href="https://cryptopols.com/html/contact.html">Send</a> us the link to evaluate. Thanks!</p> 
+
+        </section>
+
+        <!-- FOOTER-->
+        <script>
+            $(function () {
+                $("#footer-placeholder").load("footer.html");
+            });
+        </script>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="../scripts/congress-letters-table.js?v=1.4.4"></script>
+    <script src="../scripts/nav-bar.js?v=1.4.4"></script>
+</body>
+
+</html>

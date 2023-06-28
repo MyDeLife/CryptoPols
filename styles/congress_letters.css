@@ -1,0 +1,411 @@
+* {
+    /border: 1px solid black
+}
+
+#cl-top {
+    margin-top: 10rem;
+    text-align: center;
+}
+
+.introduction-text {
+    text-align: left;
+    width: 85%;
+    margin-bottom: 5rem;
+}
+
+.table-note {
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: left;
+    width: 85%;
+    margin-bottom: 10rem;
+    margin-top: 1rem
+}
+
+.table-note a:visited {
+    color: blue;
+}
+
+#cl-table-filters-cont {
+    display: flex;
+    justify-content: center;
+    border: none;
+    background: white;
+    z-index: 11;
+    margin-top: -1.2%;
+    margin-bottom: 1.5rem;
+}
+
+#cl-search-field {
+    border: 0.1rem solid var(--light-brown) !important;
+    -webkit-box-shadow: 3px 3px 3px 0px #000000;
+    box-shadow: 3px 3px 3px 0px #000000;
+    width: 18rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    color: var(--dark-brown);
+    padding-left: 3rem;
+}
+
+#cl-search-field:focus {
+    outline: 2.5px solid var(--dark-brown);
+    background: var(--gray);
+}
+
+.mag-glass {
+    position: absolute;
+    transform: translate(-420%, 45%);
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-left: 0.6rem;
+}
+
+#cl-table-cont {
+    width: 90vw;
+    max-width: 120rem;
+    margin: 0rem auto 0 auto;
+    height: 68vh;
+    overflow: scroll;
+    border: 2px solid var(--light-brown);
+    box-shadow: 0 0.2rem 1rem 0rem rgba(0, 0, 0, 0.2);
+}
+
+#cl-table {
+    width: 100%;
+    max-width: 90vw;
+    /* keep same value as #legislation-table-cont width */
+    table-layout: fixed;
+    /* sets a fixed layout to prevent resizing beyond given width */
+    overflow: scroll;
+    border-collapse: collapse;
+}
+
+#cl-table thead {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+}
+
+#cl-table td,
+#cl-table th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+#cl-table th {
+    font-size: 1.4rem;
+    background-color: rgba(212, 199, 189, 0.8);
+    height: 3.5vh;
+
+}
+
+#cl-table tr:hover:not(.expansion) {
+    background-color: rgba(212, 199, 189, 0.5);
+    cursor: pointer;
+}
+
+#cl-table tr.clicked td {
+    background-color: rgba(212, 199, 189, 0.5);
+    font-size: bold;
+}
+
+#cl-table td {
+    font-size: 1.4rem;
+    height: 4.2vh !important;
+    border-bottom: 1px solid var(--light-brown);
+}
+
+#cl-details {
+    text-align: right;
+    border-right: none !important;
+    width: 2.5%;
+}
+
+#cl-date {
+    width: 10%;
+    text-align: center;
+}
+
+
+#cl-topic {
+    width: 43%;
+    text-align: left;
+}
+
+#cl-branch {
+    width: 12%;
+    text-align: center;
+}
+
+#cl-signer-party-color {
+    width: 0.7%;
+    border-right: none !important;
+}
+
+#cl-signer {
+    border-left: none !important
+}
+
+#cl-signer {
+    width: 15%;
+    text-align: left;
+}
+
+#cl-sentiment {
+    text-align: center;
+    width: calc(100% - 8% -8% - 15.7% - 12% - 32% - 9.5%)
+}
+
+.cl-details-arrow {
+    padding-left: 1.5%;
+}
+
+.fa-caret-right {
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rotate-caret {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cl-branch {
+    text-align: center;
+}
+
+.cl-signer-party-color-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60%;
+    width: 85%;
+    border-radius: 1rem;
+    color: transparent;
+}
+
+[data-signer-party='Democrat'] .cl-signer-party-color-inner {
+    background-color: var(--dems);
+}
+
+[data-signer-party='Republican'] .cl-signer-party-color-inner {
+    background-color: var(--reps);
+}
+
+[data-signer-party='Independent'] .cl-signer-party-color-inner {
+    background: var(--inds);
+}
+
+[data-signer-party='Green'] .cl-signer-party-color-inner {
+    background-color: var(--grns);
+}
+
+.cl-signer {
+    padding-left: 0.5%;
+}
+
+.cl-cosigners {
+    text-align: center;
+}
+
+.cl-date {
+    font-size: 1.2rem !important;
+    text-align: center;
+}
+
+.cl-sentiment {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5%;
+}
+
+.cl-sentiment-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75%;
+    width: 85%;
+    border-radius: 1rem;
+    color: white;
+    box-shadow: 0 0.2rem 1rem 0rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid var(--light-brown)
+}
+
+[data-cl-sentiment='Strongly Pro'] .cl-sentiment-inner {
+    background-color: var(--strongly-pro);
+}
+
+[data-cl-sentiment='Slightly Pro'] .cl-sentiment-inner {
+    background-color: var(--slightly-pro);
+}
+
+[data-cl-sentiment='Neutral'] .cl-sentiment-inner {
+    background-color: var(--neutral);
+}
+
+[data-cl-sentiment='Slightly Anti'] .cl-sentiment-inner {
+    background-color: var(--slightly-anti);
+}
+
+[data-cl-sentiment='Strongly Anti'] .cl-sentiment-inner {
+    background-color: var(--strongly-anti);
+}
+
+[data-cl-sentiment='Not enough data'] .cl-sentiment-inner {
+    background-color: var(--not-enough-data);
+}
+
+
+.cl-details-cont {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5%;
+    min-height: 16vh;
+    background-color: rgba(212, 199, 189, 0.5);
+    /* rgba(212, 199, 189, 0.8) */
+    border-top: 1px solid var(--light-brown);
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    padding-left: 2.0%;
+    padding-right: 1%;
+    margin-top: -1px;
+}
+
+.cl-details {
+    display: flex;
+    max-width: 100%;
+}
+
+.details1 {
+    display: flex;
+    width: 25%;
+}
+
+.details2 {
+    width: 42%;
+}
+
+.details3 {
+    display: flex;
+    width: 33%;
+}
+
+.cl-summary-cont,
+.cl-addressee-cont,
+.cl-branch-seal-cont,
+.cl-cosigners-cont {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.cl-summary-label,
+.cl-addressee-label,
+.cl-cosigners-label {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    margin-bottom: 1vh;
+    font-weight: bold;
+    text-shadow: 0rem 0.01rem 0rem rgba(0, 0, 0, 0.2);
+}
+
+.cl-summary-label,
+.cl-addressee-label {
+    text-align: left;
+}
+
+.cl-cosigners-label {
+    text-align: center;
+}
+
+.cl-addressee-text {
+    font-size: 1.38rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    margin-bottom: 1vh;
+}
+
+.cl-summary-text {
+    font-size: 1.38rem;
+    white-space: normal;
+    overflow: visible;
+    background-color: var(--gray);
+    text-overflow: clip;
+    padding: 1vh;
+    margin-bottom: 1vh;
+    box-shadow: 0 0.2rem 1rem 0rem rgba(0, 0, 0, 0.2);
+}
+
+.cl-full-text {
+    font-size: 1.3rem;
+}
+
+.cl-full-text:visited {
+    color: blue
+}
+
+.cl-cosigners-cont {
+    width: 100%;
+}
+
+.cl-cosigners-text {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 20rem;
+    max-width: 26rem;
+    gap: 1%;
+}
+
+.cl-cosigners-value {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.05rem;
+    border: 1px solid var(--light-brown);
+    border-radius: 1rem 1rem 0 0;
+    padding-top: 0.3vh;
+    gap: 0.3vh;
+    width: 33%;
+    color: var(--white);
+    font-weight: bold;
+    text-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+#cl-cosigners-dems {
+    background-color: var(--dems);
+}
+
+#cl-cosigners-reps {
+    background-color: var(--reps);
+}
+
+#cl-cosigners-inds {
+    background-color: var(--inds);
+}
+
+.cl-cosigners-value-number {
+    background-color: var(--gray);
+    color: var(--black);
+    padding: 1vh;
+    font-size: 1.4rem;
+    margin-bottom: 1.8vh;
+}
+
+.cl-branch-seal-cont {
+    justify-items: center;
+    padding: 3rem 6% 0 0;
+}
+
+.cl-branch-seal-img {
+    height: 7rem;
+    width: 7rem;
+    margin: 0 auto;
+}
